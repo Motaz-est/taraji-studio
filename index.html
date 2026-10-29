@@ -72,7 +72,7 @@
 
             <!-- Navigation Links -->
             <nav class="hidden lg:flex items-center gap-1 bg-black/60 p-1.5 rounded-2xl border border-panelBorder text-xs font-bold overflow-x-auto">
-                <button onclick="switchTab('tactics')" id="tab-tactics" class="px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold"><i class="fa-solid fa-futbol ml-1"></i> الملعب والتكتيك</button>
+                <button onclick="switchTab('tactics')" id="tab-tactics" class="px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold"><i class="fa-solid fa-futbol ml-1"></i> التشكيلة والملعب</button>
                 <button onclick="switchTab('matches')" id="tab-matches" class="px-3 py-2 rounded-xl text-goldBright bg-gold/10 border border-gold/30"><i class="fa-solid fa-calendar-days ml-1"></i> المباريات القادمة والتقييم</button>
                 <button onclick="switchTab('league')" id="tab-league" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-trophy ml-1"></i> الدوري المحلي</button>
                 <button onclick="switchTab('caf')" id="tab-caf" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-earth-africa ml-1"></i> إفريقيا</button>
@@ -88,7 +88,7 @@
 
     <!-- Mobile Navigation Bar -->
     <div class="lg:hidden flex overflow-x-auto bg-[#0E0E10] border-b border-panelBorder p-2 gap-2 text-xs font-bold">
-        <button onclick="switchTab('tactics')" id="mob-tab-tactics" class="px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap">الملعب والتكتيك</button>
+        <button onclick="switchTab('tactics')" id="mob-tab-tactics" class="px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap">التشكيلة والملعب</button>
         <button onclick="switchTab('matches')" id="mob-tab-matches" class="px-3 py-2 rounded-lg bg-gold/20 text-goldBright border border-gold/30 whitespace-nowrap">المباريات والتقييم</button>
         <button onclick="switchTab('league')" id="mob-tab-league" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">الدوري</button>
         <button onclick="switchTab('caf')" id="mob-tab-caf" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">إفريقيا</button>
@@ -97,7 +97,7 @@
 
     <main class="max-w-7xl mx-auto px-3 sm:px-4 py-6 flex-1 w-full space-y-6">
 
-        <!-- ================= TAB 1: TACTICS & PITCH ================= -->
+        <!-- ================= TAB 1: TACTICS, PITCH & FULL ROSTER ================= -->
         <section id="sec-tactics" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div class="lg:col-span-4 space-y-4">
                 <div class="glass-panel rounded-2xl p-4 space-y-3">
@@ -115,12 +115,22 @@
                     </div>
                 </div>
 
+                <!-- Starters Roster -->
                 <div class="glass-panel rounded-2xl p-4 space-y-2">
                     <h3 class="font-black text-xs text-white border-b border-panelBorder pb-2 flex items-center justify-between">
                         <span>التشكيلة الأساسية (11)</span>
                         <span class="text-gold font-bold">رسمي</span>
                     </h3>
-                    <div id="startersRosterList" class="space-y-1.5 max-h-[300px] overflow-y-auto pr-1"></div>
+                    <div id="startersRosterList" class="space-y-1.5 max-h-[220px] overflow-y-auto pr-1"></div>
+                </div>
+
+                <!-- Subs Roster -->
+                <div class="glass-panel rounded-2xl p-4 space-y-2">
+                    <h3 class="font-black text-xs text-white border-b border-panelBorder pb-2 flex items-center justify-between">
+                        <span>دكة الاحتياط (6 لاعبين)</span>
+                        <span class="text-rose-400 font-bold">بدلاء</span>
+                    </h3>
+                    <div id="subsRosterList" class="space-y-1.5 max-h-[180px] overflow-y-auto pr-1"></div>
                 </div>
             </div>
 
@@ -128,8 +138,8 @@
                 <div class="glass-panel rounded-2xl p-4 flex flex-col items-center space-y-3">
                     <div class="w-full flex items-center justify-between border-b border-panelBorder pb-2">
                         <div>
-                            <h3 class="font-black text-white text-sm">الملعب التفاعلي التكتيكي</h3>
-                            <p class="text-[11px] text-gold font-bold">اسحب اللاعبين بحرية في الملعب</p>
+                            <h3 class="font-black text-white text-sm">الملعب التفاعلي التكتيكي (اسحب بالماوس)</h3>
+                            <p class="text-[11px] text-gold font-bold">جميع لاعبي الترجي الأساسيين والاحتياط متوفرون</p>
                         </div>
                         <button onclick="exportPitchImage()" class="bg-redEst text-white text-xs px-3 py-1.5 rounded-lg font-bold">تصدير صورة</button>
                     </div>
@@ -161,7 +171,7 @@
             <!-- Upcoming Matches Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="upcomingMatchesContainer"></div>
 
-            <!-- Fan Ratings Panel (Activated After Match Ends) -->
+            <!-- Fan Ratings Panel -->
             <div id="fanRatingPanel" class="glass-panel rounded-2xl p-6 space-y-4 border-2 border-gold hidden">
                 <div class="flex items-center justify-between border-b border-panelBorder pb-3">
                     <div>
@@ -185,29 +195,15 @@
 
         <!-- ================= TAB 3: TUNISIAN LEAGUE ================= -->
         <section id="sec-league" class="space-y-4 hidden">
-            <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-3">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg border border-gold/30">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-black text-white text-sm">محاكي الرابطة المحترفة الأولى (15 فريقاً)</h2>
-                        <p class="text-[11px] text-gray-400">محاكاة نتائج مباريات الدوري التونسي وحساب النقاط</p>
-                    </div>
-                </div>
+            <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex justify-between items-center">
+                <h2 class="font-black text-white text-sm">محاكي الرابطة المحترفة الأولى (15 فريقاً)</h2>
+                <button onclick="simulateNextRound()" class="bg-redEst text-white text-xs px-3 py-1.5 rounded-xl font-bold">محاكاة الجولة</button>
             </div>
-
             <div class="glass-panel rounded-2xl p-4 overflow-x-auto">
                 <table class="w-full text-right text-xs">
                     <thead>
                         <tr class="text-gray-400 border-b border-panelBorder text-[11px]">
-                            <th class="pb-2">#</th>
-                            <th class="pb-2">الفريق</th>
-                            <th class="pb-2 text-center">لعب</th>
-                            <th class="pb-2 text-center text-emerald-400">فاز</th>
-                            <th class="pb-2 text-center text-amber-400">تعادل</th>
-                            <th class="pb-2 text-center text-rose-400">خسر</th>
-                            <th class="pb-2 text-center font-black text-gold">النقاط</th>
+                            <th class="pb-2">#</th><th class="pb-2">الفريق</th><th class="pb-2 text-center">لعب</th><th class="pb-2 text-center text-emerald-400">فاز</th><th class="pb-2 text-center text-amber-400">تعادل</th><th class="pb-2 text-center text-rose-400">خسر</th><th class="pb-2 text-center font-black text-gold">النقاط</th>
                         </tr>
                     </thead>
                     <tbody id="leagueTableBody" class="divide-y divide-panelBorder/40"></tbody>
@@ -217,16 +213,9 @@
 
         <!-- ================= TAB 4: CAF CHAMPIONS LEAGUE ================= -->
         <section id="sec-caf" class="space-y-4 hidden">
-            <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg border border-gold/30">
-                        <i class="fa-solid fa-earth-africa"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-black text-white text-sm">دوري أبطال إفريقيا 2026/2027</h2>
-                        <p class="text-[11px] text-gray-400">مجموعات ومباريات غول إفريقيا القارية</p>
-                    </div>
-                </div>
+            <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex justify-between items-center">
+                <h2 class="font-black text-white text-sm">دوري أبطال إفريقيا 2026/2027</h2>
+                <button onclick="drawCafGroups()" class="bg-gold text-black text-xs font-black px-3 py-1.5 rounded-xl">قرعة المجموعات</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cafGroupsContainer"></div>
         </section>
@@ -263,20 +252,30 @@
 
     <script>
         const estStarters = [
-            { id: 1, name: 'بشير بن سعيد', pos: 'GK', rating: 83, flag: '🇹🇳', pac: 52, sho: 20, pas: 66, dri: 50, def: 84, phy: 82, fanScore: 8.5 },
-            { id: 2, name: 'محمد دراغر', pos: 'RB', rating: 81, flag: '🇹🇳', pac: 84, sho: 65, pas: 75, dri: 76, def: 77, phy: 78, fanScore: 7.9 },
-            { id: 3, name: 'نضال العيفي', pos: 'LB', rating: 76, flag: '🇹🇳', pac: 78, sho: 50, pas: 68, dri: 70, def: 75, phy: 74, fanScore: 7.5 },
-            { id: 4, name: 'حمزة الجلاصي', pos: 'CB', rating: 80, flag: '🇹🇳', pac: 64, sho: 50, pas: 66, dri: 62, def: 81, phy: 83, fanScore: 8.0 },
-            { id: 5, name: 'عليلات', pos: 'CB', rating: 78, flag: '🇩🇿', pac: 66, sho: 42, pas: 64, dri: 60, def: 79, phy: 81, fanScore: 7.7 },
-            { id: 6, name: 'خيسوس كاستيلو', pos: 'CDM', rating: 78, flag: '🇵🇪', pac: 70, sho: 58, pas: 74, dri: 72, def: 78, phy: 80, fanScore: 7.8 },
-            { id: 7, name: 'حمزة رفيعة', pos: 'CAM', rating: 84, flag: '🇹🇳', pac: 78, sho: 80, pas: 86, dri: 85, def: 60, phy: 74, fanScore: 8.4 },
-            { id: 8, name: 'محمد الحاج محمود', pos: 'CM', rating: 81, flag: '🇹🇳', pac: 75, sho: 72, pas: 81, dri: 79, def: 76, phy: 78, fanScore: 8.1 },
-            { id: 9, name: 'يوسف البلايلي', pos: 'LW', rating: 88, flag: '🇩🇿', pac: 85, sho: 86, pas: 84, dri: 90, def: 45, phy: 78, fanScore: 9.2 },
-            { id: 10, name: 'لوكاس ريبيرو', pos: 'RW', rating: 85, flag: '🇧🇷', pac: 83, sho: 84, pas: 85, dri: 87, def: 48, phy: 72, fanScore: 8.6 },
-            { id: 11, name: 'حازم المستوري', pos: 'ST', rating: 79, flag: '🇹🇳', pac: 80, sho: 81, pas: 68, dri: 74, def: 35, phy: 82, fanScore: 8.2 }
+            { id: 1, name: 'بشير بن سعيد', pos: 'GK', rating: 83, flag: '🇹🇳', pac: 52, sho: 20, pas: 66, dri: 50, def: 84, phy: 82, isStarter: true, fanScore: 8.5 },
+            { id: 2, name: 'محمد دراغر', pos: 'RB', rating: 81, flag: '🇹🇳', pac: 84, sho: 65, pas: 75, dri: 76, def: 77, phy: 78, isStarter: true, fanScore: 7.9 },
+            { id: 3, name: 'نضال العيفي', pos: 'LB', rating: 76, flag: '🇹🇳', pac: 78, sho: 50, pas: 68, dri: 70, def: 75, phy: 74, isStarter: true, fanScore: 7.5 },
+            { id: 4, name: 'حمزة الجلاصي', pos: 'CB', rating: 80, flag: '🇹🇳', pac: 64, sho: 50, pas: 66, dri: 62, def: 81, phy: 83, isStarter: true, fanScore: 8.0 },
+            { id: 5, name: 'عليلات', pos: 'CB', rating: 78, flag: '🇩🇿', pac: 66, sho: 42, pas: 64, dri: 60, def: 79, phy: 81, isStarter: true, fanScore: 7.7 },
+            { id: 6, name: 'خيسوس كاستيلو', pos: 'CDM', rating: 78, flag: '🇵🇪', pac: 70, sho: 58, pas: 74, dri: 72, def: 78, phy: 80, isStarter: true, fanScore: 7.8 },
+            { id: 7, name: 'حمزة رفيعة', pos: 'CAM', rating: 84, flag: '🇹🇳', pac: 78, sho: 80, pas: 86, dri: 85, def: 60, phy: 74, isStarter: true, fanScore: 8.4 },
+            { id: 8, name: 'محمد الحاج محمود', pos: 'CM', rating: 81, flag: '🇹🇳', pac: 75, sho: 72, pas: 81, dri: 79, def: 76, phy: 78, isStarter: true, fanScore: 8.1 },
+            { id: 9, name: 'يوسف البلايلي', pos: 'LW', rating: 88, flag: '🇩🇿', pac: 85, sho: 86, pas: 84, dri: 90, def: 45, phy: 78, isStarter: true, fanScore: 9.2 },
+            { id: 10, name: 'لوكاس ريبيرو', pos: 'RW', rating: 85, flag: '🇧🇷', pac: 83, sho: 84, pas: 85, dri: 87, def: 48, phy: 72, isStarter: true, fanScore: 8.6 },
+            { id: 11, name: 'حازم المستوري', pos: 'ST', rating: 79, flag: '🇹🇳', pac: 80, sho: 81, pas: 68, dri: 74, def: 35, phy: 82, isStarter: true, fanScore: 8.2 }
         ];
 
-        // Upcoming Official Matches Schedule (2026/2027)
+        const estSubs = [
+            { id: 12, name: 'عماد فرج', pos: 'RW/ST', rating: 80, flag: '🇫🇷', pac: 84, sho: 76, pas: 78, dri: 82, def: 40, phy: 68, isStarter: false, fanScore: 7.6 },
+            { id: 13, name: 'رائد الشيخاوي', pos: 'CB', rating: 77, flag: '🇹🇳', pac: 68, sho: 40, pas: 62, dri: 60, def: 78, phy: 80, isStarter: false, fanScore: 7.3 },
+            { id: 14, name: 'إلياس عرعار', pos: 'LB', rating: 74, flag: '🇹🇳', pac: 77, sho: 48, pas: 66, dri: 68, def: 73, phy: 71, isStarter: false, fanScore: 7.1 },
+            { id: 15, name: 'عبد الرحمن كوناتي', pos: 'CM', rating: 78, flag: '🇨🇮', pac: 76, sho: 68, pas: 77, dri: 76, def: 72, phy: 76, isStarter: false, fanScore: 7.4 },
+            { id: 16, name: 'معز الحاج علي', pos: 'CM', rating: 74, flag: '🇹🇳', pac: 72, sho: 60, pas: 73, dri: 71, def: 70, phy: 72, isStarter: false, fanScore: 7.0 },
+            { id: 17, name: 'فلوريان دانهو', pos: 'ST', rating: 78, flag: '🇫🇷', pac: 82, sho: 79, pas: 65, dri: 73, def: 38, phy: 84, isStarter: false, fanScore: 7.5 }
+        ];
+
+        const allPlayers = [...estStarters, ...estSubs];
+
         const upcomingMatches = [
             { id: 1, competition: 'الرابطة المحترفة الأولى', opponent: 'النادي الرياضي الصفاقسي 🇹🇳', date: '29 أكتوبر 2026 - 16:30', venue: 'ملعب حمادي العقربي برادس', status: 'قادمة' },
             { id: 2, competition: 'الرابطة المحترفة الأولى', opponent: 'الاتحاد الرياضي المنستيري 🇹🇳', date: '7 نوفمبر 2026 - 15:00', venue: 'ملعب مصطفى بن جنات بالمنستير', status: 'قادمة' },
@@ -311,13 +310,164 @@
 
         function switchTab(tabId) {
             ['tactics', 'matches', 'league', 'caf', 'scout'].forEach(t => {
-                const sec = document.getElementById(`sec-${t}`); if (sec) sec.classList.add('hidden'); const btn = document.getElementById(`tab-${t}`);
+                const sec = document.getElementById(`sec-${t}`);
+                if (sec) sec.classList.add('hidden');
+                const btn = document.getElementById(`tab-${t}`);
                 if (btn) btn.className = "px-3 py-2 rounded-xl text-gray-400 hover:text-white transition";
-                const mbtn = document.getElementById(`mob-tab-${t}`); if (mbtn) mbtn.className = "px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap"; }); document.getElementById(`sec-${tabId}`).classList.remove('hidden');
-            document.getElementById(`tab-${tabId}`).className = "px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold"; document.getElementById(`mob-tab-${tabId}`).className = "px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold";
+                const mbtn = document.getElementById(`mob-tab-${t}`);
+                if (mbtn) mbtn.className = "px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap";
+            });
+            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+            document.getElementById(`tab-${tabId}`).className = "px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold";
+            document.getElementById(`mob-tab-${tabId}`).className = "px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold";
         }
 
         function renderRosters() {
             document.getElementById('startersRosterList').innerHTML = estStarters.map(p => `
                 <div class="p-2 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-
+                    <div class="flex items-center gap-2"><span>${p.flag}</span><span class="text-white">${p.name}</span></div>
+                    <span class="font-black text-gold">${p.pos}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('subsRosterList').innerHTML = estSubs.map(p => `
+                <div class="p-2 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2"><span>${p.flag}</span><span class="text-gray-300">${p.name}</span></div>
+                    <span class="font-bold text-rose-400">${p.pos}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderPitchNodes() {
+            document.getElementById('pitchNodes').innerHTML = currentPitchSquad.map((p, idx) => `
+                <div class="player-pin flex flex-col items-center" style="top: ${p.y}%; left: ${p.x}%;">
+                    <div class="w-9 h-9 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-redEst">${p.pos}</div>
+                    <span class="bg-black/90 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded mt-0.5 border border-gold/40 whitespace-nowrap">${p.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function applyFormation(formKey) {
+            if (formationPitchPresets[formKey]) {
+                currentPitchSquad = JSON.parse(JSON.stringify(formationPitchPresets[formKey]));
+                renderPitchNodes();
+                showToast("تم تطبيق الخطة التكتيكية");
+            }
+        }
+
+        function renderUpcomingMatches() {
+            document.getElementById('upcomingMatchesContainer').innerHTML = upcomingMatches.map(m => `
+                <div class="glass-panel p-4 rounded-2xl border border-panelBorder space-y-3">
+                    <div class="flex justify-between items-center border-b border-panelBorder pb-2">
+                        <span class="text-[10px] bg-gold/20 text-gold px-2 py-0.5 rounded font-bold">${m.competition}</span>
+                        <span class="text-xs text-gray-400"><i class="fa-regular fa-clock ml-1"></i> ${m.date}</span>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-white text-base">الترجي الرياضي التونسي 🇹🇳 vs ${m.opponent}</h4>
+                        <p class="text-xs text-gray-400 mt-1"><i class="fa-solid fa-location-dot ml-1 text-redEst"></i> الملعب: ${m.venue}</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-panelBorder">
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle text-[8px] ml-1"></i> ${m.status}</span>
+                        <button onclick="openFanRatingPanel('${m.opponent}')" class="bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold px-3 py-1.5 rounded-xl text-xs shadow hover:brightness-110">
+                            <i class="fa-solid fa-star ml-1"></i> فتح صندوق تقييم الجماهير (بعد المباراة)
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openFanRatingPanel(opponentName) {
+            document.getElementById('ratingMatchTitle').innerText = `تقييم لاعبي الترجي ضد ${opponentName}`;
+            document.getElementById('fanRatingPanel').classList.remove('hidden');
+            document.getElementById('fanRatingPlayersGrid').innerHTML = allPlayers.map(p => `
+                <div class="p-3 bg-black/60 rounded-xl border border-panelBorder space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-white text-xs">${p.flag} ${p.name} (${p.pos})</span>
+                        <span id="scoreval-${p.id}" class="font-black text-gold text-xs">${p.fanScore}/10</span>
+                    </div>
+                    <input type="range" min="1" max="10" step="0.5" value="${p.fanScore}" oninput="document.getElementById('scoreval-${p.id}').innerText = this.value + '/10'" class="w-full accent-gold cursor-pointer" id="slider-${p.id}">
+                </div>
+            `).join('');
+            window.scrollTo({ top: document.getElementById('fanRatingPanel').offsetTop, behavior: 'smooth' });
+        }
+
+        function closeRatingPanel() {
+            document.getElementById('fanRatingPanel').classList.add('hidden');
+        }
+
+        function submitFanRatings() {
+            allPlayers.forEach(p => {
+                const slider = document.getElementById(`slider-${p.id}`);
+                if (slider) p.fanScore = parseFloat(slider.value);
+            });
+            closeRatingPanel();
+            showToast("تم اعتماد ونشر تقييمات جماهير الترجي بنجاح!");
+        }
+
+        function renderLeagueTable() {
+            const leagueTeams = [
+                { rank: 1, name: 'الترجي الرياضي التونسي', p: 8, w: 7, d: 1, l: 0, pts: 22 },
+                { rank: 2, name: 'النادي الإفريقي', p: 8, w: 6, d: 2, l: 0, pts: 20 },
+                { rank: 3, name: 'النجم الساحلي', p: 8, w: 5, d: 2, l: 1, pts: 17 }
+            ];
+            document.getElementById('leagueTableBody').innerHTML = leagueTeams.map(t => `
+                <tr class="bg-redEst/15 font-black">
+                    <td class="py-2 text-gold">${t.rank}</td><td class="py-2 text-white">${t.name}</td><td class="py-2 text-center">${t.p}</td><td class="py-2 text-center text-emerald-400">${t.w}</td><td class="py-2 text-center text-amber-400">${t.d}</td><td class="py-2 text-center text-rose-400">${t.l}</td><td class="py-2 text-center text-gold text-sm">${t.pts}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderScoutRoster() {
+            document.getElementById('scoutRosterList').innerHTML = allPlayers.map(p => `
+                <div onclick="selectScoutPlayer(${p.id})" class="p-2 rounded-xl border border-panelBorder bg-black/60 cursor-pointer flex justify-between items-center text-xs">
+                    <span>${p.flag} ${p.name}</span><span class="text-gold font-bold">${p.rating}</span>
+                </div>
+            `).join('');
+        }
+
+        function selectScoutPlayer(id) {
+            const p = allPlayers.find(x => x.id === id); if (!p) return;
+            activeScoutPlayer = p;
+            document.getElementById('cardName').innerText = p.name;
+            document.getElementById('cardPos').innerText = p.pos;
+            document.getElementById('cardRating').innerText = p.rating;
+            document.getElementById('cardFlag').innerText = p.flag;
+            document.getElementById('c_pac').innerText = p.pac;
+            document.getElementById('c_dri').innerText = p.dri;
+            updateScoutRadarChart();
+        }
+
+        function initScoutRadarChart() {
+            const ctx = document.getElementById('scoutRadarChart').getContext('2d');
+            scoutRadarChartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['السرعة', 'التسديد', 'التمرير', 'المراوغة', 'الدفاع', 'البدن'],
+                    datasets: [{ data: [85, 86, 84, 90, 45, 78], backgroundColor: 'rgba(230,0,0,0.35)', borderColor: '#D4AF37', borderWidth: 2 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 20, max: 100, ticks: { display: false } } }, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function updateScoutRadarChart() {
+            if (!scoutRadarChartInstance) return;
+            scoutRadarChartInstance.data.datasets[0].data = [activeScoutPlayer.pac, activeScoutPlayer.sho || 75, activeScoutPlayer.pas || 75, activeScoutPlayer.dri, activeScoutPlayer.def, activeScoutPlayer.phy];
+            scoutRadarChartInstance.update();
+        }
+
+        function exportPitchImage() {
+            html2canvas(document.getElementById('pitchExportArea')).then(canvas => {
+                const link = document.createElement('a'); link.download = 'Taraji_Formation.png'; link.href = canvas.toDataURL(); link.click();
+                showToast("تم تصدير صورة التشكيلة بنجاح!");
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 3000);
+        }
+    </script>
+</body>
+</html>
