@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoalPulse Live - النتائج الرياضية المباشرة</title>
+    <title>تحدي ألغاز الترجي - غول إفريقيا</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -16,12 +16,9 @@
             theme: {
                 extend: {
                     colors: {
-                        flashDark: '#121214',
-                        flashCard: '#1a1a1e',
-                        flashGreen: '#22c55e',
-                        flashRed: '#ef4444',
-                        flashOrange: '#f97316',
-                        flashBorder: '#27272a'
+                        estRed: '#E60000',
+                        estGold: '#D4AF37',
+                        estDark: '#121318'
                     },
                     fontFamily: {
                         cairo: ['Cairo', 'sans-serif']
@@ -31,116 +28,184 @@
         }
     </script>
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #09090b; color: #f4f4f5; }
-        ::-webkit-scrollbar { width: 5px; height: 5px; }
-        ::-webkit-scrollbar-track { background: #121214; }
-        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+        body { font-family: 'Cairo', sans-serif; background-color: #0B0C10; color: #F3F4F6; }
+        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.25); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col bg-[#09090b] text-gray-100">
+<body class="min-h-screen flex flex-col items-center justify-center p-4 bg-[#0B0C10]">
 
-    <!-- Top Flashscore Header -->
-    <header class="bg-[#121214] border-b border-[#27272a] sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Container -->
+    <div class="max-w-xl w-full bg-[#121318] border border-estGold/30 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 gold-glow">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b border-gray-800 pb-4">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center text-white font-black text-xl shadow-lg">
-                    <i class="fa-solid fa-bolt"></i>
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-estRed to-estGold flex items-center justify-center text-white text-xl font-black shadow-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <div>
-                    <h1 class="font-black text-base tracking-wider text-white">GOALPULSE <span class="text-orange-500 font-light text-xs">LIVE</span></h1>
-                    <p class="text-[10px] text-gray-400">نتائج المباريات المباشرة والرياضة العالمية</p>
+                    <h1 class="font-black text-lg text-white">مسابقة ألغاز الترجي الرياضي</h1>
+                    <p class="text-xs text-estGold">اختبر معلوماتك الكروية عن غول إفريقيا</p>
                 </div>
             </div>
-
-            <!-- Sports Categories Bar -->
-            <div class="hidden md:flex items-center gap-2 bg-[#1a1a1e] px-3 py-1.5 rounded-xl border border-[#27272a] text-xs font-bold">
-                <button class="px-3 py-1.5 rounded-lg bg-orange-600 text-white flex items-center gap-1.5"><i class="fa-solid fa-futbol"></i> كرة القدم</button>
-                <button class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white flex items-center gap-1.5"><i class="fa-solid fa-basketball"></i> السلة</button>
-                <button class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white flex items-center gap-1.5"><i class="fa-solid fa-baseball"></i> التنس</button>
-            </div>
-
-            <!-- Date Selector Pill -->
-            <div class="flex items-center gap-2 bg-[#1a1a1e] px-3 py-2 rounded-xl border border-[#27272a] text-xs font-bold">
-                <button onclick="changeDate(-1)" class="text-gray-400 hover:text-white px-1"><i class="fa-solid fa-chevron-right"></i></button>
-                <span id="displayDate" class="text-orange-400 font-extrabold">اليوم، 29 أكتوبر 2026</span>
-                <button onclick="changeDate(1)" class="text-gray-400 hover:text-white px-1"><i class="fa-solid fa-chevron-left"></i></button>
+            <div id="scoreBox" class="bg-black/60 px-4 py-2 rounded-xl border border-estGold/25 text-xs font-bold text-estGold">
+                النقاط: <span id="scoreVal" class="text-white text-sm font-black">0</span>
             </div>
         </div>
-    </header>
 
-    <!-- Sub Status Filters -->
-    <div class="bg-[#121214] border-b border-[#27272a] py-2 px-4">
-        <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs font-bold overflow-x-auto">
-            <button onclick="filterStatus('ALL')" id="filter-all" class="px-4 py-1.5 rounded-lg bg-orange-600 text-white whitespace-nowrap">الكل</button>
-            <button onclick="filterStatus('LIVE')" id="filter-live" class="px-4 py-1.5 rounded-lg bg-[#1a1a1e] text-gray-400 hover:text-white whitespace-nowrap flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> المباشرة (Live)</button>
-            <button onclick="filterStatus('FINISHED')" id="filter-finished" class="px-4 py-1.5 rounded-lg bg-[#1a1a1e] text-gray-400 hover:text-white whitespace-nowrap">المنتهية</button>
-            <button onclick="filterStatus('SCHEDULED')" id="filter-scheduled" class="px-4 py-1.5 rounded-lg bg-[#1a1a1e] text-gray-400 hover:text-white whitespace-nowrap">المجدولة</button>
+        <!-- Quiz Box -->
+        <div id="quizContainer" class="space-y-6">
+            <div class="flex items-center justify-between text-xs text-gray-400 font-bold">
+                <span id="questionProgress">السؤال 1 من 6</span>
+                <span class="text-estRed bg-estRed/10 px-2.5 py-1 rounded-lg border border-estRed/20">تحدي المكشخين</span>
+            </div>
+
+            <!-- Question Text -->
+            <div class="bg-black/40 p-5 rounded-2xl border border-gray-800">
+                <h3 id="questionText" class="font-black text-base sm:text-lg text-white leading-relaxed">
+                    جاري تحميل السؤال...
+                </h3>
+            </div>
+
+            <!-- Options Grid -->
+            <div id="optionsContainer" class="grid grid-cols-1 gap-3">
+                <!-- Buttons injected by JS -->
+            </div>
         </div>
+
+        <!-- Result / Finished Screen -->
+        <div id="resultContainer" class="hidden text-center space-y-6 py-6">
+            <div class="w-20 h-20 mx-auto rounded-full bg-estGold/20 border-2 border-estGold flex items-center justify-center text-estGold text-3xl">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="space-y-2">
+                <h2 id="resultTitle" class="text-2xl font-black text-white">أحسنت يا مكشخ!</h2>
+                <p id="resultDesc" class="text-xs text-gray-300">أنت تعرف كل صغيرة وكبيرة عن تاريخ الترجي الرياضي.</p>
+            </div>
+            <div class="bg-black/60 p-4 rounded-2xl border border-estGold/30 max-w-xs mx-auto">
+                <span class="text-xs text-gray-400 block">النتيجة النهائية</span>
+                <span id="finalScore" class="text-3xl font-black text-estGold">6 / 6</span>
+            </div>
+            <button onclick="restartQuiz()" class="w-full bg-gradient-to-r from-estRed to-rose-700 hover:brightness-110 text-white font-extrabold py-3 rounded-xl transition shadow-lg text-xs">
+                إعادة التحدي <i class="fa-solid fa-rotate-right ml-1"></i>
+            </button>
+        </div>
+
     </div>
 
-    <!-- Main Matches Container -->
-    <main class="max-w-5xl mx-auto px-3 py-6 flex-1 w-full space-y-6">
-        <div id="matchesContainer" class="space-y-4">
-            <!-- Dynamic Matches injected by JS -->
-        </div>
-    </main>
-
-    <!-- Match Details Modal -->
-    <div id="matchModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-[#1a1a1e] border border-[#27272a] rounded-3xl w-full max-w-lg p-6 space-y-6 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white bg-[#121214] w-8 h-8 rounded-full flex items-center justify-center border border-[#27272a]"><i class="fa-solid fa-xmark"></i></button>
-            
-            <div id="modalContent" class="space-y-6">
-                <!-- Content injected dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript Engine -->
+    <!-- JavaScript Game Logic -->
     <script>
-        const matchesData = [
+        const questions = [
             {
-                league: 'الرابطة المحترفة الأولى التونسية (الجولة 6 - الكلاسيكو)',
-                countryFlag: '🇹🇳',
-                country: 'تونس',
-                matches: [
-                    { id: 1, home: 'النادي الصفاقسي', away: 'الترجي الرياضي التونسي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🖤', awayLogo: '🟥', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } },
-                    { id: 2, home: 'النادي الإفريقي', away: 'النادي البنزرتي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🔴', awayLogo: '🟡', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } },
-                    { id: 3, home: 'الملعب التونسي', away: 'الترجي الجرجيسي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🟢', awayLogo: '🟡', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
-                ]
+                q: "في أي سنة تأسس الترجي الرياضي التونسي (قلعة باب سويقة)؟",
+                options: ["1910", "1919", "1925", "1930"],
+                answer: 1
             },
             {
-                league: 'دوري أبطال أوروبا - دور المجموعات',
-                countryFlag: '🇪🇺',
-                country: 'أوروبا',
-                matches: [
-                    { id: 4, home: 'ريال مدريد', away: 'مانشستر سيتي', homeScore: 2, awayScore: 1, status: 'FINISHED', time: 'FT', homeLogo: '👑', awayLogo: '⚡', stats: { poss: [52, 48], shots: [14, 12], yellow: [2, 3], corners: [6, 5] } },
-                    { id: 5, home: 'بايرن ميونخ', away: 'باريس سان جيرمان', homeScore: 0, awayScore: 0, status: 'SCHEDULED', time: '21:00', homeLogo: '🔴', awayLogo: '🔵', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
-                ]
+                q: "كم عدد ألقاب دوري أبطال إفريقيا التي توج بها الترجي في تاريخه حتى الآن؟",
+                options: ["2 ألقاب", "3 ألقاب", "4 ألقاب", "5 ألقاب"],
+                answer: 2
             },
             {
-                league: 'الدوري الإنجليزي الممتاز (Premier League)',
-                countryFlag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-                country: 'إنجلترا',
-                matches: [
-                    { id: 6, home: 'آرسنال', away: 'ليفربول', homeScore: 3, awayScore: 2, status: 'FINISHED', time: 'FT', homeLogo: '🔴', awayLogo: '🔴', stats: { poss: [49, 51], shots: [18, 15], yellow: [1, 2], corners: [7, 4] } },
-                    { id: 7, home: 'تشيلسي', away: 'مانشستر يونايتد', homeScore: 1, awayScore: 1, status: 'FINISHED', time: 'FT', homeLogo: '🔵', awayLogo: '🔴', stats: { poss: [55, 45], shots: [11, 10], yellow: [3, 3], corners: [5, 3] } }
-                ]
+                q: "ما هو اللقب الشهير الذي يطلق جماهيرياً على الترجي الرياضي التونسي؟",
+                options: ["الشيخ", "غول إفريقيا", "الزعيم", "المارد الأحمر"],
+                answer: 1
+            },
+            {
+                q: "في أي ملعب عريق يستقبل الترجي الرياضي التونسي مبارياته الرسمية الكبرى؟",
+                options: ["ملعب زويتن", "ملعب الشاهد الحارثي", "الملعب الأولمبي برادس (حمادي العقربي)", "ملعب المنزه"],
+                answer: 2
+            },
+            {
+                q: "من هو النادي التاريخي الذي جمعته مباريات 'الديربي' الكلاسيكي الشهير ضد الترجي في تونس؟",
+                options: ["النجم الساحلي", "النادي الإفريقي", "النادي الصفاقسي", "الملعب التونسي"],
+                answer: 1
+            },
+            {
+                q: "بأي لونين يتميز الزي الرسمي والتاريخي للترجي الرياضي التونسي؟",
+                options: ["الأبيض والأزرق", "الأحمر والأصفر", "الأخضر والأبيض", "الأسود والأصفر"],
+                answer: 1
             }
         ];
 
-        let currentFilter = 'ALL';
+        let currentQuestion = 0;
+        let score = 0;
+        let lockAnswer = false;
 
-        function renderMatches() {
-            const container = document.getElementById('matchesContainer');
-            container.innerHTML = matchesData.map(leagueGroup => {
-                const filteredMatches = leagueGroup.matches.filter(m => {
-                    if (currentFilter === 'ALL') return true;
-                    return m.status === currentFilter;
-                });
+        function loadQuestion() {
+            lockAnswer = false;
+            const q = questions[currentQuestion];
+            document.getElementById('questionProgress').innerText = `السؤال ${currentQuestion + 1} من ${questions.length}`;
+            document.getElementById('questionText').innerText = q.q;
 
-                if (filteredMatches.length === 0) return '';
+            const optionsBox = document.getElementById('optionsContainer');
+            optionsBox.innerHTML = q.options.map((opt, idx) => `
+                <button onclick="checkAnswer(${idx})" class="option-btn w-full text-right p-3.5 rounded-xl bg-black/60 border border-gray-800 hover:border-estGold text-xs sm:text-sm font-bold text-gray-200 transition flex items-center justify-between">
+                    <span>${opt}</span>
+                    <span class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center text-[10px] text-gray-400 font-black">${['أ', 'ب', 'ج', 'د'][idx]}</span>
+                </button>
+            `).join('');
+        }
 
-                return `
-                    <div class="bg-[#121214] border border-[#27272a] rounded-2xl overflow
+        function checkAnswer(selectedIdx) {
+            if (lockAnswer) return;
+            lockAnswer = true;
+
+            const q = questions[currentQuestion];
+            const buttons = document.querySelectorAll('.option-btn');
+
+            if (selectedIdx === q.answer) {
+                buttons[selectedIdx].classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-white');
+                score++;
+                document.getElementById('scoreVal').innerText = score;
+            } else {
+                buttons[selectedIdx].classList.add('bg-rose-500/20', 'border-rose-500', 'text-rose-300');
+                buttons[q.answer].classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-white');
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1200);
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('resultContainer').classList.remove('hidden');
+            document.getElementById('finalScore').innerText = `${score} / ${questions.length}`;
+
+            const title = document.getElementById('resultTitle');
+            const desc = document.getElementById('resultDesc');
+
+            if (score === questions.length) {
+                title.innerText = "أنت مكشخ حقيقي أسطوري! 🏆";
+                desc.innerText = "علامة كاملة! إلمامك بتاريخ وأرقام الترجي الرياضي التونسي ممتاز جداً.";
+            } else if (score >= 4) {
+                title.innerText = "أداء ممتاز يا مكشخ! 🥇";
+                desc.innerText = "معلوماتك القوية تعكس حبك الكبير لغول إفريقيا.";
+            } else {
+                title.innerText = "حاول مرة أخرى! 💪";
+                desc.innerText = "يمكنك مراجعة تاريخ الترجي العريق وإعادة التحدي لتسجيل علامة كاملة.";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            lockAnswer = false;
+            document.getElementById('scoreVal').innerText = score;
+            document.getElementById('resultContainer').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        window.onload = function() {
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
