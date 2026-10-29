@@ -76,7 +76,7 @@
                 <button onclick="switchTab('matches')" id="tab-matches" class="px-3 py-2 rounded-xl text-goldBright bg-gold/10 border border-gold/30"><i class="fa-solid fa-calendar-days ml-1"></i> المباريات القادمة والتقييم</button>
                 <button onclick="switchTab('league')" id="tab-league" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-trophy ml-1"></i> الدوري المحلي</button>
                 <button onclick="switchTab('caf')" id="tab-caf" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-earth-africa ml-1"></i> إفريقيا</button>
-                <button onclick="switchTab('scout')" id="tab-scout" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-radar ml-1"></i> الرادار والمقارنة</button>
+                <button onclick="switchTab('scout')" id="tab-scout" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white"><i class="fa-solid fa-radar ml-1"></i> الرادار</button>
             </nav>
 
             <button onclick="exportPitchImage()" class="bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-lg gold-glow">
@@ -144,7 +144,7 @@
             </div>
         </section>
 
-        <!-- ================= TAB 2: UPCOMING MATCHES & FAN RATINGS (NEW!) ================= -->
+        <!-- ================= TAB 2: UPCOMING MATCHES & FAN RATINGS ================= -->
         <section id="sec-matches" class="space-y-6 hidden">
             <div class="glass-panel rounded-2xl p-5 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
@@ -161,12 +161,12 @@
             <!-- Upcoming Matches Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="upcomingMatchesContainer"></div>
 
-            <!-- Fan Ratings Modal / Panel (Activated After Match Ends) -->
+            <!-- Fan Ratings Panel (Activated After Match Ends) -->
             <div id="fanRatingPanel" class="glass-panel rounded-2xl p-6 space-y-4 border-2 border-gold hidden">
                 <div class="flex items-center justify-between border-b border-panelBorder pb-3">
                     <div>
                         <span class="text-[10px] bg-redEst text-white px-2 py-0.5 rounded font-bold">وضع تقييم الجماهير</span>
-                        <h3 id="ratingMatchTitle" class="font-black text-white text-base mt-1">تقييم لاعبي الترجي ضد النادي الصفاقسي</h3>
+                        <h3 id="ratingMatchTitle" class="font-black text-white text-base mt-1">تقييم لاعبي الترجي ضد المنافس</h3>
                     </div>
                     <button onclick="closeRatingPanel()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
                 </div>
@@ -194,10 +194,6 @@
                         <h2 class="font-black text-white text-sm">محاكي الرابطة المحترفة الأولى (15 فريقاً)</h2>
                         <p class="text-[11px] text-gray-400">محاكاة نتائج مباريات الدوري التونسي وحساب النقاط</p>
                     </div>
-                </div>
-                <div class="flex items-center gap-2 text-xs font-bold">
-                    <button onclick="simulateNextRound()" class="px-3.5 py-2 rounded-xl bg-redEst text-white font-bold">محاكاة الجولة التالية</button>
-                    <button onclick="resetLeague()" class="px-3.5 py-2 rounded-xl bg-black/60 border border-panelBorder text-gray-300">إعادة الضبط</button>
                 </div>
             </div>
 
@@ -231,7 +227,6 @@
                         <p class="text-[11px] text-gray-400">مجموعات ومباريات غول إفريقيا القارية</p>
                     </div>
                 </div>
-                <button onclick="drawCafGroups()" class="bg-gold text-black font-extrabold px-3.5 py-2 rounded-xl text-xs">إجراء القرعة</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cafGroupsContainer"></div>
         </section>
@@ -316,168 +311,13 @@
 
         function switchTab(tabId) {
             ['tactics', 'matches', 'league', 'caf', 'scout'].forEach(t => {
-                const sec = document.getElementById(`sec-${t}`);
-                if (sec) sec.classList.add('hidden');
-                const btn = document.getElementById(`tab-${t}`);
+                const sec = document.getElementById(`sec-${t}`); if (sec) sec.classList.add('hidden'); const btn = document.getElementById(`tab-${t}`);
                 if (btn) btn.className = "px-3 py-2 rounded-xl text-gray-400 hover:text-white transition";
-                const mbtn = document.getElementById(`mob-tab-${t}`);
-                if (mbtn) mbtn.className = "px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap";
-            });
-            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
-            document.getElementById(`tab-${tabId}`).className = "px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold";
-            document.getElementById(`mob-tab-${tabId}`).className = "px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold";
+                const mbtn = document.getElementById(`mob-tab-${t}`); if (mbtn) mbtn.className = "px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap"; }); document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+            document.getElementById(`tab-${tabId}`).className = "px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg font-bold"; document.getElementById(`mob-tab-${tabId}`).className = "px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold";
         }
 
         function renderRosters() {
             document.getElementById('startersRosterList').innerHTML = estStarters.map(p => `
                 <div class="p-2 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-2"><span>${p.flag}</span><span class="text-white">${p.name}</span></div>
-                    <span class="font-black text-gold">${p.pos}</span>
-                </div>
-            `).join('');
-        }
-
-        function renderPitchNodes() {
-            document.getElementById('pitchNodes').innerHTML = currentPitchSquad.map((p, idx) => `
-                <div class="player-pin flex flex-col items-center" style="top: ${p.y}%; left: ${p.x}%;">
-                    <div class="w-9 h-9 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-redEst">${p.pos}</div>
-                    <span class="bg-black/90 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded mt-0.5 border border-gold/40 whitespace-nowrap">${p.name}</span>
-                </div>
-            `).join('');
-        }
-
-        function applyFormation(formKey) {
-            if (formationPitchPresets[formKey]) {
-                currentPitchSquad = JSON.parse(JSON.stringify(formationPitchPresets[formKey]));
-                renderPitchNodes();
-                showToast("تم تطبيق الخطة التكتيكية");
-            }
-        }
-
-        // Render Upcoming Matches with "Open Fan Ratings" simulator button
-        function renderUpcomingMatches() {
-            document.getElementById('upcomingMatchesContainer').innerHTML = upcomingMatches.map(m => `
-                <div class="glass-panel p-4 rounded-2xl border border-panelBorder space-y-3">
-                    <div class="flex justify-between items-center border-b border-panelBorder pb-2">
-                        <span class="text-[10px] bg-gold/20 text-gold px-2 py-0.5 rounded font-bold">${m.competition}</span>
-                        <span class="text-xs text-gray-400"><i class="fa-regular fa-clock ml-1"></i> ${m.date}</span>
-                    </div>
-                    <div>
-                        <h4 class="font-black text-white text-base">الترجي الرياضي التونسي 🇹🇳 vs ${m.opponent}</h4>
-                        <p class="text-xs text-gray-400 mt-1"><i class="fa-solid fa-location-dot ml-1 text-redEst"></i> الملعب: ${m.venue}</p>
-                    </div>
-                    <div class="flex justify-between items-center pt-2 border-t border-panelBorder">
-                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle text-[8px] ml-1"></i> ${m.status}</span>
-                        <button onclick="openFanRatingPanel('${m.opponent}')" class="bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold px-3 py-1.5 rounded-xl text-xs shadow hover:brightness-110">
-                            <i class="fa-solid fa-star ml-1"></i> فتح صندوق تقييم الجماهير (بعد المباراة)
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function openFanRatingPanel(opponentName) {
-            document.getElementById('ratingMatchTitle').innerText = `تقييم لاعبي الترجي ضد ${opponentName}`;
-            document.getElementById('fanRatingPanel').classList.remove('hidden');
-            document.getElementById('fanRatingPlayersGrid').innerHTML = estStarters.map(p => `
-                <div class="p-3 bg-black/60 rounded-xl border border-panelBorder space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-white text-xs">${p.flag} ${p.name} (${p.pos})</span>
-                        <span id="scoreval-${p.id}" class="font-black text-gold text-xs">${p.fanScore}/10</span>
-                    </div>
-                    <input type="range" min="1" max="10" step="0.5" value="${p.fanScore}" oninput="document.getElementById('scoreval-${p.id}').innerText = this.value + '/10'" class="w-full accent-gold cursor-pointer" id="slider-${p.id}">
-                </div>
-            `).join('');
-            window.scrollTo({ top: document.getElementById('fanRatingPanel').offsetTop, behavior: 'smooth' });
-        }
-
-        function closeRatingPanel() {
-            document.getElementById('fanRatingPanel').classList.add('hidden');
-        }
-
-        function submitFanRatings() {
-            estStarters.forEach(p => {
-                const slider = document.getElementById(`slider-${p.id}`);
-                if (slider) p.fanScore = parseFloat(slider.value);
-            });
-            closeRatingPanel();
-            showToast("تم اعتماد ونشر تقييمات جماهير الترجي بنجاح!");
-        }
-
-        function renderLeagueTable() {
-            const leagueTeams = [
-                { rank: 1, name: 'الترجي الرياضي التونسي', p: 8, w: 7, d: 1, l: 0, pts: 22 },
-                { rank: 2, name: 'النادي الإفريقي', p: 8, w: 6, d: 2, l: 0, pts: 20 },
-                { rank: 3, name: 'النجم الساحلي', p: 8, w: 5, d: 2, l: 1, pts: 17 }
-            ];
-            document.getElementById('leagueTableBody').innerHTML = leagueTeams.map(t => `
-                <tr class="bg-redEst/15 font-black">
-                    <td class="py-2 text-gold">${t.rank}</td>
-                    <td class="py-2 text-white">${t.name}</td>
-                    <td class="py-2 text-center">${t.p}</td>
-                    <td class="py-2 text-center text-emerald-400">${t.w}</td>
-                    <td class="py-2 text-center text-amber-400">${t.d}</td>
-                    <td class="py-2 text-center text-rose-400">${t.l}</td>
-                    <td class="py-2 text-center text-gold text-sm">${t.pts}</td>
-                </tr>
-            `).join('');
-        }
-
-        function simulateNextRound() { showToast("تمت محاكاة نتائج الجولة بنجاح"); }
-        function resetLeague() { showToast("تم إعادة ضبط الدوري"); }
-        function drawCafGroups() { showToast("تم سحب قرعة مجموعات دوري الأبطال"); }
-
-        function renderScoutRoster() {
-            document.getElementById('scoutRosterList').innerHTML = estStarters.map(p => `
-                <div onclick="selectScoutPlayer(${p.id})" class="p-2 rounded-xl border border-panelBorder bg-black/60 cursor-pointer flex justify-between items-center text-xs">
-                    <span>${p.flag} ${p.name}</span><span class="text-gold font-bold">${p.rating}</span>
-                </div>
-            `).join('');
-        }
-
-        function selectScoutPlayer(id) {
-            const p = estStarters.find(x => x.id === id); if (!p) return;
-            activeScoutPlayer = p;
-            document.getElementById('cardName').innerText = p.name;
-            document.getElementById('cardPos').innerText = p.pos;
-            document.getElementById('cardRating').innerText = p.rating;
-            document.getElementById('cardFlag').innerText = p.flag;
-            document.getElementById('c_pac').innerText = p.pac;
-            document.getElementById('c_dri').innerText = p.dri;
-            updateScoutRadarChart();
-        }
-
-        function initScoutRadarChart() {
-            const ctx = document.getElementById('scoutRadarChart').getContext('2d');
-            scoutRadarChartInstance = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['السرعة', 'التسديد', 'التمرير', 'المراوغة', 'الدفاع', 'البدن'],
-                    datasets: [{ data: [85, 86, 84, 90, 45, 78], backgroundColor: 'rgba(230,0,0,0.35)', borderColor: '#D4AF37', borderWidth: 2 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 20, max: 100, ticks: { display: false } } }, plugins: { legend: { display: false } } }
-            });
-        }
-
-        function updateScoutRadarChart() {
-            if (!scoutRadarChartInstance) return;
-            scoutRadarChartInstance.data.datasets[0].data = [activeScoutPlayer.pac, activeScoutPlayer.sho || 75, activeScoutPlayer.pas || 75, activeScoutPlayer.dri, activeScoutPlayer.def, activeScoutPlayer.phy];
-            scoutRadarChartInstance.update();
-        }
-
-        function exportPitchImage() {
-            html2canvas(document.getElementById('pitchExportArea')).then(canvas => {
-                const link = document.createElement('a'); link.download = 'Taraji_Formation.png'; link.href = canvas.toDataURL(); link.click();
-                showToast("تم تصدير صورة التشكيلة بنجاح!");
-            });
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMsg').innerText = msg;
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 3000);
-        }
-    </script>
-</body>
-</html>
+                    <div class="flex items-center gap-
