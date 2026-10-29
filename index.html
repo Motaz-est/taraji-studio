@@ -21,7 +21,6 @@
                         flashGreen: '#22c55e',
                         flashRed: '#ef4444',
                         flashOrange: '#f97316',
-                        flashYellow: '#eab308',
                         flashBorder: '#27272a'
                     },
                     fontFamily: {
@@ -64,7 +63,7 @@
             <!-- Date Selector Pill -->
             <div class="flex items-center gap-2 bg-[#1a1a1e] px-3 py-2 rounded-xl border border-[#27272a] text-xs font-bold">
                 <button onclick="changeDate(-1)" class="text-gray-400 hover:text-white px-1"><i class="fa-solid fa-chevron-right"></i></button>
-                <span id="displayDate" class="text-orange-400 font-extrabold">اليوم، 29 أكتوبر</span>
+                <span id="displayDate" class="text-orange-400 font-extrabold">اليوم، 29 أكتوبر 2026</span>
                 <button onclick="changeDate(1)" class="text-gray-400 hover:text-white px-1"><i class="fa-solid fa-chevron-left"></i></button>
             </div>
         </div>
@@ -102,12 +101,22 @@
     <script>
         const matchesData = [
             {
+                league: 'الرابطة المحترفة الأولى التونسية (الجولة 6 - الكلاسيكو)',
+                countryFlag: '🇹🇳',
+                country: 'تونس',
+                matches: [
+                    { id: 1, home: 'النادي الصفاقسي', away: 'الترجي الرياضي التونسي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🖤', awayLogo: '🟥', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } },
+                    { id: 2, home: 'النادي الإفريقي', away: 'النادي البنزرتي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🔴', awayLogo: '🟡', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } },
+                    { id: 3, home: 'الملعب التونسي', away: 'الترجي الجرجيسي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '14:30', homeLogo: '🟢', awayLogo: '🟡', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
+                ]
+            },
+            {
                 league: 'دوري أبطال أوروبا - دور المجموعات',
                 countryFlag: '🇪🇺',
                 country: 'أوروبا',
                 matches: [
-                    { id: 1, home: 'ريال مدريد', away: 'مانشستر سيتي', homeScore: 2, awayScore: 1, status: 'LIVE', minute: "78'", homeLogo: '👑', awayLogo: '⚡', stats: { poss: [52, 48], shots: [14, 12], yellow: [2, 3], corners: [6, 5] } },
-                    { id: 2, home: 'بايرن ميونخ', away: 'باريس سان جيرمان', homeScore: 0, awayScore: 0, status: 'SCHEDULED', time: '22:00', homeLogo: '🔴', awayLogo: '🔵', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
+                    { id: 4, home: 'ريال مدريد', away: 'مانشستر سيتي', homeScore: 2, awayScore: 1, status: 'FINISHED', time: 'FT', homeLogo: '👑', awayLogo: '⚡', stats: { poss: [52, 48], shots: [14, 12], yellow: [2, 3], corners: [6, 5] } },
+                    { id: 5, home: 'بايرن ميونخ', away: 'باريس سان جيرمان', homeScore: 0, awayScore: 0, status: 'SCHEDULED', time: '21:00', homeLogo: '🔴', awayLogo: '🔵', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
                 ]
             },
             {
@@ -115,16 +124,8 @@
                 countryFlag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
                 country: 'إنجلترا',
                 matches: [
-                    { id: 3, home: 'آرسنال', away: 'ليفربول', homeScore: 3, awayScore: 2, status: 'FINISHED', time: 'FT', homeLogo: '🔴', awayLogo: '🔴', stats: { poss: [49, 51], shots: [18, 15], yellow: [1, 2], corners: [7, 4] } },
-                    { id: 4, home: 'تشيلسي', away: 'مانشستر يونايتد', homeScore: 1, awayScore: 1, status: 'FINISHED', time: 'FT', homeLogo: '🔵', awayLogo: '🔴', stats: { poss: [55, 45], shots: [11, 10], yellow: [3, 3], corners: [5, 3] } }
-                ]
-            },
-            {
-                league: 'الرابطة المحترفة الأولى التونسية (الكلاسيكو)',
-                countryFlag: '🇹🇳',
-                country: 'تونس',
-                matches: [
-                    { id: 5, home: 'النادي الصفاقسي', away: 'الترجي الرياضي التونسي', homeScore: null, awayScore: null, status: 'SCHEDULED', time: '16:30', homeLogo: '🖤', awayLogo: '🟥', stats: { poss: [50, 50], shots: [0, 0], yellow: [0, 0], corners: [0, 0] } }
+                    { id: 6, home: 'آرسنال', away: 'ليفربول', homeScore: 3, awayScore: 2, status: 'FINISHED', time: 'FT', homeLogo: '🔴', awayLogo: '🔴', stats: { poss: [49, 51], shots: [18, 15], yellow: [1, 2], corners: [7, 4] } },
+                    { id: 7, home: 'تشيلسي', away: 'مانشستر يونايتد', homeScore: 1, awayScore: 1, status: 'FINISHED', time: 'FT', homeLogo: '🔵', awayLogo: '🔴', stats: { poss: [55, 45], shots: [11, 10], yellow: [3, 3], corners: [5, 3] } }
                 ]
             }
         ];
@@ -142,111 +143,4 @@
                 if (filteredMatches.length === 0) return '';
 
                 return `
-                    <div class="bg-[#121214] border border-[#27272a] rounded-2xl overflow-hidden shadow-lg">
-                        <div class="bg-[#1a1a1e] px-4 py-2.5 border-b border-[#27272a] flex items-center gap-2.5 text-xs font-black">
-                            <span class="text-base">${leagueGroup.countryFlag}</span>
-                            <span class="text-white">${leagueGroup.country}:</span>
-                            <span class="text-orange-400">${leagueGroup.league}</span>
-                        </div>
-                        <div class="divide-y divide-[#27272a]">
-                            ${filteredMatches.map(m => `
-                                <div onclick="openMatchDetails(${m.id})" class="px-4 py-3 flex items-center justify-between hover:bg-[#1a1a1e] transition cursor-pointer text-xs">
-                                    <div class="flex items-center gap-3 w-1/3">
-                                        <span class="text-gray-500 font-bold text-[11px] w-12 text-center">
-                                            ${m.status === 'LIVE' ? `<span class="text-red-500 font-extrabold animate-pulse">${m.minute}</span>` : m.status === 'FINISHED' ? 'منتهية' : m.time}
-                                        </span>
-                                    </div>
-                                    <div class="flex-1 space-y-1.5">
-                                        <div class="flex items-center justify-between">
-                                            <span class="font-bold text-white flex items-center gap-2"><span>${m.homeLogo}</span> ${m.home}</span>
-                                            <span class="font-black text-sm px-2 py-0.5 rounded ${m.status === 'LIVE' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-white'}">${m.homeScore !== null ? m.homeScore : '-'}</span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="font-bold text-white flex items-center gap-2"><span>${m.awayLogo}</span> ${m.away}</span>
-                                            <span class="font-black text-sm px-2 py-0.5 rounded ${m.status === 'LIVE' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-white'}">${m.awayScore !== null ? m.awayScore : '-'}</span>
-                                        </div>
-                                    </div>
-                                    <div class="w-12 text-left">
-                                        <i class="fa-solid fa-chevron-left text-gray-500"></i>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function filterStatus(status) {
-            currentFilter = status;
-            ['all', 'live', 'finished', 'scheduled'].forEach(s => {
-                const btn = document.getElementById(`filter-${s}`);
-                if(btn) btn.className = "px-4 py-1.5 rounded-lg bg-[#1a1a1e] text-gray-400 hover:text-white whitespace-nowrap";
-            });
-            document.getElementById(`filter-${status.toLowerCase()}`).className = "px-4 py-1.5 rounded-lg bg-orange-600 text-white whitespace-nowrap";
-            renderMatches();
-        }
-
-        function openMatchDetails(id) {
-            let matchObj = null;
-            matchesData.forEach(g => {
-                const found = g.matches.find(m => m.id === id);
-                if (found) matchObj = found;
-            });
-            if(!matchObj) return;
-
-            const modal = document.getElementById('matchModal');
-            const content = document.getElementById('modalContent');
-
-            content.innerHTML = `
-                <div class="text-center space-y-3 border-b border-[#27272a] pb-4">
-                    <span class="text-[10px] bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full font-bold border border-orange-500/30">${matchObj.status === 'LIVE' ? 'مباراة مباشرة الآن' : matchObj.status === 'FINISHED' ? 'نتيجة نهائية' : 'مباراة مجدولة'}</span>
-                    <div class="flex items-center justify-between px-6 py-2">
-                        <div class="text-center space-y-1">
-                            <span class="text-3xl">${matchObj.homeLogo}</span>
-                            <h4 class="font-bold text-white text-sm">${matchObj.home}</h4>
-                        </div>
-                        <div class="px-4 py-2 bg-[#121214] rounded-xl border border-[#27272a] font-black text-xl text-orange-400">
-                            ${matchObj.homeScore !== null ? `${matchObj.homeScore} - ${matchObj.awayScore}` : matchObj.time}
-                        </div>
-                        <div class="text-center space-y-1">
-                            <span class="text-3xl">${matchObj.awayLogo}</span>
-                            <h4 class="font-bold text-white text-sm">${matchObj.away}</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <h5 class="font-bold text-xs text-gray-400">إحصائيات المباراة المباشرة</h5>
-                    <div class="space-y-3 text-xs">
-                        <div>
-                            <div class="flex justify-between font-bold mb-1"><span>${matchObj.stats.poss[0]}%</span><span>الاستحواذ</span><span>${matchObj.stats.poss[1]}%</span></div>
-                            <div class="w-full bg-[#121214] h-2 rounded-full overflow-hidden flex"><div class="bg-orange-500 h-full" style="width: ${matchObj.stats.poss[0]}%"></div><div class="bg-gray-600 h-full" style="width: ${matchObj.stats.poss[1]}%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between font-bold mb-1"><span>${matchObj.stats.shots[0]}</span><span>التسديدات</span><span>${matchObj.stats.shots[1]}</span></div>
-                            <div class="w-full bg-[#121214] h-2 rounded-full overflow-hidden flex"><div class="bg-orange-500 h-full" style="width: ${(matchObj.stats.shots[0]/(matchObj.stats.shots[0]+matchObj.stats.shots[1]||1))*100}%"></div><div class="bg-gray-600 h-full" style="width: ${(matchObj.stats.shots[1]/(matchObj.stats.shots[0]+matchObj.stats.shots[1]||1))*100}%"></div></div>
-                        </div>
-                        <div class="flex justify-between py-2 border-b border-[#27272a]"><span>بطاقات صفراء</span><span class="font-bold">${matchObj.stats.yellow[0]} - ${matchObj.stats.yellow[1]}</span></div>
-                        <div class="flex justify-between py-2"><span>الضربات الركنية</span><span class="font-bold">${matchObj.stats.corners[0]} - ${matchObj.stats.corners[1]}</span></div>
-                    </div>
-                </div>
-            `;
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('matchModal').classList.add('hidden');
-        }
-
-        function changeDate(days) {
-            // Simple visual date simulation
-            document.getElementById('displayDate').innerText = days > 1 ? 'الغد، 30 أكتوبر' : days < 0 ? 'أمس، 28 أكتوبر' : 'اليوم، 29 أكتوبر';
-        }
-
-        window.onload = function() {
-            renderMatches();
-        };
-    </script>
-</body>
-</html>
+                    <div class="bg-[#121214] border border-[#27272a] rounded-2xl overflow
