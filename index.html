@@ -1,732 +1,17 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="dark"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
-        window.__firebase_config = firebaseConfig;
-        window.__initial_auth_token = initialAuthToken;
-        window.__app_id = appId;
-            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExNjRiNzdiNDMzZDdhMDAyMWI4NjE4YjhjYTU3ZTMyZGI5MWUxMTMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMzY2OTgwNTI3NTU2MjQyMjg0MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzFhOGNkOGEyNTZiMzM1MTZfaW5kZXguaHRtbC0xMTcifSwiZXhwIjoxNzkzMjE2NTk3LCJpYXQiOjE3OTMyMTI5OTcsImFsZyI6IlJTMjU2In0.evvy4W5GsUWiopIZlA9JpK4saenWQE5er6s4W-zqTIVxJlGozdxtEEGaLZGaBfVy7-aGe6c9jkT6-rfgeDbWl4eSVz-tNWC2nCgJrSNQESWq3WW5TiqOfA11sLGvcLRh4B8Uduvjk0s4h-j1DXgm2KJ8PuHz01w5ZPtFVMTdXu5QLs71YUEJhWv5eZcA-9Vyyu1MCdFbphzaFl-AEbuuOOBKTTMfTDTWhYI84MQZpqTBklC3kPyKYxLBJaiJi2_7eAgvqxoEZpLLKvUfgSo17B99gUG1bbA5YObxfkjFISnar0mVDMpvqUAgONrA_50qnmolTzot5Acx7hFkTlfaOw","c_1a8cd8a256b33516_index.html-117")</script><script data-bard-client-injected="true">
-  document.addEventListener('input', (event) => {
-    if (event.target && (event.target.isContentEditable || event.target.hasAttribute('contenteditable'))) {
-      const clonedDoc = document.cloneNode(true);
-      const injectedScripts = clonedDoc.querySelectorAll('[data-bard-client-injected="true"]');
-      injectedScripts.forEach(el => el.remove());
-      window.parent.postMessage({
-        type: 'inlineEdit',
-        html: '<!DOCTYPE html>\n' + clonedDoc.documentElement.outerHTML
-      }, '*');
-    }
-  });
-</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
-</script><script data-bard-client-injected="true">(function(){'use strict';var k=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function m(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var q=m(this);
-function r(a,b){if(b)a:{var d=q;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&k(d,a,{configurable:!0,writable:!0,value:b})}}function t(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function u(a){return t(a())}
-r("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});r("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
-
- MIT License
-
- Copyright (c) 2017-2023 W.Y.
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-
-*/
-function v(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var aa=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let y=null;function z(a={}){return y?y:a.u?y=a.u:y=w(window.getComputedStyle(document.documentElement))}function A(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
-function B(a,b={}){var d;if(!(d=b.width)){d=A(a,"border-left-width");var c=A(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=A(a,"border-top-width"),c=A(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function C(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
-function ba(a){return u(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
-function ca(a,b,d){return u(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return ba(c)})}
-var D=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||D(a,b)};function da(a,b){return z(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
-function E(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=aa();try{b.className=`${b.className} ${f}`}catch(h){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=da(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function F(a){return a.search(/^(data:)/)!==-1}function G(a,b,d){return u(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var h=new FileReader;h.onerror=g;h.onloadend=()=>{try{f(d({v:c,result:h.result}))}catch(l){g(l)}};h.readAsDataURL(e)})})}const H={};function ea(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
-function I(a,b,d){return u(function*(){var c=ea(a,b,d.F);if(H[c]!=null)return H[c];d.B&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield G(a,d.l,({v:g,result:h})=>{b||(b=g.headers.get("Content-Type")||"");return h.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.o||""}return H[c]=e})};const J={R:"application/font-woff",S:"application/font-woff",O:"application/font-truetype",C:"application/vnd.ms-fontobject",J:"image/png",H:"image/jpeg",G:"image/jpeg",D:"image/gif",N:"image/tiff",M:"image/svg+xml",P:"image/webp"};function K(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function fa(a){return u(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):C(b)})}function ha(a,b){return u(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return C(d)}d=a.poster;d=yield I(d,J[K(d).toLowerCase()]||"",b);return C(d)})}
-function ia(a,b){return u(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield L(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ja(a,b){return u(function*(){return D(a,HTMLCanvasElement)?fa(a):D(a,HTMLVideoElement)?ha(a,b):D(a,HTMLIFrameElement)?ia(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
-function ka(a,b,d){return u(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(D(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||D(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>L(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
-return b})}function la(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):z(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);D(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
-function ma(a,b){D(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
-function na(a,b){return u(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield L(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
-c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
-function L(a,b,d){return u(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ja(c,b)).then(c=>ka(a,c,b)).then(c=>{D(c,Element)&&(la(a,c,b),E(a,c,":before",b),E(a,c,":after",b),D(a,HTMLTextAreaElement)&&(c.textContent=a.value),D(a,HTMLInputElement)&&c.setAttribute("value",a.value),ma(a,c));return c}).then(c=>na(c,b)):null})};const M=/url\((['"]?)([^'"]+?)\1\)/g,oa=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,pa=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function qa(a){var b=[];a.replace(M,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!F(d))}
-function ra(a,b,d,c){return u(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield I(e,J[K(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function sa(a,{K:b}){return b?a.replace(pa,d=>{for(;;){let [c,,e]=oa.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
-function N(a,b,d){return u(function*(){if(a.search(M)===-1)return a;var c=sa(a,d);return qa(c).reduce((e,f)=>e.then(g=>ra(g,f,b,d)),Promise.resolve(c))})};function O(a,b,d){return u(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield N(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function ta(a,b){return u(function*(){(yield O("background",a,b))||(yield O("background-image",a,b));(yield O("mask",a,b))||(yield O("-webkit-mask",a,b))||(yield O("mask-image",a,b))||(yield O("-webkit-mask-image",a,b))})}
-function ua(a,b){return u(function*(){var d=D(a,HTMLImageElement);if(d&&!F(a.src)||D(a,SVGImageElement)&&!F(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield I(c,J[K(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.h?(...h)=>{try{f(b.h(...h))}catch(l){g(l)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
-function va(a,b){return u(function*(){var d=w(a.childNodes).map(c=>P(c,b));yield Promise.all(d).then(()=>a)})}function P(a,b){return u(function*(){D(a,Element)&&(yield ta(a,b),yield ua(a,b),yield va(a,b))})};const Q={};function R(a){return u(function*(){var b=Q[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return Q[a]=b})}function S(a,b){return u(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>u(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return G(g,b.l,({result:h})=>{d=d.replace(f,`url(${h})`);return[f,h]})}));return Promise.all(e).then(()=>d)})}
-function T(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
-d.lastIndex;b.push(e[0])}return b}
-function wa(a,b){return u(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let h=g+1;f=R(f.href).then(l=>S(l,b)).then(l=>T(l).forEach(p=>{try{e.insertRule(p,p.startsWith("@import")?h+=1:e.cssRules.length)}catch(x){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(h=>h.href==null)||document.styleSheets[0];e.href!=null&&c.push(R(e.href).then(h=>S(h,b)).then(h=>T(h).forEach(l=>{g.insertRule(l,g.cssRules.length)})).catch(()=>
-{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function xa(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(M)!==-1)}function ya(a,b){return u(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=yield wa(w(a.ownerDocument.styleSheets),b);return xa(d)})}
-function za(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function Aa(a,b){return u(function*(){var d=yield ya(a,b),c=za(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>N(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
-function Ba(a,b){return u(function*(){var d=b.m!=null?b.m:b.A?null:yield Aa(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function Ca(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield L(a,b,!0);yield Ba(e,b);yield P(e,b);v(e,b);return yield ca(e,d,c)})}
-function Da(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield Ca(a,b);e=yield C(e);var f=document.createElement("canvas"),g=f.getContext("2d"),h=b.I||window.devicePixelRatio||1,l=b.j||d,p=b.i||c;f.width=l*h;f.height=p*h;!b.L&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
-f.style.width=`${l}`;f.style.height=`${p}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function Ea(a,b={}){return u(function*(){return(yield Da(a,b)).toDataURL()})};const Fa=["gemini.google.com","corp.google.com","proxy.googlers.com"];function V(a){a=Number(a.replace(/px$/,""));return Number.isFinite(a)?a:0}function W(){return document.body.querySelectorAll('[class*="animate"]').length>0}function X(a,b){var d=document.createElement("canvas");d.width=a;d.height=b;return d.toDataURL("image/png")}const Y=X(1,1);
-function Z(a,b){return u(function*(){var d=Math.max(b?b.width:a.offsetWidth,1),c=Math.max(b?b.height:a.offsetHeight,1),e=HTMLCanvasElement.prototype.toDataURL;b&&(HTMLCanvasElement.prototype.toDataURL=function(f,g){var h;if(h=this.isConnected&&a.contains(this)){{let n=this.getBoundingClientRect();if(n.width===0||n.height===0)h=!1;else if(window.getComputedStyle(this).position==="fixed")h=n.bottom>0&&n.top<b.height&&n.right>0&&n.left<b.width;else{h=a.getBoundingClientRect();var l=n.top-h.top,p=n.left-
-h.left,x=n.right-h.left;h=n.bottom-h.top>b.scrollTop&&l<b.scrollTop+b.height&&x>b.scrollLeft&&p<b.scrollLeft+b.width}}h=!h}return h?"data:,":e.call(this,f,g)});try{let f=window.getComputedStyle(a),g=b?`${V(f.marginTop)-b.scrollTop}px`:void 0,h=b?`${V(f.marginLeft)-b.scrollLeft}px`:void 0,l=`${Math.max(a.offsetWidth,d)}px`,p,x=`${Math.max(a.offsetHeight,c+((p=b==null?void 0:b.scrollTop)!=null?p:0))}px`;return yield Ea(a,Object.assign({},{width:d,height:c,j:d,i:c},b?{style:{width:l,height:x,marginTop:g,
-marginLeft:h,marginBlockStart:g,marginInlineStart:h}}:{},{A:!0,filter:n=>{if(n.tagName==="IMG"){let U=n.getAttribute("src");if(!U||U.trim()===""||n.style.display==="none")return!1}return!0},o:Y,h:()=>Y}))}catch(f){return X(d,c)}finally{HTMLCanvasElement.prototype.toDataURL=e}})}
-function Ga(){return u(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
-function Ha(a){return u(function*(){var b={width:window.innerWidth||document.documentElement.clientWidth||document.body.offsetWidth,height:window.innerHeight||document.documentElement.clientHeight||document.body.offsetHeight,scrollTop:window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0,scrollLeft:window.scrollX||document.documentElement.scrollLeft||document.body.scrollLeft||0},d=document.body;if(W()){let c=yield Ga();d=c;document.body.appendChild(c)}b=yield Z(d,b);W()&&
-document.body.removeChild(d);window.parent.postMessage({type:"SEND_SCREENSHOT",image:b,topOffset:0},a.origin)})}function Ia(a){return u(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}window.addEventListener("message",a=>u(function*(){if(Fa.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ha(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ia(a)))}}));
-})();</script><script data-bard-client-injected="true">(function() {
-  // Ensure this script is executed only once
-  if (window.firebaseAuthBridgeScriptLoaded) {
-    return;
-  }
-  window.firebaseAuthBridgeScriptLoaded = true;
-
-  let nextTokenPromiseId = 0;
-
-  // Stores { resolve, reject } for ongoing token requests
-  const pendingTokenPromises = {};
-
-  // Listen for messages from the Host Application
-  window.addEventListener('message', function(event) {
-
-    const messageData = event.data;
-
-  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
-      const { success, token, error, promiseId } = messageData ?? {};
-      if (pendingTokenPromises[promiseId]) {
-        if (success) {
-          pendingTokenPromises[promiseId].resolve(token);
-        } else {
-          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
-        }
-        delete pendingTokenPromises[promiseId];
-      }
-    }
-  });
-
-  // Expose a function for the Generated App to request a new Firebase token
-  window.requestNewFirebaseToken = function() {
-    const currentPromiseId = nextTokenPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingTokenPromises[currentPromiseId] = { resolve, reject };
-    });
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'REQUEST_NEW_FIREBASE_TOKEN',
-        promiseId: currentPromiseId
-      }, '*');
-    } else {
-      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
-      delete pendingTokenPromises[currentPromiseId];
-    }
-    return promise;
-  };
-})();</script><script data-bard-client-injected="true">
-let realOriginalGetUserMedia = null;
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
-}
-
-(function() {
-  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
-    try {
-      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
-        get: function() {
-          return undefined; // Or throw an error
-        },
-        configurable: false
-      });
-    } catch (error) {
-      console.error("Error defining prototype getter:", error);
-    }
-  }
-})();
-
-(function() {
-  const pendingMediaResolvers = {};
-  let nextMediaPromiseId = 0;
-
-  function requestMediaPermissions(constraints) {
-    const mediaPromiseId = nextMediaPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingMediaResolvers[mediaPromiseId] = (granted) => {
-        delete pendingMediaResolvers[mediaPromiseId];
-        resolve(granted);
-      };
-    });
-
-    window.parent.postMessage({
-      type: 'requestMediaPermission',
-      constraints: constraints,
-      promiseId: mediaPromiseId,
-    }, '*');
-
-    return promise;
-  }
-
-  let originalGetUserMedia = realOriginalGetUserMedia;
-
-  function interceptGetUserMedia() {
-    if (navigator.mediaDevices) {
-      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
-        value: function(constraints) {
-          return requestMediaPermissions(constraints).then((granted) => {
-            if (granted) {
-              if (originalGetUserMedia) {
-                return originalGetUserMedia(constraints);
-              } else {
-                throw new Error("Original getUserMedia not available.");
-              }
-            } else {
-              throw new DOMException('Permission denied', 'NotAllowedError');
-            }
-          });
-        },
-        writable: false,
-        configurable: false
-      });
-    }
-  }
-
-  interceptGetUserMedia();
-
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'childList' && mutation.addedNodes) {
-        mutation.addedNodes.forEach(node => {
-          if (node === navigator.mediaDevices) {
-            interceptGetUserMedia();
-          }
-        });
-      }
-    }
-  });
-
-  function interceptSpeechRecognition() {
-    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
-      return;
-    }
-
-    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const SpeechRecognitionWrapper = function(...args) {
-      const recognizer = new OriginalSpeechRecognition(...args);
-      const originalStart = recognizer.start.bind(recognizer);
-
-      recognizer.start = function() {
-        requestMediaPermissions({ audio: true }).then(granted => {
-          if (granted) {
-            originalStart();
-          } else {
-            const errorEvent = new SpeechRecognitionErrorEvent('error');
-            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
-            recognizer.dispatchEvent(errorEvent);
-          }
-        });
-      };
-
-      return recognizer;
-    };
-
-    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
-    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
-
-    if (window.SpeechRecognition) {
-      window.SpeechRecognition = SpeechRecognitionWrapper;
-    }
-    if (window.webkitSpeechRecognition) {
-      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
-    }
-  }
-
-  interceptSpeechRecognition();
-
-  window.addEventListener('message', function(event) {
-    if (event.data) {
-      if (event.data.type === 'resolveMediaPermission') {
-        const { promiseId, granted } = event.data;
-        if (pendingMediaResolvers[promiseId]) {
-          pendingMediaResolvers[promiseId](granted);
-        }
-      }
-    }
-  });
-
-})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
-function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-function A(b,d){function e(){}e.prototype=d.prototype;b.j=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
-let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
-null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.i="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
-c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
-"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
-Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
-(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
-url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
-</script><script data-bard-client-injected="true">((function(modelInformation) {
-  const originalFetch = window.fetch;
-  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
-  let googleLlmBaseApiUrls = [
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
-  ];
-  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-    );
-  });
-  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedImageTransformModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-
-  const pendingFetchResolvers = {};
-  let nextPromiseId = 0;
-
-  function handleStringInput(input, optionsArgument) {
-    const actualUrl = input;
-    const fetchCallArgs = [actualUrl, optionsArgument];
-    const effectiveOptions = optionsArgument || {};
-    const bodyForApiKeyCheck = effectiveOptions.body;
-    const bodyForPostMessage = effectiveOptions.body;
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  function handleRequestInput(input, optionsArgument) {
-    const actualUrl = input.url;
-    const fetchCallArgs = [input, optionsArgument];
-    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (optionsArgument) {
-      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
-      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
-      if ('body' in optionsArgument) {
-        bodyForApiKeyCheck = optionsArgument.body;
-        bodyForPostMessage = optionsArgument.body;
-      } else {
-        bodyForApiKeyCheck = undefined;
-        bodyForPostMessage = input.body;
-      }
-    } else {
-      bodyForApiKeyCheck = undefined;
-      bodyForPostMessage = input.body;
-    }
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  window.fetch = function(input, optionsArgument) {
-    let actualUrl;
-    let fetchCallArgs;
-    let effectiveOptions = {};
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (typeof input === 'string') {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
-    } else if (input instanceof Request) {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
-    } else {
-      return originalFetch.apply(window, [input, optionsArgument]);
-    }
-
-    effectiveOptions.method = effectiveOptions.method || 'GET';
-    if (!effectiveOptions.headers) {
-      effectiveOptions.headers = new Headers();
-    }
-
-
-    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
-      let apiKeyIsNull = true;
-
-      const regex = new RegExp("models/([^:]+)");
-      const modelNameMatch = actualUrl.match(regex);
-      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
-
-
-      try {
-        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
-        const apiKeyParam = urlObject.searchParams.get('key');
-        if (apiKeyParam) {
-          apiKeyIsNull = false;
-        }
-      } catch (e) {
-        // Continue checks even if URL parsing fails
-      }
-
-      if (apiKeyIsNull && effectiveOptions.headers) {
-        const h = new Headers(effectiveOptions.headers);
-        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
-        if (apiKeyHeaderValue) {
-          apiKeyIsNull = false;
-          return originalFetch.apply(window, fetchCallArgs);
-        }
-      }
-
-      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
-        try {
-          const bodyData = JSON.parse(bodyForApiKeyCheck);
-          if (bodyData && bodyData.apiKey) {
-            apiKeyIsNull = false;
-            return originalFetch.apply(window, fetchCallArgs);
-          }
-        } catch (e) {
-          // Ignore JSON parsing errors
-        }
-      }
-
-      if(apiKeyIsNull) {
-        const promiseId = nextPromiseId++;
-        const promise = new Promise((resolve) => {
-          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
-            delete pendingFetchResolvers[promiseId];
-            resolve(resolvedResponse);
-          };
-        });
-
-        let serializedBodyForPostMessage;
-        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
-            serializedBodyForPostMessage = bodyForPostMessage;
-        } else if (bodyForPostMessage instanceof ReadableStream) {
-            serializedBodyForPostMessage = null;
-        } else {
-            try {
-                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
-            } catch (e) {
-                serializedBodyForPostMessage = null;
-            }
-        }
-
-        const messageOptions = {
-            method: effectiveOptions.method,
-            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
-            body: serializedBodyForPostMessage
-        };
-
-        window.parent.postMessage({
-          type: 'requestFetch',
-          url: actualUrl,
-          modelName: modelName,
-          options: messageOptions,
-          promiseId: promiseId,
-        }, '*');
-
-        return promise;
-      }
-      return originalFetch.apply(window, fetchCallArgs);
-    }
-    return originalFetch.apply(window, fetchCallArgs);
-  };
-
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'resolveFetch') {
-      const { promiseId, response } = event.data;
-      if (pendingFetchResolvers[promiseId]) {
-        try {
-          const reconstructedResponse = new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: new Headers(response.headers),
-          });
-          pendingFetchResolvers[promiseId](reconstructedResponse);
-        } catch (error) {
-          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
-        }
-      }
-    }
-  });
-
-}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image","imageTransformModelName":"gemini-3-pro-image","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image","gemini-3.1-flash-image-preview"],"deprecatedImageTransformModelNames":["gemini-3-pro-image-preview-11-2025"]})</script><script data-bard-client-injected="true">(function() {
-  function normalizeSlug(str) {
-    try {
-      return str
-        .trim()
-        .toLowerCase()
-        .replace(/[^p{L}p{N}s_-]/gu, '')
-        .replace(/s+/g, '-');
-    } catch (e) {
-      return str
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9s_-]/g, '')
-        .replace(/s+/g, '-');
-    }
-  }
-
-  function findTargetElement(hash) {
-    if (!hash || hash === '#') {
-      return null;
-    }
-    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
-    let decodedId = rawId;
-    try {
-      decodedId = decodeURIComponent(rawId);
-    } catch (e) {
-      // Ignore URI malformed errors.
-    }
-
-    // 1. Direct ID match (raw and decoded).
-    let target = document.getElementById(rawId) || document.getElementById(decodedId);
-    if (target) {
-      return target;
-    }
-
-    // 2. Name attribute match (<a name="...">).
-    try {
-      if (typeof CSS !== 'undefined' && CSS.escape) {
-        target =
-          document.querySelector('[name="' + CSS.escape(rawId) + '"]') ||
-          document.querySelector('[name="' + CSS.escape(decodedId) + '"]');
-      } else {
-        const namedElements = document.getElementsByName(rawId);
-        if (namedElements && namedElements.length > 0) {
-          return namedElements[0];
-        }
-      }
-    } catch (e) {
-      // Ignore querySelector syntax errors.
-    }
-    if (target) {
-      return target;
-    }
-
-    // 3. Match heading text by slug (for Markdown TOCs where headings lack explicit IDs).
-    const targetSlug = normalizeSlug(decodedId);
-    if (targetSlug) {
-      for (const heading of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
-        if (normalizeSlug(heading.textContent || '') === targetSlug) {
-          return heading;
-        }
-      }
-    }
-
-    return null;
-  }
-
-  document.addEventListener('click', function(event) {
-    const target = event.target;
-    const anchor = target && typeof target.closest === 'function' ? target.closest('a') : null;
-    if (!anchor) {
-      return;
-    }
-
-    const href = anchor.getAttribute('href');
-    if (
-      !href ||
-      href.trim().toLowerCase().startsWith('javascript:') ||
-      anchor.hasAttribute('download')
-    ) {
-      return;
-    }
-
-    // Check if the link is an in-page hash / anchor link.
-    if (href.startsWith('#')) {
-      event.preventDefault();
-      const targetElement = findTargetElement(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-      }
-      return;
-    }
-
-    // Check if the URL has the same origin/pathname but with a hash.
-    try {
-      const url = new URL(anchor.href, window.location.href);
-      if (
-        url.hash &&
-        url.origin === window.location.origin &&
-        url.pathname === window.location.pathname
-      ) {
-        event.preventDefault();
-        const targetElement = findTargetElement(url.hash);
-        if (targetElement) {
-          targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-        return;
-      }
-    } catch (e) {
-      // Fall through if URL parsing fails.
-    }
-
-    // For all external or full navigation links, prevent iframe-level navigation
-    // (which breaks in AGSA WebView or sandboxed iframes) and ensure they open
-    // safely in a new tab/window.
-    if (anchor.target !== '_blank') {
-      event.preventDefault();
-      window.open(anchor.href, '_blank', 'noopener,noreferrer');
-    }
-  }, {capture: true});
-})();</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
-</script><script data-bard-client-injected="true">(function() {
-  const originalConsoleLog = console.log;
-  const originalConsoleError = console.error;
-
-    /**
-   * Normalizes an error event or a promise rejection reason into a structured error object.
-   * @param {*} errorEventOrReason The error object or reason.
-   * @return {object} Structured error data { message, name, stack }.
-   */
-  function getErrorObject(errorEventOrReason) {
-    if (errorEventOrReason instanceof Error) {
-      return {
-        message: errorEventOrReason.message,
-        name: errorEventOrReason.name,
-        stack: errorEventOrReason.stack,
-      };
-    }
-    // Fallback for non-Error objects.
-    try {
-      return {
-        message: JSON.stringify(errorEventOrReason),
-        name: 'UnknownErrorType',
-        stack: null,
-      };
-    } catch (e) {
-      return {
-        message: String(errorEventOrReason),
-        name: 'UnknownErrorTypeNonStringifiable',
-        stack: null,
-      };
-    }
-  }
-
-  /**
-   * Converts an array of arguments (from log/error) into a single string.
-   * Handles Error objects specially to include their message and stack.
-   * @param {Array<*>} args - Arguments passed to console methods.
-   * @return {string} A string representation of the arguments.
-   */
-  function stringifyArgs(args) {
-    return args
-      .map((arg) => {
-        if (arg instanceof Error) {
-          const {message, stack} = arg;
-          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
-        }
-        if (typeof arg === 'object' && arg !== null) {
-          try {
-            return JSON.stringify(arg);
-          } catch (error) {
-            return '[Circular Object]';
-          }
-        } else {
-          return String(arg);
-        }
-      })
-      .join(' ');
-  }
-
-  console.log = function(...args) {
-    const logString = stringifyArgs(args);
-    window.parent.postMessage({ type: 'log', message: logString }, '*');
-    originalConsoleLog.apply(console, args);
-  };
-
-  console.error = function(...args) {
-    let errorData;
-    if (args.length > 0 && args[0] instanceof Error) {
-      const err = args[0];
-      // If the first arg is an Error, capture its details.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        ...getErrorObject(err),
-        rawArgsString: stringifyArgs(args.slice(1)),
-        timestamp: new Date().toISOString(),
-      };
-    } else {
-      // If not an Error object, treat all args as a general error message.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        message: stringifyArgs(args),
-        name: 'ConsoleLoggedError',
-        stack: null,
-        timestamp: new Date().toISOString(),
-      };
-    }
-    window.parent.postMessage(errorData, '*');
-    originalConsoleError.apply(console, args);
-  };
-
-  // Listen for global unhandled synchronous errors.
-  window.addEventListener('error', function(event) {
-    const errorDetails = event.error ? getErrorObject(event.error) : {
-      message: event.message,
-      name: 'GlobalError',
-      stack: null,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-    };
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'global',
-      ...errorDetails,
-      message: errorDetails.message || event.message,
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-  // Listen for unhandled promise rejections (asynchronous errors).
-  window.addEventListener('unhandledrejection', function(event) {
-    const errorDetails = getErrorObject(event.reason);
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'unhandledrejection',
-      ...errorDetails,
-      message: errorDetails.message || 'Unhandled Promise Rejection',
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-})();</script>
+<html lang="ar" dir="rtl" class="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taraji Analytics &amp; Tactics Studio 2026/2027</title>
+    <title>Taraji Analytics & Tactics Studio 2026/2027</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -744,8 +29,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                         goldBright: '#FACC15',
                         redEst: '#E60000',
                         redDark: '#8B0000',
-                        pitchDark: '#081c0e',
-                        pitchLine: 'rgba(212, 175, 55, 0.35)',
                         panelDark: '#121318',
                         panelBorder: '#262936'
                     },
@@ -758,105 +41,28 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
     </script>
 
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0B0C10;
-            color: #F3F4F6;
-            user-select: none;
-            overflow-x: hidden;
-        }
-
-        /* Gold Glows & Gradients */
-        .gold-glow {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-        }
-        .red-glow {
-            box-shadow: 0 0 20px rgba(230, 0, 0, 0.3);
-        }
-
-        .glass-panel {
-            background: rgba(18, 19, 24, 0.9);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-
-        /* Tactical Pitch */
-        .football-pitch {
-            background: radial-gradient(circle at center, #0e3017 0%, #06170a 100%);
-            border: 3px solid #D4AF37;
-            box-shadow: inset 0 0 80px rgba(0,0,0,0.9);
-            position: relative;
-            touch-action: none;
-        }
-
-        .pitch-lines {
-            position: absolute;
-            inset: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            pointer-events: none;
-        }
-
-        .pitch-center-circle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .pitch-center-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.2);
-            pointer-events: none;
-        }
-
-        /* Player Pin on Pitch */
-        .player-pin {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            cursor: grab;
-            transition: transform 0.12s ease, box-shadow 0.2s ease;
-            z-index: 10;
-        }
-
-        .player-pin:active {
-            cursor: grabbing;
-            transform: translate(-50%, -50%) scale(1.15);
-            z-index: 30;
-        }
-
-        /* Custom Scrollbars */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0c10;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #262936;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #E60000;
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #0B0C10; color: #F3F4F6; user-select: none; overflow-x: hidden; }
+        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.25); }
+        .red-glow { box-shadow: 0 0 20px rgba(230, 0, 0, 0.3); }
+        .glass-panel { background: rgba(18, 19, 24, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(212, 175, 55, 0.15); }
+        .football-pitch { background: radial-gradient(circle at center, #0e3017 0%, #06170a 100%); border: 3px solid #D4AF37; box-shadow: inset 0 0 80px rgba(0,0,0,0.9); position: relative; touch-action: none; }
+        .pitch-lines { position: absolute; inset: 12px; border: 2px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
+        .pitch-center-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 50%; pointer-events: none; }
+        .pitch-center-line { position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: rgba(255, 255, 255, 0.2); pointer-events: none; }
+        .player-pin { position: absolute; transform: translate(-50%, -50%); cursor: grab; transition: transform 0.12s ease, box-shadow 0.2s ease; z-index: 10; }
+        .player-pin:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.15); z-index: 30; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0c10; }
+        ::-webkit-scrollbar-thumb { background: #262936; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E60000; }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.bottom-5{bottom:1.25rem}.left-5{left:1.25rem}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-auto{margin-top:auto;margin-bottom:auto}.mb-1{margin-bottom:0.25rem}.ml-1{margin-left:0.25rem}.ml-1\.5{margin-left:0.375rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-16{height:4rem}.h-64{height:16rem}.h-\[380px\]{height:380px}.h-\[560px\]{height:560px}.max-h-\[220px\]{max-height:220px}.max-h-\[260px\]{max-height:260px}.max-h-\[460px\]{max-height:460px}.max-h-\[480px\]{max-height:480px}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-64{width:16rem}.w-full{width:100%}.w-2\/5{width:40%}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-0\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.125rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-panelBorder\/40 > :not([hidden]) ~ :not([hidden]){border-color:rgb(38 41 54 / 0.4)}.divide-panelBorder\/50 > :not([hidden]) ~ :not([hidden]){border-color:rgb(38 41 54 / 0.5)}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-md{border-radius:0.375rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-r-2{border-right-width:2px}.border-gold\/20{border-color:rgb(212 175 55 / 0.2)}.border-gold\/30{border-color:rgb(212 175 55 / 0.3)}.border-gold\/40{border-color:rgb(212 175 55 / 0.4)}.border-panelBorder{--tw-border-opacity:1;border-color:rgb(38 41 54 / var(--tw-border-opacity, 1))}.border-redEst\/30{border-color:rgb(230 0 0 / 0.3)}.border-gold{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.border-rose-500\/20{border-color:rgb(244 63 94 / 0.2)}.bg-\[\#0B0C10\]{--tw-bg-opacity:1;background-color:rgb(11 12 16 / var(--tw-bg-opacity, 1))}.bg-\[\#0E0E10\]{--tw-bg-opacity:1;background-color:rgb(14 14 16 / var(--tw-bg-opacity, 1))}.bg-\[\#0E0E10\]\/95{background-color:rgb(14 14 16 / 0.95)}.bg-amber-500\/10{background-color:rgb(245 158 11 / 0.1)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-black\/70{background-color:rgb(0 0 0 / 0.7)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-emerald-500\/10{background-color:rgb(16 185 129 / 0.1)}.bg-gold{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.bg-gold\/10{background-color:rgb(212 175 55 / 0.1)}.bg-purple-500\/10{background-color:rgb(168 85 247 / 0.1)}.bg-redEst{--tw-bg-opacity:1;background-color:rgb(230 0 0 / var(--tw-bg-opacity, 1))}.bg-redEst\/20{background-color:rgb(230 0 0 / 0.2)}.bg-rose-500\/10{background-color:rgb(244 63 94 / 0.1)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/90{background-color:rgb(0 0 0 / 0.9)}.bg-redEst\/15{background-color:rgb(230 0 0 / 0.15)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.from-gold{--tw-gradient-from:#D4AF37 var(--tw-gradient-from-position);--tw-gradient-to:rgb(212 175 55 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-redDark{--tw-gradient-from:#8B0000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(139 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-redEst{--tw-gradient-from:#E60000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(230 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-\[\#0E0E10\]{--tw-gradient-to:rgb(14 14 16 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #0E0E10 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-redDark{--tw-gradient-to:rgb(139 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #8B0000 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-amber-500{--tw-gradient-to:#f59e0b var(--tw-gradient-to-position)}.to-black{--tw-gradient-to:#000 var(--tw-gradient-to-position)}.to-gold{--tw-gradient-to:#D4AF37 var(--tw-gradient-to-position)}.to-rose-600{--tw-gradient-to:#e11d48 var(--tw-gradient-to-position)}.to-rose-700{--tw-gradient-to:#be123c var(--tw-gradient-to-position)}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-2{padding-bottom:0.5rem}.pb-3{padding-bottom:0.75rem}.pr-1{padding-right:0.25rem}.pt-3{padding-top:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-gold{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-goldBright{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-gold:hover{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.hover\:border-gold\/50:hover{border-color:rgb(212 175 55 / 0.5)}.hover\:border-rose-400\/50:hover{border-color:rgb(251 113 133 / 0.5)}.hover\:bg-gold:hover{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.hover\:bg-goldBright:hover{--tw-bg-opacity:1;background-color:rgb(250 204 21 / var(--tw-bg-opacity, 1))}.hover\:bg-black\/50:hover{background-color:rgb(0 0 0 / 0.5)}.hover\:from-amber-400:hover{--tw-gradient-from:#fbbf24 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 191 36 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-amber-300:hover{--tw-gradient-to:#fcd34d var(--tw-gradient-to-position)}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:brightness-110:hover{--tw-brightness:brightness(1.1);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:border-gold:focus{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:p-8{padding:2rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:col-span-5{grid-column:span 5 / span 5}.md\:col-span-7{grid-column:span 7 / span 7}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-right{text-align:right}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}}</style></head>
+</head>
 <body class="min-h-screen flex flex-col bg-[#0B0C10] text-gray-100">
 
     <!-- Top Navigation Header -->
     <header class="border-b border-panelBorder bg-[#0E0E10]/95 backdrop-blur sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
             
-            <!-- EST Crest & Brand -->
             <div class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-redEst via-redDark to-gold flex items-center justify-center text-white text-xl shadow-lg red-glow">
                     <i class="fa-solid fa-shield-halved drop-shadow"></i>
@@ -872,27 +78,29 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-1 bg-black/60 p-1.5 rounded-2xl border border-panelBorder text-xs font-bold">
-                <button onclick="switchTab('tactics')" id="tab-tactics" class="px-4 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg transition font-bold">
-                    <i class="fa-solid fa-futbol ml-1.5"></i> التشكيلة والملعب
+                <button onclick="switchTab('tactics')" id="tab-tactics" class="px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg transition font-bold">
+                    <i class="fa-solid fa-futbol ml-1"></i> التشكيلة والملعب
                 </button>
-                <button onclick="switchTab('stats')" id="tab-stats" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white transition">
-                    <i class="fa-solid fa-chart-pie ml-1.5"></i> مساهمات اللاعبين
+                <button onclick="switchTab('stats')" id="tab-stats" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white transition">
+                    <i class="fa-solid fa-chart-pie ml-1"></i> مساهمات اللاعبين
                 </button>
-                <button onclick="switchTab('history')" id="tab-history" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white transition">
-                    <i class="fa-solid fa-crown ml-1.5 text-gold"></i> تاريخ الترجي
+                <button onclick="switchTab('history')" id="tab-history" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white transition">
+                    <i class="fa-solid fa-crown ml-1 text-gold"></i> تاريخ الترجي
                 </button>
-                <button onclick="switchTab('league')" id="tab-league" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white transition">
-                    <i class="fa-solid fa-trophy ml-1.5"></i> الدوري الخيالي
+                <button onclick="switchTab('league')" id="tab-league" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white transition">
+                    <i class="fa-solid fa-trophy ml-1"></i> الدوري المحلي
                 </button>
-                <button onclick="switchTab('scout')" id="tab-scout" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white transition">
-                    <i class="fa-solid fa-radar ml-1.5"></i> رادار الكشافة
+                <button onclick="switchTab('caf')" id="tab-caf" class="px-3 py-2 rounded-xl text-goldBright bg-gold/10 border border-gold/30 hover:bg-gold hover:text-black transition">
+                    <i class="fa-solid fa-earth-africa ml-1"></i> دوري أبطال إفريقيا
+                </button>
+                <button onclick="switchTab('scout')" id="tab-scout" class="px-3 py-2 rounded-xl text-gray-400 hover:text-white transition">
+                    <i class="fa-solid fa-radar ml-1"></i> رادار الكشافة
                 </button>
             </nav>
 
-            <!-- Export HTML Button -->
-            <button onclick="exportHTML()" class="bg-gradient-to-r from-gold to-amber-500 hover:from-amber-400 hover:to-amber-300 text-black font-extrabold text-xs px-4 py-2.5 rounded-xl flex items-center gap-2 transition shadow-lg gold-glow">
+            <button onclick="exportHTML()" class="bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold text-xs px-4 py-2.5 rounded-xl flex items-center gap-2 transition shadow-lg gold-glow">
                 <i class="fa-solid fa-download"></i>
-                <span class="hidden sm:inline">تصدير الكود HTML</span>
+                <span class="hidden sm:inline">تصدير الكود</span>
             </button>
         </div>
     </header>
@@ -902,20 +110,16 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <button onclick="switchTab('tactics')" id="mob-tab-tactics" class="px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold">التشكيلة والملعب</button>
         <button onclick="switchTab('stats')" id="mob-tab-stats" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">مساهمات اللاعبين</button>
         <button onclick="switchTab('history')" id="mob-tab-history" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">تاريخ الترجي</button>
-        <button onclick="switchTab('league')" id="mob-tab-league" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">الدوري الخيالي</button>
+        <button onclick="switchTab('league')" id="mob-tab-league" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">الدوري المحلي</button>
+        <button onclick="switchTab('caf')" id="mob-tab-caf" class="px-3 py-2 rounded-lg bg-gold/20 text-goldBright border border-gold/30 whitespace-nowrap">دوري أبطال إفريقيا</button>
         <button onclick="switchTab('scout')" id="mob-tab-scout" class="px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap">رادار الكشافة</button>
     </div>
 
-    <!-- Main Content Workspace -->
     <main class="max-w-7xl mx-auto px-3 sm:px-4 py-6 flex-1 w-full space-y-6">
 
         <!-- ================= TAB 1: TACTICS & PITCH ================= -->
         <section id="sec-tactics" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            <!-- Left Panel: Formations & Roster (4 Cols) -->
             <div class="lg:col-span-4 space-y-5">
-                
-                <!-- Tactical Controls -->
                 <div class="glass-panel rounded-2xl p-5 space-y-4">
                     <div class="border-b border-panelBorder pb-3 flex items-center justify-between">
                         <div>
@@ -941,219 +145,25 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                     </div>
                 </div>
 
-                <!-- Starters Roster (11 Players) -->
                 <div class="glass-panel rounded-2xl p-4 space-y-3">
                     <h3 class="font-black text-xs text-white flex items-center justify-between border-b border-panelBorder pb-2">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-emerald-400 text-[10px]"></i> التشكيلة الأساسية (11 لاعباً)</span>
                         <span class="text-gold font-bold">رسمي</span>
                     </h3>
-                    
-                    <div id="startersRosterList" class="space-y-2 max-h-[260px] overflow-y-auto pr-1">
-                <div onclick="selectScoutPlayer(1); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">بشير بن سعيد</h4>
-                            <span class="text-[10px] text-gray-400">GK</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">83</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(2); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">محمد دراغر</h4>
-                            <span class="text-[10px] text-gray-400">RB</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">81</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(3); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">نضال العيفي</h4>
-                            <span class="text-[10px] text-gray-400">LB</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">76</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(4); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">حمزة الجلاصي</h4>
-                            <span class="text-[10px] text-gray-400">CB</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">80</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(5); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇩🇿</span>
-                        <div>
-                            <h4 class="font-bold text-white">عليلات</h4>
-                            <span class="text-[10px] text-gray-400">CB</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(6); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇵🇪</span>
-                        <div>
-                            <h4 class="font-bold text-white">خيسوس كاستيلو</h4>
-                            <span class="text-[10px] text-gray-400">CDM</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(7); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">حمزة رفيعة</h4>
-                            <span class="text-[10px] text-gray-400">CAM</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">84</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(8); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">محمد الحاج محمود</h4>
-                            <span class="text-[10px] text-gray-400">CM</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">81</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(9); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇩🇿</span>
-                        <div>
-                            <h4 class="font-bold text-white">يوسف البلايلي</h4>
-                            <span class="text-[10px] text-gray-400">LW</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">88</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(10); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇧🇷</span>
-                        <div>
-                            <h4 class="font-bold text-white">لوكاس ريبيرو</h4>
-                            <span class="text-[10px] text-gray-400">RW</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">85</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(11); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-white">حازم المستوري</h4>
-                            <span class="text-[10px] text-gray-400">ST</span>
-                        </div>
-                    </div>
-                    <span class="font-black text-gold bg-black/80 px-2 py-0.5 rounded border border-gold/20">79</span>
-                </div>
-            </div>
+                    <div id="startersRosterList" class="space-y-2 max-h-[260px] overflow-y-auto pr-1"></div>
                 </div>
 
-                <!-- Reserves Roster (6 Players) -->
                 <div class="glass-panel rounded-2xl p-4 space-y-3">
                     <h3 class="font-black text-xs text-white flex items-center justify-between border-b border-panelBorder pb-2">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-rose-400"></i> دكة الاحتياط (6 لاعبين)</span>
                         <span class="text-rose-400 font-bold">بدلاء</span>
                     </h3>
-                    
-                    <div id="subsRosterList" class="space-y-2 max-h-[220px] overflow-y-auto pr-1">
-                <div onclick="selectScoutPlayer(12); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇫🇷</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">عماد فرج</h4>
-                            <span class="text-[10px] text-rose-400">RW/ST (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">80</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(13); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">رائد الشيخاوي</h4>
-                            <span class="text-[10px] text-rose-400">CB (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">77</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(14); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">إلياس عرعار</h4>
-                            <span class="text-[10px] text-rose-400">LB (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">74</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(15); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇨🇮</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">عبد الرحمن كوناتي</h4>
-                            <span class="text-[10px] text-rose-400">CM (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(16); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">معز الحاج علي</h4>
-                            <span class="text-[10px] text-rose-400">CM (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">74</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(17); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm">🇫🇷</span>
-                        <div>
-                            <h4 class="font-bold text-gray-200">فلوريان دانهو</h4>
-                            <span class="text-[10px] text-rose-400">ST (احتياط)</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-rose-300 bg-black/80 px-2 py-0.5 rounded border border-rose-500/20">78</span>
+                    <div id="subsRosterList" class="space-y-2 max-h-[220px] overflow-y-auto pr-1"></div>
                 </div>
             </div>
-                </div>
 
-            </div>
-
-            <!-- Pitch Visualizer Area (8 Cols) -->
             <div class="lg:col-span-8">
                 <div class="glass-panel rounded-2xl p-5 flex flex-col items-center space-y-4">
-                    
                     <div class="w-full flex items-center justify-between border-b border-panelBorder pb-3">
                         <div>
                             <h3 class="font-black text-white text-base">الملعب التكتيكي التفاعلي</h3>
@@ -1162,118 +172,14 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                         <span class="text-xs bg-redEst/20 text-rose-300 px-3 py-1 rounded-lg border border-redEst/30 font-bold">تحريك حر</span>
                     </div>
 
-                    <!-- Tactical Pitch Container -->
                     <div id="pitchContainer" class="football-pitch w-full max-w-xl h-[560px] rounded-2xl relative overflow-hidden">
                         <div class="pitch-lines"></div>
                         <div class="pitch-center-line"></div>
                         <div class="pitch-center-circle"></div>
-
-                        <!-- Player Nodes -->
-                        <div id="pitchNodes">
-                <div id="pnode-0" onmousedown="startDragPitchNode(event, 0)" ontouchstart="startDragPitchNodeTouch(event, 0)" class="player-pin flex flex-col items-center" style="top: 88%; left: 50%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        GK
+                        <div id="pitchNodes"></div>
                     </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        بن سعيد
-                    </span>
-                </div>
-            
-                <div id="pnode-1" onmousedown="startDragPitchNode(event, 1)" ontouchstart="startDragPitchNodeTouch(event, 1)" class="player-pin flex flex-col items-center" style="top: 72%; left: 86%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        RB
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        دراغر
-                    </span>
-                </div>
-            
-                <div id="pnode-2" onmousedown="startDragPitchNode(event, 2)" ontouchstart="startDragPitchNodeTouch(event, 2)" class="player-pin flex flex-col items-center" style="top: 76%; left: 63%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        CB
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        الجلاصي
-                    </span>
-                </div>
-            
-                <div id="pnode-3" onmousedown="startDragPitchNode(event, 3)" ontouchstart="startDragPitchNodeTouch(event, 3)" class="player-pin flex flex-col items-center" style="top: 76%; left: 37%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        CB
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        عليلات
-                    </span>
-                </div>
-            
-                <div id="pnode-4" onmousedown="startDragPitchNode(event, 4)" ontouchstart="startDragPitchNodeTouch(event, 4)" class="player-pin flex flex-col items-center" style="top: 72%; left: 14%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        LB
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        العيفي
-                    </span>
-                </div>
-            
-                <div id="pnode-5" onmousedown="startDragPitchNode(event, 5)" ontouchstart="startDragPitchNodeTouch(event, 5)" class="player-pin flex flex-col items-center" style="top: 58%; left: 50%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        CDM
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        كاستيلو
-                    </span>
-                </div>
-            
-                <div id="pnode-6" onmousedown="startDragPitchNode(event, 6)" ontouchstart="startDragPitchNodeTouch(event, 6)" class="player-pin flex flex-col items-center" style="top: 44%; left: 30%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        CM
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        الحاج محمود
-                    </span>
-                </div>
-            
-                <div id="pnode-7" onmousedown="startDragPitchNode(event, 7)" ontouchstart="startDragPitchNodeTouch(event, 7)" class="player-pin flex flex-col items-center" style="top: 44%; left: 70%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        CAM
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        رفيعة
-                    </span>
-                </div>
-            
-                <div id="pnode-8" onmousedown="startDragPitchNode(event, 8)" ontouchstart="startDragPitchNodeTouch(event, 8)" class="player-pin flex flex-col items-center" style="top: 22%; left: 82%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        RW
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        ريبيرو
-                    </span>
-                </div>
-            
-                <div id="pnode-9" onmousedown="startDragPitchNode(event, 9)" ontouchstart="startDragPitchNodeTouch(event, 9)" class="player-pin flex flex-col items-center" style="top: 16%; left: 50%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        ST
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        المستوري
-                    </span>
-                </div>
-            
-                <div id="pnode-10" onmousedown="startDragPitchNode(event, 10)" ontouchstart="startDragPitchNodeTouch(event, 10)" class="player-pin flex flex-col items-center" style="top: 22%; left: 18%;">
-                    <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
-                        LW
-                    </div>
-                    <span class="bg-black/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md mt-1 border border-gold/40 whitespace-nowrap shadow-lg">
-                        البلايلي
-                    </span>
                 </div>
             </div>
-                    </div>
-
-                </div>
-            </div>
-
         </section>
 
         <!-- ================= TAB 2: CONTRIBUTIONS & STATS ================= -->
@@ -1296,7 +202,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 </div>
             </div>
 
-            <!-- Stats Table -->
             <div class="glass-panel rounded-2xl p-5 overflow-x-auto">
                 <table class="w-full text-right text-xs">
                     <thead>
@@ -1312,123 +217,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                             <th class="pb-3 text-center">معدل التقييم</th>
                         </tr>
                     </thead>
-                    <tbody id="playerStatsTableBody" class="divide-y divide-panelBorder/50">
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇫🇷</span>
-                            <div>
-                                <span>عماد فرج</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">RW/ST</td>
-                        <td class="py-3 text-center font-bold text-gray-300">15</td>
-                        <td class="py-3 text-center text-gray-400">890'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">4</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">4</td>
-                        <td class="py-3 text-center font-black text-gold text-base">8</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">81%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7.7</td>
-                    </tr>
-                
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇹🇳</span>
-                            <div>
-                                <span>رائد الشيخاوي</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">CB</td>
-                        <td class="py-3 text-center font-bold text-gray-300">10</td>
-                        <td class="py-3 text-center text-gray-400">540'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">0</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">1</td>
-                        <td class="py-3 text-center font-black text-gold text-base">1</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">84%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7.2</td>
-                    </tr>
-                
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇹🇳</span>
-                            <div>
-                                <span>إلياس عرعار</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">LB</td>
-                        <td class="py-3 text-center font-bold text-gray-300">8</td>
-                        <td class="py-3 text-center text-gray-400">410'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">0</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">2</td>
-                        <td class="py-3 text-center font-black text-gold text-base">2</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">80%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7</td>
-                    </tr>
-                
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇨🇮</span>
-                            <div>
-                                <span>عبد الرحمن كوناتي</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">CM</td>
-                        <td class="py-3 text-center font-bold text-gray-300">14</td>
-                        <td class="py-3 text-center text-gray-400">780'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">2</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">3</td>
-                        <td class="py-3 text-center font-black text-gold text-base">5</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">85%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7.5</td>
-                    </tr>
-                
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇹🇳</span>
-                            <div>
-                                <span>معز الحاج علي</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">CM</td>
-                        <td class="py-3 text-center font-bold text-gray-300">11</td>
-                        <td class="py-3 text-center text-gray-400">520'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">1</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">2</td>
-                        <td class="py-3 text-center font-black text-gold text-base">3</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">82%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7.1</td>
-                    </tr>
-                
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>🇫🇷</span>
-                            <div>
-                                <span>فلوريان دانهو</span>
-                                <span class="text-[10px] text-gray-400 block">بديل</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">ST</td>
-                        <td class="py-3 text-center font-bold text-gray-300">13</td>
-                        <td class="py-3 text-center text-gray-400">670'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">5</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">1</td>
-                        <td class="py-3 text-center font-black text-gold text-base">6</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">76%</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">7.6</td>
-                    </tr>
-                </tbody>
+                    <tbody id="playerStatsTableBody" class="divide-y divide-panelBorder/50"></tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ================= TAB 3: EST HISTORY & INFO ================= -->
+        <!-- ================= TAB 3: EST HISTORY ================= -->
         <section id="sec-history" class="space-y-6 hidden">
-            
-            <!-- Hero Banner -->
             <div class="glass-panel rounded-3xl p-6 sm:p-8 relative overflow-hidden bg-gradient-to-r from-redDark via-[#0E0E10] to-black border border-gold/40">
                 <div class="relative z-10 space-y-3 max-w-3xl">
                     <div class="flex items-center gap-2">
@@ -1444,112 +239,37 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 </div>
             </div>
 
-            <!-- Trophies Counter Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="glass-panel rounded-2xl p-4 text-center space-y-2 border border-gold/30 hover:border-gold transition">
-                    <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 text-gold flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 text-gold flex items-center justify-center text-xl"><i class="fa-solid fa-trophy"></i></div>
                     <h3 class="text-3xl font-black text-white">33</h3>
                     <p class="text-xs font-bold text-gray-300">الرابطة المحترفة الأولى</p>
-                    <span class="text-[10px] text-gold block">البطولة الوطنية</span>
                 </div>
-
                 <div class="glass-panel rounded-2xl p-4 text-center space-y-2 border border-gold/30 hover:border-gold transition">
-                    <div class="w-12 h-12 mx-auto rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl"><i class="fa-solid fa-award"></i></div>
                     <h3 class="text-3xl font-black text-white">15</h3>
                     <p class="text-xs font-bold text-gray-300">كأس تونس</p>
-                    <span class="text-[10px] text-rose-400 block">السجل الرقمي القياسي</span>
                 </div>
-
                 <div class="glass-panel rounded-2xl p-4 text-center space-y-2 border border-gold/30 hover:border-gold transition">
-                    <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 text-amber-300 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-earth-africa"></i>
-                    </div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 text-amber-300 flex items-center justify-center text-xl"><i class="fa-solid fa-earth-africa"></i></div>
                     <h3 class="text-3xl font-black text-white">4</h3>
                     <p class="text-xs font-bold text-gray-300">دوري أبطال إفريقيا</p>
-                    <span class="text-[10px] text-amber-300 block">CAF Champions League</span>
                 </div>
-
                 <div class="glass-panel rounded-2xl p-4 text-center space-y-2 border border-gold/30 hover:border-gold transition">
-                    <div class="w-12 h-12 mx-auto rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-crown"></i>
-                    </div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl"><i class="fa-solid fa-crown"></i></div>
                     <h3 class="text-3xl font-black text-white">6</h3>
-                    <p class="text-xs font-bold text-gray-300">الكأس الممتازة (السوبر)</p>
-                    <span class="text-[10px] text-purple-400 block">السوبر التونسي</span>
+                    <p class="text-xs font-bold text-gray-300">السوبر التونسي</p>
                 </div>
-
                 <div class="glass-panel rounded-2xl p-4 text-center space-y-2 border border-gold/30 hover:border-gold transition">
-                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-shield"></i>
-                    </div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl"><i class="fa-solid fa-shield"></i></div>
                     <h3 class="text-3xl font-black text-white">3</h3>
                     <p class="text-xs font-bold text-gray-300">كأس العرب للأندية</p>
-                    <span class="text-[10px] text-emerald-400 block">الريادة العربية</span>
                 </div>
             </div>
-
-            <!-- Venue & Philosophy Info -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-panel rounded-2xl p-6 space-y-4">
-                    <h2 class="font-black text-sm text-white flex items-center gap-2 border-b border-panelBorder pb-3">
-                        <i class="fa-solid fa-building-stadium text-gold"></i> المعقل الأولمبي برادس
-                    </h2>
-
-                    <div class="space-y-3 text-xs leading-relaxed text-gray-300">
-                        <div class="bg-black/60 p-3.5 rounded-xl border border-panelBorder space-y-1">
-                            <span class="text-gold font-extrabold block">اسم الملعب:</span>
-                            <p class="font-bold text-white">الملعب الأولمبي بقرطاج برادس (حمادي العقربي)</p>
-                            <p class="text-[11px] text-gray-400">طاقة الاستيعاب: 60,000 متفرج</p>
-                        </div>
-
-                        <div class="bg-black/60 p-3.5 rounded-xl border border-panelBorder space-y-1">
-                            <span class="text-gold font-extrabold block">الفلسفة الكروية:</span>
-                            <p>الضغط العالي الشامل، بناء الهجمة من الخلف، الاستحواذ الإيجابي في وسط الميدان، والسرعة الفائقة في التحولات الهجومية على الأطراف عبر البلايلي وريبيرو.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-panel rounded-2xl p-6 space-y-4">
-                    <h2 class="font-black text-sm text-white flex items-center gap-2 border-b border-panelBorder pb-3">
-                        <i class="fa-solid fa-bullseye text-gold"></i> طموحات وأهداف مشروع 2026/2027
-                    </h2>
-
-                    <ul class="space-y-3 text-xs text-gray-300">
-                        <li class="flex items-start gap-2.5 bg-black/60 p-3 rounded-xl border border-panelBorder">
-                            <i class="fa-solid fa-check-circle text-emerald-400 text-sm mt-0.5"></i>
-                            <div>
-                                <strong class="text-white block">التتويج بالنجمة القارية الخامسة:</strong>
-                                <span class="text-[11px] text-gray-400">إعادة لقب دوري أبطال إفريقيا إلى خزانة نادي باب سويقة.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2.5 bg-black/60 p-3 rounded-xl border border-panelBorder">
-                            <i class="fa-solid fa-check-circle text-emerald-400 text-sm mt-0.5"></i>
-                            <div>
-                                <strong class="text-white block">حصد البطولة المحلية رقم 34:</strong>
-                                <span class="text-[11px] text-gray-400">السيطرة المطلقة والتتويج بلقب الرابطة المحترفة الأولى.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2.5 bg-black/60 p-3 rounded-xl border border-panelBorder">
-                            <i class="fa-solid fa-check-circle text-emerald-400 text-sm mt-0.5"></i>
-                            <div>
-                                <strong class="text-white block">تجهيز دكة بدلاء عالية الجودة:</strong>
-                                <span class="text-[11px] text-gray-400">رفع المستوى الفني للبدلاء مثل الشيخاوي، دانهو، وعرعار.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
         </section>
 
-        <!-- ================= TAB 4: LEAGUE SIMULATOR ================= -->
+        <!-- ================= TAB 4: LOCAL LEAGUE SIMULATOR ================= -->
         <section id="sec-league" class="space-y-6 hidden">
-            
-            <!-- Simulator Controls Header -->
             <div class="glass-panel rounded-2xl p-5 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center text-xl border border-gold/30">
@@ -1562,7 +282,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 </div>
 
                 <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
-                    <button onclick="simulateNextRound()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-redEst to-rose-600 text-white shadow hover:brightness-110 transition flex items-center gap-2">
+                    <button onclick="simulateNextRound()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-redEst to-rose-600 text-white shadow transition flex items-center gap-2">
                         <i class="fa-solid fa-play"></i> محاكاة الجولة التالية
                     </button>
                     <button onclick="simulateAllRounds()" class="px-4 py-2.5 rounded-xl bg-gold text-black font-extrabold hover:bg-goldBright transition flex items-center gap-2 shadow">
@@ -1574,16 +294,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 </div>
             </div>
 
-            <!-- League Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                
-                <!-- Table (7 Cols) -->
                 <div class="lg:col-span-7 glass-panel rounded-2xl p-5 space-y-3">
                     <div class="flex items-center justify-between border-b border-panelBorder pb-3">
                         <h3 class="font-black text-white text-xs flex items-center gap-2">
                             <i class="fa-solid fa-list-ol text-gold"></i> جدول ترتيب الدوري المباشر
                         </h3>
-                        <span id="currentRoundDisplay" class="text-[11px] bg-black/60 text-gold font-extrabold px-3 py-1 rounded-lg border border-gold/30">انتهت البطولة!</span>
+                        <span id="currentRoundDisplay" class="text-[11px] bg-black/60 text-gold font-extrabold px-3 py-1 rounded-lg border border-gold/30">الجولة 1 من 30</span>
                     </div>
 
                     <div class="overflow-x-auto">
@@ -1600,519 +317,65 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                                     <th class="pb-2 text-center font-black text-gold">النقاط</th>
                                 </tr>
                             </thead>
-                            <tbody id="leagueTableBody" class="divide-y divide-panelBorder/40">
-                <tr class="hover:bg-black/50 transition bg-redEst/15 font-black border-r-2 border-gold">
-                    <td class="py-2 font-bold text-gold">1</td>
-                    <td class="py-2 font-black text-white">الترجي الرياضي التونسي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">18</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">2</td>
-                    <td class="py-2 text-center text-gray-400">113:87</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">64</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gold">2</td>
-                    <td class="py-2 font-black text-white">النجم الرياضي بمتلوي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">13</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">7</td>
-                    <td class="py-2 text-center text-gray-400">51:39</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">49</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gold">3</td>
-                    <td class="py-2 font-black text-white">الاتحاد الرياضي ببن قردان</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">13</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">7</td>
-                    <td class="py-2 text-center text-gray-400">57:48</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">49</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">4</td>
-                    <td class="py-2 font-black text-white">النادي الإفريقي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">13</td>
-                    <td class="py-2 text-center text-amber-400">8</td>
-                    <td class="py-2 text-center text-rose-400">9</td>
-                    <td class="py-2 text-center text-gray-400">89:84</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">47</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">5</td>
-                    <td class="py-2 font-black text-white">النادي الرياضي البنزرتي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">10</td>
-                    <td class="py-2 text-center text-amber-400">14</td>
-                    <td class="py-2 text-center text-rose-400">6</td>
-                    <td class="py-2 text-center text-gray-400">62:56</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">44</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">6</td>
-                    <td class="py-2 font-black text-white">الاتحاد الرياضي المنستيري</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">11</td>
-                    <td class="py-2 text-center text-amber-400">9</td>
-                    <td class="py-2 text-center text-rose-400">10</td>
-                    <td class="py-2 text-center text-gray-400">80:78</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">42</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">7</td>
-                    <td class="py-2 font-black text-white">الشبيبة الرياضية القيروانية</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">8</td>
-                    <td class="py-2 text-center text-amber-400">17</td>
-                    <td class="py-2 text-center text-rose-400">5</td>
-                    <td class="py-2 text-center text-gray-400">40:35</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">41</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">8</td>
-                    <td class="py-2 font-black text-white">الملعب التونسي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">10</td>
-                    <td class="py-2 text-center text-amber-400">9</td>
-                    <td class="py-2 text-center text-rose-400">11</td>
-                    <td class="py-2 text-center text-gray-400">78:80</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">39</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">9</td>
-                    <td class="py-2 font-black text-white">النادي الرياضي الصفاقسي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">9</td>
-                    <td class="py-2 text-center text-amber-400">8</td>
-                    <td class="py-2 text-center text-rose-400">13</td>
-                    <td class="py-2 text-center text-gray-400">84:89</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">35</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">10</td>
-                    <td class="py-2 font-black text-white">المستقبل الرياضي بالقصرين</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">5</td>
-                    <td class="py-2 text-center text-amber-400">17</td>
-                    <td class="py-2 text-center text-rose-400">8</td>
-                    <td class="py-2 text-center text-gray-400">35:40</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">32</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">11</td>
-                    <td class="py-2 font-black text-white">الأولمبي الباجي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">6</td>
-                    <td class="py-2 text-center text-amber-400">14</td>
-                    <td class="py-2 text-center text-rose-400">10</td>
-                    <td class="py-2 text-center text-gray-400">56:62</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">32</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">12</td>
-                    <td class="py-2 font-black text-white">المستقبل الرياضي بسليمان</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">7</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">13</td>
-                    <td class="py-2 text-center text-gray-400">48:57</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">31</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">13</td>
-                    <td class="py-2 font-black text-white">القوافل الرياضية بڤفصة</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">7</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">13</td>
-                    <td class="py-2 text-center text-gray-400">39:51</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">31</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition ">
-                    <td class="py-2 font-bold text-gray-400">14</td>
-                    <td class="py-2 font-black text-white">النجم الرياضي الساحلي</td>
-                    <td class="py-2 text-center text-gray-300">30</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">2</td>
-                    <td class="py-2 text-center text-amber-400">10</td>
-                    <td class="py-2 text-center text-rose-400">18</td>
-                    <td class="py-2 text-center text-gray-400">87:113</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">16</td>
-                </tr>
-            
-                <tr class="hover:bg-black/50 transition bg-redEst/15 font-black border-r-2 border-gold">
-                    <td class="py-2 font-bold text-gray-400">15</td>
-                    <td class="py-2 font-black text-white">الترجي الرياضي الجرجيسي</td>
-                    <td class="py-2 text-center text-gray-300">0</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">0</td>
-                    <td class="py-2 text-center text-amber-400">0</td>
-                    <td class="py-2 text-center text-rose-400">0</td>
-                    <td class="py-2 text-center text-gray-400">0:0</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">0</td>
-                </tr>
-            </tbody>
+                            <tbody id="leagueTableBody" class="divide-y divide-panelBorder/40"></tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Matches Viewer (5 Cols) -->
                 <div class="lg:col-span-5 glass-panel rounded-2xl p-5 space-y-4">
                     <div class="flex items-center justify-between border-b border-panelBorder pb-3">
                         <h3 class="font-black text-white text-xs flex items-center gap-2">
                             <i class="fa-solid fa-calendar-days text-gold"></i> نتائج ومواعيد الجولة
                         </h3>
-                        <select id="roundSelector" onchange="displayRoundMatches(parseInt(this.value))" class="bg-black/80 border border-panelBorder text-white text-xs font-bold rounded-lg p-1.5 focus:outline-none focus:border-gold">
-                <option value="0">الجولة 1</option>
-            
-                <option value="1">الجولة 2</option>
-            
-                <option value="2">الجولة 3</option>
-            
-                <option value="3">الجولة 4</option>
-            
-                <option value="4">الجولة 5</option>
-            
-                <option value="5">الجولة 6</option>
-            
-                <option value="6">الجولة 7</option>
-            
-                <option value="7">الجولة 8</option>
-            
-                <option value="8">الجولة 9</option>
-            
-                <option value="9">الجولة 10</option>
-            
-                <option value="10">الجولة 11</option>
-            
-                <option value="11">الجولة 12</option>
-            
-                <option value="12">الجولة 13</option>
-            
-                <option value="13">الجولة 14</option>
-            
-                <option value="14">الجولة 15</option>
-            
-                <option value="15">الجولة 16</option>
-            
-                <option value="16">الجولة 17</option>
-            
-                <option value="17">الجولة 18</option>
-            
-                <option value="18">الجولة 19</option>
-            
-                <option value="19">الجولة 20</option>
-            
-                <option value="20">الجولة 21</option>
-            
-                <option value="21">الجولة 22</option>
-            
-                <option value="22">الجولة 23</option>
-            
-                <option value="23">الجولة 24</option>
-            
-                <option value="24">الجولة 25</option>
-            
-                <option value="25">الجولة 26</option>
-            
-                <option value="26">الجولة 27</option>
-            
-                <option value="27">الجولة 28</option>
-            
-                <option value="28">الجولة 29</option>
-            
-                <option value="29">الجولة 30</option>
-            </select>
+                        <select id="roundSelector" onchange="displayRoundMatches(parseInt(this.value))" class="bg-black/80 border border-panelBorder text-white text-xs font-bold rounded-lg p-1.5 focus:outline-none focus:border-gold"></select>
                     </div>
-
-                    <div id="roundMatchesList" class="space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">النجم الرياضي الساحلي</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        2 - 3
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">الترجي الرياضي التونسي</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">النادي الرياضي الصفاقسي</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        3 - 3
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">النادي الإفريقي</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">الملعب التونسي</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        3 - 4
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">الاتحاد الرياضي المنستيري</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">الأولمبي الباجي</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        2 - 1
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">النادي الرياضي البنزرتي</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">المستقبل الرياضي بسليمان</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        2 - 3
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">الاتحاد الرياضي ببن قردان</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">القوافل الرياضية بڤفصة</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        2 - 3
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">النجم الرياضي بمتلوي</span>
-                </div>
-            
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">الشبيبة الرياضية القيروانية</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        1 - 1
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">المستقبل الرياضي بالقصرين</span>
+                    <div id="roundMatchesList" class="space-y-2.5 max-h-[460px] overflow-y-auto pr-1"></div>
                 </div>
             </div>
-                </div>
-
-            </div>
-
         </section>
 
-        <!-- ================= TAB 5: SCOUT RADAR ================= -->
+        <!-- ================= NEW TAB 5: CAF CHAMPIONS LEAGUE 2026/2027 ================= -->
+        <section id="sec-caf" class="space-y-6 hidden">
+            <div class="glass-panel rounded-2xl p-5 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center text-xl border border-gold/30">
+                        <i class="fa-solid fa-earth-africa"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-black text-white text-base">دوري أبطال إفريقيا (CAF Champions League 2026/2027)</h2>
+                        <p class="text-xs text-gray-400">قرعة ومحاكاة دور المجموعات للـ 16 فريق المتأهل للموسم الحالي</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 text-xs font-bold">
+                    <button onclick="drawCafGroups()" class="bg-gradient-to-r from-gold to-amber-500 text-black font-extrabold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 hover:bg-goldBright transition">
+                        <i class="fa-solid fa-shuffle"></i> إجراء القرعة العشوائية
+                    </button>
+                    <button onclick="simulateCafGroups()" class="bg-gradient-to-r from-redEst to-rose-600 text-white font-bold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 hover:brightness-110 transition">
+                        <i class="fa-solid fa-play"></i> محاكاة دور المجموعات
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 Groups Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="cafGroupsContainer"></div>
+        </section>
+
+        <!-- ================= TAB 6: SCOUT RADAR ================= -->
         <section id="sec-scout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 hidden">
-            
-            <!-- Left List (4 Cols) -->
             <div class="lg:col-span-4 glass-panel rounded-2xl p-5 space-y-4">
                 <div class="border-b border-panelBorder pb-3">
                     <h3 class="font-black text-white text-xs flex items-center gap-2">
                         <i class="fa-solid fa-search text-gold"></i> اختيار اللاعب للتحليل والرادار
                     </h3>
                 </div>
-
                 <input type="text" id="scoutSearch" onkeyup="filterScoutList()" placeholder="ابحث باسم اللاعب..." class="w-full bg-black/70 border border-panelBorder rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-gold">
-
-                <div id="scoutRosterList" class="space-y-2 max-h-[480px] overflow-y-auto pr-1">
-                <div onclick="selectScoutPlayer(1)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">بشير بن سعيد</h4>
-                            <span class="text-[10px] text-gold">GK</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">83</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(2)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">محمد دراغر</h4>
-                            <span class="text-[10px] text-gold">RB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">81</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(3)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">نضال العيفي</h4>
-                            <span class="text-[10px] text-gold">LB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">76</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(4)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">حمزة الجلاصي</h4>
-                            <span class="text-[10px] text-gold">CB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">80</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(5)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇩🇿</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">عليلات</h4>
-                            <span class="text-[10px] text-gold">CB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(6)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇵🇪</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">خيسوس كاستيلو</h4>
-                            <span class="text-[10px] text-gold">CDM</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(7)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">حمزة رفيعة</h4>
-                            <span class="text-[10px] text-gold">CAM</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">84</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(8)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">محمد الحاج محمود</h4>
-                            <span class="text-[10px] text-gold">CM</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">81</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(9)" class="p-2.5 rounded-xl border bg-redEst/20 border-gold hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇩🇿</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">يوسف البلايلي</h4>
-                            <span class="text-[10px] text-gold">LW</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">88</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(10)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇧🇷</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">لوكاس ريبيرو</h4>
-                            <span class="text-[10px] text-gold">RW</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">85</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(11)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">حازم المستوري</h4>
-                            <span class="text-[10px] text-gold">ST</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">79</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(12)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇫🇷</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">عماد فرج</h4>
-                            <span class="text-[10px] text-rose-400">RW/ST</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">80</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(13)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">رائد الشيخاوي</h4>
-                            <span class="text-[10px] text-rose-400">CB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">77</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(14)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">إلياس عرعار</h4>
-                            <span class="text-[10px] text-rose-400">LB</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">74</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(15)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇨🇮</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">عبد الرحمن كوناتي</h4>
-                            <span class="text-[10px] text-rose-400">CM</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">78</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(16)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇹🇳</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">معز الحاج علي</h4>
-                            <span class="text-[10px] text-rose-400">CM</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">74</span>
-                </div>
-            
-                <div onclick="selectScoutPlayer(17)" class="p-2.5 rounded-xl border bg-black/60 border-panelBorder hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
-                    <div class="flex items-center gap-2.5">
-                        <span class="text-base">🇫🇷</span>
-                        <div>
-                            <h4 class="font-bold text-xs text-white">فلوريان دانهو</h4>
-                            <span class="text-[10px] text-rose-400">ST</span>
-                        </div>
-                    </div>
-                    <span class="text-xs font-black px-2 py-0.5 rounded bg-black/80 text-gold border border-gold/30">78</span>
-                </div>
-            </div>
+                <div id="scoutRosterList" class="space-y-2 max-h-[480px] overflow-y-auto pr-1"></div>
             </div>
 
-            <!-- Radar Visualizer & Fut Card (8 Cols) -->
             <div class="lg:col-span-8 glass-panel rounded-2xl p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                
-                <!-- Player FUT Card (5 Cols) -->
                 <div class="md:col-span-5 flex justify-center">
                     <div id="futCard" class="w-64 h-[380px] rounded-3xl p-5 flex flex-col justify-between relative shadow-2xl transition transform hover:scale-105" style="background: linear-gradient(135deg, #180509 0%, #3a0d18 50%, #110306 100%); border: 2px solid #D4AF37;">
-                        
-                        <!-- Top Info -->
                         <div class="flex items-start justify-between">
                             <div class="text-center space-y-0.5">
                                 <span id="cardRating" class="text-3xl font-black text-gold block">88</span>
@@ -2123,13 +386,9 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                         </div>
-
-                        <!-- Player Name -->
                         <div class="text-center my-auto py-4">
                             <h3 id="cardName" class="font-black text-xl text-white tracking-wider border-b border-gold/30 pb-2">يوسف البلايلي</h3>
                         </div>
-
-                        <!-- Stats Grid -->
                         <div class="grid grid-cols-2 gap-2 text-[11px] font-extrabold text-gray-200 border-t border-gold/20 pt-3">
                             <div class="flex justify-between"><span>PACالسرعة:</span><span id="c_pac" class="text-gold">85</span></div>
                             <div class="flex justify-between"><span>DRIالمراوغة:</span><span id="c_dri" class="text-gold">90</span></div>
@@ -2141,18 +400,15 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                     </div>
                 </div>
 
-                <!-- Radar Chart (7 Cols) -->
                 <div class="md:col-span-7 space-y-4">
                     <h3 class="font-black text-white text-xs border-b border-panelBorder pb-2 text-center md:text-right">
                         رادار الطاقات الإجمالية (Scout Radar)
                     </h3>
                     <div class="h-64 relative">
-                        <canvas id="scoutRadarChart" height="320" style="display: block; box-sizing: border-box; height: 256px; width: 519.7px;" width="649"></canvas>
+                        <canvas id="scoutRadarChart"></canvas>
                     </div>
                 </div>
-
             </div>
-
         </section>
 
     </main>
@@ -2160,12 +416,10 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
     <!-- Notification Toast -->
     <div id="toast" class="fixed bottom-5 left-5 bg-gradient-to-r from-gold to-amber-400 text-black font-extrabold px-4 py-2.5 rounded-xl shadow-2xl transition-all duration-300 text-xs flex items-center gap-2 z-50 opacity-0 pointer-events-none">
         <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMsg">تمت محاكاة كل جولات الموسم بنجاح!</span>
+        <span id="toastMsg">تم التحديث بنجاح!</span>
     </div>
 
-    <!-- Application JavaScript Code -->
     <script>
-        // 1. STARTERS ROSTER (11 Players Exactly as specified)
         const estStarters = [
             { id: 1, name: 'بشير بن سعيد', pos: 'GK', rating: 83, flag: '🇹🇳', pac: 52, sho: 20, pas: 66, dri: 50, def: 84, phy: 82, isStarter: true, matches: 22, mins: 1980, goals: 0, assists: 0, passAcc: '82%', ratingStat: 8.1 },
             { id: 2, name: 'محمد دراغر', pos: 'RB', rating: 81, flag: '🇹🇳', pac: 84, sho: 65, pas: 75, dri: 76, def: 77, phy: 78, isStarter: true, matches: 20, mins: 1720, goals: 2, assists: 5, passAcc: '85%', ratingStat: 7.8 },
@@ -2180,7 +434,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             { id: 11, name: 'حازم المستوري', pos: 'ST', rating: 79, flag: '🇹🇳', pac: 80, sho: 81, pas: 68, dri: 74, def: 35, phy: 82, isStarter: true, matches: 20, mins: 1620, goals: 11, assists: 3, passAcc: '78%', ratingStat: 8.1 }
         ];
 
-        // 2. RESERVES ROSTER (6 Players Exactly as specified)
         const estSubs = [
             { id: 12, name: 'عماد فرج', pos: 'RW/ST', rating: 80, flag: '🇫🇷', pac: 84, sho: 76, pas: 78, dri: 82, def: 40, phy: 68, isStarter: false, matches: 15, mins: 890, goals: 4, assists: 4, passAcc: '81%', ratingStat: 7.7 },
             { id: 13, name: 'رائد الشيخاوي', pos: 'CB', rating: 77, flag: '🇹🇳', pac: 68, sho: 40, pas: 62, dri: 60, def: 78, phy: 80, isStarter: false, matches: 10, mins: 540, goals: 0, assists: 1, passAcc: '84%', ratingStat: 7.2 },
@@ -2192,7 +445,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
         const allPlayers = [...estStarters, ...estSubs];
 
-        // Tactical Pitch Formations
         const formationPitchPresets = {
             '433': [
                 { pos: 'GK', name: 'بن سعيد', x: 50, y: 88 },
@@ -2237,7 +489,28 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
         let currentPitchSquad = JSON.parse(JSON.stringify(formationPitchPresets['433']));
 
-        // 15 Tunisian Teams Engine
+        // CAF Champions League 2026/2027 Qualified Teams
+        const cafTeamsData = [
+            { name: "الترجي الرياضي التونسي", flag: "🇹🇳", pot: 1, pts: 0, gf: 0, ga: 0 },
+            { name: "نادي الزمالك", flag: "🇪🇬", pot: 1, pts: 0, gf: 0, ga: 0 },
+            { name: "نادي بيراميدز", flag: "🇪🇬", pot: 1, pts: 0, gf: 0, ga: 0 },
+            { name: "مولودية الجزائر", flag: "🇩🇿", pot: 1, pts: 0, gf: 0, ga: 0 },
+            { name: "النادي الإفريقي", flag: "🇹🇳", pot: 2, pts: 0, gf: 0, ga: 0 },
+            { name: "المغرب الفاسي", flag: "🇲🇦", pot: 2, pts: 0, gf: 0, ga: 0 },
+            { name: "النهضة البركانية", flag: "🇲🇦", pot: 2, pts: 0, gf: 0, ga: 0 },
+            { name: "يانغ أفريكانز", flag: "🇹🇿", pot: 2, pts: 0, gf: 0, ga: 0 },
+            { name: "نادي سيمبا", flag: "🇹🇿", pot: 3, pts: 0, gf: 0, ga: 0 },
+            { name: "بترو أتليتيكو", flag: "🇦🇴", pot: 3, pts: 0, gf: 0, ga: 0 },
+            { name: "الهلال السوداني", flag: "🇸🇩", pot: 3, pts: 0, gf: 0, ga: 0 },
+            { name: "أورلاندو بايرتس", flag: "🇿🇦", pot: 3, pts: 0, gf: 0, ga: 0 },
+            { name: "نادي هورويا", flag: "🇬🇳", pot: 4, pts: 0, gf: 0, ga: 0 },
+            { name: "نادي نواذيبو", flag: "🇲🇷", pot: 4, pts: 0, gf: 0, ga: 0 },
+            { name: "كولومب سبورتيف", flag: "🇨🇲", pot: 4, pts: 0, gf: 0, ga: 0 },
+            { name: "ويليتي سبورت", flag: "🇦🇴", pot: 4, pts: 0, gf: 0, ga: 0 }
+        ];
+
+        let cafGroups = { A: [], B: [], C: [], D: [] };
+
         const initialTeams = [
             { id: 1, name: 'الترجي الرياضي التونسي', power: 92, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 },
             { id: 2, name: 'النجم الرياضي الساحلي', power: 85, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 },
@@ -2259,15 +532,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         let teams = JSON.parse(JSON.stringify(initialTeams));
         let leagueRounds = [];
         let currentRoundIndex = 0;
-        let activeScoutPlayer = estStarters[8]; // Default Belaili
+        let activeScoutPlayer = estStarters[8];
         let scoutRadarChartInstance = null;
 
-        // Initialization
         window.onload = function() {
             renderRosters();
             renderPitchNodes();
             renderPlayerStatsTable('ALL');
-            
             initScoutRadarChart();
             renderScoutRoster();
             selectScoutPlayer(9);
@@ -2276,16 +547,17 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             renderLeagueTable();
             populateRoundSelector();
             displayRoundMatches(0);
+
+            drawCafGroups();
         };
 
-        // Navigation Tabs Engine
         function switchTab(tabId) {
-            ['tactics', 'stats', 'history', 'league', 'scout'].forEach(t => {
+            ['tactics', 'stats', 'history', 'league', 'caf', 'scout'].forEach(t => {
                 const sec = document.getElementById(`sec-${t}`);
                 if (sec) sec.classList.add('hidden');
                 
                 const btn = document.getElementById(`tab-${t}`);
-                if (btn) btn.className = "px-4 py-2 rounded-xl text-gray-400 hover:text-white transition";
+                if (btn) btn.className = "px-3 py-2 rounded-xl text-gray-400 hover:text-white transition";
 
                 const mbtn = document.getElementById(`mob-tab-${t}`);
                 if (mbtn) mbtn.className = "px-3 py-2 rounded-lg bg-black/40 text-gray-400 whitespace-nowrap";
@@ -2295,7 +567,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             if (activeSec) activeSec.classList.remove('hidden');
 
             const activeBtn = document.getElementById(`tab-${tabId}`);
-            if (activeBtn) activeBtn.className = "px-4 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg transition font-bold";
+            if (activeBtn) activeBtn.className = "px-3 py-2 rounded-xl bg-gradient-to-r from-redEst to-rose-700 text-white shadow-lg transition font-bold";
 
             const activeMBtn = document.getElementById(`mob-tab-${tabId}`);
             if (activeMBtn) activeMBtn.className = "px-3 py-2 rounded-lg bg-redEst text-white whitespace-nowrap font-bold";
@@ -2305,10 +577,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             }
         }
 
-        // Render Starter & Reserve Roster List
         function renderRosters() {
-            const startersContainer = document.getElementById('startersRosterList');
-            startersContainer.innerHTML = estStarters.map(p => `
+            document.getElementById('startersRosterList').innerHTML = estStarters.map(p => `
                 <div onclick="selectScoutPlayer(${p.id}); switchTab('scout');" class="p-2.5 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs hover:border-gold/50 cursor-pointer transition">
                     <div class="flex items-center gap-2">
                         <span class="text-sm">${p.flag}</span>
@@ -2321,8 +591,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 </div>
             `).join('');
 
-            const subsContainer = document.getElementById('subsRosterList');
-            subsContainer.innerHTML = estSubs.map(p => `
+            document.getElementById('subsRosterList').innerHTML = estSubs.map(p => `
                 <div onclick="selectScoutPlayer(${p.id}); switchTab('scout');" class="p-2.5 rounded-xl bg-black/40 border border-panelBorder flex items-center justify-between text-xs hover:border-rose-400/50 cursor-pointer transition">
                     <div class="flex items-center gap-2">
                         <span class="text-sm">${p.flag}</span>
@@ -2336,10 +605,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             `).join('');
         }
 
-        // Tactical Pitch Nodes Rendering
         function renderPitchNodes() {
-            const container = document.getElementById('pitchNodes');
-            container.innerHTML = currentPitchSquad.map((p, idx) => `
+            document.getElementById('pitchNodes').innerHTML = currentPitchSquad.map((p, idx) => `
                 <div id="pnode-${idx}" onmousedown="startDragPitchNode(event, ${idx})" ontouchstart="startDragPitchNodeTouch(event, ${idx})" class="player-pin flex flex-col items-center" style="top: ${p.y}%; left: ${p.x}%;">
                     <div class="w-10 h-10 rounded-full border-2 border-gold shadow-2xl flex items-center justify-center font-black text-xs text-white bg-gradient-to-tr from-redEst via-redDark to-amber-500">
                         ${p.pos}
@@ -2363,14 +630,11 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             applyFormation(document.getElementById('formationSelect').value);
         }
 
-        // Interactive Player Pin Dragging (Mouse & Touch)
         let isDragNode = false;
         let activeDragIdx = null;
 
         function startDragPitchNode(e, idx) {
-            e.stopPropagation();
-            isDragNode = true;
-            activeDragIdx = idx;
+            e.stopPropagation(); isDragNode = true; activeDragIdx = idx;
             document.addEventListener('mousemove', onDragPitchNode);
             document.addEventListener('mouseup', stopDragPitchNode);
         }
@@ -2380,22 +644,19 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             const pitch = document.getElementById('pitchContainer').getBoundingClientRect();
             let x = ((e.clientX - pitch.left) / pitch.width) * 100;
             let y = ((e.clientY - pitch.top) / pitch.height) * 100;
-
             currentPitchSquad[activeDragIdx].x = Math.max(5, Math.min(95, x));
             currentPitchSquad[activeDragIdx].y = Math.max(5, Math.min(95, y));
             renderPitchNodes();
         }
 
         function stopDragPitchNode() {
-            isDragNode = false;
-            activeDragIdx = null;
+            isDragNode = false; activeDragIdx = null;
             document.removeEventListener('mousemove', onDragPitchNode);
             document.removeEventListener('mouseup', stopDragPitchNode);
         }
 
         function startDragPitchNodeTouch(e, idx) {
-            isDragNode = true;
-            activeDragIdx = idx;
+            isDragNode = true; activeDragIdx = idx;
             document.addEventListener('touchmove', onDragPitchNodeTouch);
             document.addEventListener('touchend', stopDragPitchNodeTouch);
         }
@@ -2405,48 +666,41 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             const pitch = document.getElementById('pitchContainer').getBoundingClientRect();
             let x = ((e.touches[0].clientX - pitch.left) / pitch.width) * 100;
             let y = ((e.touches[0].clientY - pitch.top) / pitch.height) * 100;
-
             currentPitchSquad[activeDragIdx].x = Math.max(5, Math.min(95, x));
             currentPitchSquad[activeDragIdx].y = Math.max(5, Math.min(95, y));
             renderPitchNodes();
         }
 
         function stopDragPitchNodeTouch() {
-            isDragNode = false;
-            activeDragIdx = null;
+            isDragNode = false; activeDragIdx = null;
             document.removeEventListener('touchmove', onDragPitchNodeTouch);
             document.removeEventListener('touchend', stopDragPitchNodeTouch);
         }
 
-        // Player Stats Table Filtering
         function renderPlayerStatsTable(roleFilter) {
             let list = allPlayers;
             if (roleFilter === 'STARTER') list = allPlayers.filter(p => p.isStarter);
             if (roleFilter === 'SUB') list = allPlayers.filter(p => !p.isStarter);
 
-            const tbody = document.getElementById('playerStatsTableBody');
-            tbody.innerHTML = list.map(p => {
-                const totalGA = p.goals + p.assists;
-                return `
-                    <tr class="hover:bg-black/50 transition">
-                        <td class="py-3 font-bold text-white flex items-center gap-2">
-                            <span>${p.flag}</span>
-                            <div>
-                                <span>${p.name}</span>
-                                <span class="text-[10px] text-gray-400 block">${p.isStarter ? 'أساسي' : 'بديل'}</span>
-                            </div>
-                        </td>
-                        <td class="py-3 text-center font-bold text-gold">${p.pos}</td>
-                        <td class="py-3 text-center font-bold text-gray-300">${p.matches}</td>
-                        <td class="py-3 text-center text-gray-400">${p.mins}'</td>
-                        <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">${p.goals}</td>
-                        <td class="py-3 text-center font-extrabold text-amber-400 text-sm">${p.assists}</td>
-                        <td class="py-3 text-center font-black text-gold text-base">${totalGA}</td>
-                        <td class="py-3 text-center text-gray-300 font-bold">${p.passAcc}</td>
-                        <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">${p.ratingStat}</td>
-                    </tr>
-                `;
-            }).join('');
+            document.getElementById('playerStatsTableBody').innerHTML = list.map(p => `
+                <tr class="hover:bg-black/50 transition">
+                    <td class="py-3 font-bold text-white flex items-center gap-2">
+                        <span>${p.flag}</span>
+                        <div>
+                            <span>${p.name}</span>
+                            <span class="text-[10px] text-gray-400 block">${p.isStarter ? 'أساسي' : 'بديل'}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 text-center font-bold text-gold">${p.pos}</td>
+                    <td class="py-3 text-center font-bold text-gray-300">${p.matches}</td>
+                    <td class="py-3 text-center text-gray-400">${p.mins}'</td>
+                    <td class="py-3 text-center font-extrabold text-emerald-400 text-sm">${p.goals}</td>
+                    <td class="py-3 text-center font-extrabold text-amber-400 text-sm">${p.assists}</td>
+                    <td class="py-3 text-center font-black text-gold text-base">${p.goals + p.assists}</td>
+                    <td class="py-3 text-center text-gray-300 font-bold">${p.passAcc}</td>
+                    <td class="py-3 text-center font-black text-white bg-redEst/20 px-2 py-1 rounded-lg border border-gold/20">${p.ratingStat}</td>
+                </tr>
+            `).join('');
         }
 
         function filterStats(role) {
@@ -2458,10 +712,191 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             renderPlayerStatsTable(role);
         }
 
-        // Scout Radar Engine
+        // CAF Champions League Draw & Simulator Engine
+        function drawCafGroups() {
+            let pots = {
+                1: cafTeamsData.filter(t => t.pot === 1).sort(() => Math.random() - 0.5),
+                2: cafTeamsData.filter(t => t.pot === 2).sort(() => Math.random() - 0.5),
+                3: cafTeamsData.filter(t => t.pot === 3).sort(() => Math.random() - 0.5),
+                4: cafTeamsData.filter(t => t.pot === 4).sort(() => Math.random() - 0.5)
+            };
+
+            cafGroups = { A: [], B: [], C: [], D: [] };
+            ['A', 'B', 'C', 'D'].forEach((gKey, idx) => {
+                cafGroups[gKey] = [
+                    JSON.parse(JSON.stringify(pots[1][idx])),
+                    JSON.parse(JSON.stringify(pots[2][idx])),
+                    JSON.parse(JSON.stringify(pots[3][idx])),
+                    JSON.parse(JSON.stringify(pots[4][idx]))
+                ];
+            });
+
+            renderCafGroups();
+            showToast("تم سحب قرعة مجموعات دوري أبطال إفريقيا بنجاح!");
+        }
+
+        function renderCafGroups() {
+            document.getElementById('cafGroupsContainer').innerHTML = Object.keys(cafGroups).map(gKey => `
+                <div class="glass-panel p-4 rounded-2xl space-y-3">
+                    <h3 class="font-black text-gold text-sm border-b border-panelBorder pb-2 flex justify-between items-center">
+                        <span>المجموعة ${gKey}</span>
+                        <span class="text-gray-400 text-[11px]">دوري أبطال إفريقيا</span>
+                    </h3>
+                    <table class="w-full text-xs text-right">
+                        <thead>
+                            <tr class="text-gray-400 border-b border-panelBorder">
+                                <th class="pb-2">الفريق</th>
+                                <th class="pb-2 text-center">له:عليه</th>
+                                <th class="pb-2 text-center text-gold">النقاط</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-panelBorder/50">
+                            ${cafGroups[gKey].map((t, idx) => `
+                                <tr class="hover:bg-black/40 transition ${t.name.includes('الترجي') ? 'bg-redEst/20 font-black' : ''}">
+                                    <td class="py-2.5 font-bold flex items-center gap-2">
+                                        <span class="text-sm">${t.flag}</span>
+                                        <span class="${t.name.includes('الترجي') ? 'text-goldBright font-black' : 'text-white'}">${t.name}</span>
+                                    </td>
+                                    <td class="py-2.5 text-center text-gray-400">${t.gf}:${t.ga}</td>
+                                    <td class="py-2.5 text-center font-black text-gold text-sm">${t.pts}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `).join('');
+        }
+
+        function simulateCafGroups() {
+            Object.keys(cafGroups).forEach(gKey => {
+                let teamList = cafGroups[gKey];
+                teamList.forEach(t => { t.pts = 0; t.gf = 0; t.ga = 0; });
+                for (let i = 0; i < teamList.length; i++) {
+                    for (let j = i + 1; j < teamList.length; j++) {
+                        let score1 = Math.floor(Math.random() * 3);
+                        let score2 = Math.floor(Math.random() * 3);
+
+                        if (teamList[i].name.includes('الترجي')) score1 += 1;
+                        if (teamList[j].name.includes('الترجي')) score2 += 1;
+
+                        teamList[i].gf += score1; teamList[i].ga += score2;
+                        teamList[j].gf += score2; teamList[j].ga += score1;
+
+                        if (score1 > score2) teamList[i].pts += 3;
+                        else if (score1 < score2) teamList[j].pts += 3;
+                        else { teamList[i].pts += 1; teamList[j].pts += 1; }
+                    }
+                }
+                teamList.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga));
+            });
+            renderCafGroups();
+            showToast("تمت محاكاة مواجهات دور المجموعات الإفريقي!");
+        }
+
+        function generate30RoundSchedule() {
+            leagueRounds = [];
+            const numTeams = teams.length;
+            for (let r = 1; r <= 30; r++) {
+                let matches = [];
+                let usedTeams = new Set();
+                for (let i = 0; i < numTeams; i++) {
+                    if (usedTeams.has(teams[i].id)) continue;
+                    for (let j = i + 1; j < numTeams; j++) {
+                        if (!usedTeams.has(teams[j].id)) {
+                            const isHome = r % 2 === 1;
+                            matches.push({
+                                home: isHome ? teams[i] : teams[j],
+                                away: isHome ? teams[j] : teams[i],
+                                homeScore: null, awayScore: null, played: false
+                            });
+                            usedTeams.add(teams[i].id); usedTeams.add(teams[j].id);
+                            break;
+                        }
+                    }
+                }
+                leagueRounds.push({ roundNum: r, matches, simulated: false });
+            }
+        }
+
+        function renderLeagueTable() {
+            teams.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga));
+            document.getElementById('leagueTableBody').innerHTML = teams.map((t, idx) => `
+                <tr class="hover:bg-black/50 transition ${t.name.includes('الترجي') ? 'bg-redEst/15 font-black border-r-2 border-gold' : ''}">
+                    <td class="py-2 font-bold ${idx < 3 ? 'text-gold' : 'text-gray-400'}">${idx + 1}</td>
+                    <td class="py-2 font-black text-white">${t.name}</td>
+                    <td class="py-2 text-center text-gray-300">${t.p}</td>
+                    <td class="py-2 text-center text-emerald-400 font-bold">${t.w}</td>
+                    <td class="py-2 text-center text-amber-400">${t.d}</td>
+                    <td class="py-2 text-center text-rose-400">${t.l}</td>
+                    <td class="py-2 text-center text-gray-400">${t.gf}:${t.ga}</td>
+                    <td class="py-2 text-center font-black text-gold text-sm">${t.pts}</td>
+                </tr>
+            `).join('');
+        }
+
+        function populateRoundSelector() {
+            document.getElementById('roundSelector').innerHTML = leagueRounds.map((r, i) => `
+                <option value="${i}">الجولة ${r.roundNum}</option>
+            `).join('');
+        }
+
+        function displayRoundMatches(roundIdx) {
+            const round = leagueRounds[roundIdx];
+            if (!round) return;
+            document.getElementById('roundSelector').value = roundIdx;
+            document.getElementById('roundMatchesList').innerHTML = round.matches.map(m => `
+                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
+                    <span class="font-bold text-white w-2/5 text-right truncate">${m.home.name}</span>
+                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
+                        ${m.played ? `${m.homeScore} - ${m.awayScore}` : 'VS'}
+                    </div>
+                    <span class="font-bold text-white w-2/5 text-left truncate">${m.away.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function simulateNextRound() {
+            if (currentRoundIndex >= leagueRounds.length) {
+                showToast("اكتملت جميع جولات الموسم (30 جولة)!");
+                return;
+            }
+            const round = leagueRounds[currentRoundIndex];
+            round.matches.forEach(m => {
+                if (!m.played) {
+                    const hPower = m.home.power + Math.floor(Math.random() * 15);
+                    const aPower = m.away.power + Math.floor(Math.random() * 12);
+                    m.homeScore = Math.max(0, Math.floor((hPower - 60) / 10));
+                    m.awayScore = Math.max(0, Math.floor((aPower - 62) / 10));
+                    m.played = true;
+                    m.home.p++; m.away.p++;
+                    m.home.gf += m.homeScore; m.home.ga += m.awayScore;
+                    m.away.gf += m.awayScore; m.away.ga += m.homeScore;
+                    if (m.homeScore > m.awayScore) { m.home.w++; m.home.pts += 3; m.away.l++; }
+                    else if (m.homeScore < m.awayScore) { m.away.w++; m.away.pts += 3; m.home.l++; }
+                    else { m.home.d++; m.home.pts += 1; m.away.d++; m.away.pts += 1; }
+                }
+            });
+            renderLeagueTable();
+            displayRoundMatches(currentRoundIndex);
+            currentRoundIndex++;
+            showToast(`تمت محاكاة الجولة ${round.roundNum} بنجاح`);
+        }
+
+        function simulateAllRounds() {
+            while (currentRoundIndex < leagueRounds.length) simulateNextRound();
+        }
+
+        function resetLeague() {
+            teams = JSON.parse(JSON.stringify(initialTeams));
+            currentRoundIndex = 0;
+            generate30RoundSchedule();
+            renderLeagueTable();
+            displayRoundMatches(0);
+            showToast("تم إعادة ضبط الدوري التونسي");
+        }
+
         function renderScoutRoster() {
-            const container = document.getElementById('scoutRosterList');
-            container.innerHTML = allPlayers.map(p => `
+            document.getElementById('scoutRosterList').innerHTML = allPlayers.map(p => `
                 <div onclick="selectScoutPlayer(${p.id})" class="p-2.5 rounded-xl border ${activeScoutPlayer.id === p.id ? 'bg-redEst/20 border-gold' : 'bg-black/60 border-panelBorder'} hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
                     <div class="flex items-center gap-2.5">
                         <span class="text-base">${p.flag}</span>
@@ -2478,8 +913,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         function filterScoutList() {
             const q = document.getElementById('scoutSearch').value.toLowerCase();
             const filtered = allPlayers.filter(p => p.name.toLowerCase().includes(q) || p.pos.toLowerCase().includes(q));
-            const container = document.getElementById('scoutRosterList');
-            container.innerHTML = filtered.map(p => `
+            document.getElementById('scoutRosterList').innerHTML = filtered.map(p => `
                 <div onclick="selectScoutPlayer(${p.id})" class="p-2.5 rounded-xl border ${activeScoutPlayer.id === p.id ? 'bg-redEst/20 border-gold' : 'bg-black/60 border-panelBorder'} hover:border-gold/50 cursor-pointer flex items-center justify-between transition">
                     <div class="flex items-center gap-2.5">
                         <span class="text-base">${p.flag}</span>
@@ -2503,14 +937,12 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             document.getElementById('cardPos').innerText = p.pos;
             document.getElementById('cardRating').innerText = p.rating;
             document.getElementById('cardFlag').innerText = p.flag;
-
             document.getElementById('c_pac').innerText = p.pac;
             document.getElementById('c_sho').innerText = p.sho;
             document.getElementById('c_pas').innerText = p.pas;
             document.getElementById('c_dri').innerText = p.dri;
             document.getElementById('c_def').innerText = p.def;
             document.getElementById('c_phy').innerText = p.phy;
-
             updateScoutRadarChart();
         }
 
@@ -2521,7 +953,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 data: {
                     labels: ['السرعة PAC', 'التسديد SHO', 'التمرير PAS', 'المراوغة DRI', 'الدفاع DEF', 'البدن PHY'],
                     datasets: [{
-                        label: 'الرادار الفني',
                         data: [activeScoutPlayer.pac, activeScoutPlayer.sho, activeScoutPlayer.pas, activeScoutPlayer.dri, activeScoutPlayer.def, activeScoutPlayer.phy],
                         backgroundColor: 'rgba(230, 0, 0, 0.35)',
                         borderColor: '#D4AF37',
@@ -2530,18 +961,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                     }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            min: 20,
-                            max: 100,
-                            angleLines: { color: 'rgba(255,255,255,0.1)' },
-                            grid: { color: 'rgba(255,255,255,0.1)' },
-                            pointLabels: { color: '#D1D5DB', font: { family: 'Cairo', size: 10, weight: 'bold' } },
-                            ticks: { display: false }
-                        }
-                    },
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { r: { min: 20, max: 100, angleLines: { color: 'rgba(255,255,255,0.1)' }, grid: { color: 'rgba(255,255,255,0.1)' }, pointLabels: { color: '#D1D5DB', font: { family: 'Cairo', size: 10, weight: 'bold' } }, ticks: { display: false } } },
                     plugins: { legend: { display: false } }
                 }
             });
@@ -2550,176 +971,28 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         function updateScoutRadarChart() {
             if (!scoutRadarChartInstance) return;
             scoutRadarChartInstance.data.datasets[0].data = [
-                activeScoutPlayer.pac,
-                activeScoutPlayer.sho,
-                activeScoutPlayer.pas,
-                activeScoutPlayer.dri,
-                activeScoutPlayer.def,
-                activeScoutPlayer.phy
+                activeScoutPlayer.pac, activeScoutPlayer.sho, activeScoutPlayer.pas,
+                activeScoutPlayer.dri, activeScoutPlayer.def, activeScoutPlayer.phy
             ];
             scoutRadarChartInstance.update();
         }
 
-        // 30 Round Tunisian League Schedule Generator
-        function generate30RoundSchedule() {
-            leagueRounds = [];
-            const numTeams = teams.length;
-            
-            for (let r = 1; r <= 30; r++) {
-                let matches = [];
-                let usedTeams = new Set();
-
-                for (let i = 0; i < numTeams; i++) {
-                    if (usedTeams.has(teams[i].id)) continue;
-
-                    for (let j = i + 1; j < numTeams; j++) {
-                        if (!usedTeams.has(teams[j].id)) {
-                            const isHome = r % 2 === 1;
-                            matches.push({
-                                home: isHome ? teams[i] : teams[j],
-                                away: isHome ? teams[j] : teams[i],
-                                homeScore: null,
-                                awayScore: null,
-                                played: false
-                            });
-                            usedTeams.add(teams[i].id);
-                            usedTeams.add(teams[j].id);
-                            break;
-                        }
-                    }
-                }
-                leagueRounds.push({ roundNum: r, matches, simulated: false });
-            }
-        }
-
-        function renderLeagueTable() {
-            teams.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
-
-            const tbody = document.getElementById('leagueTableBody');
-            tbody.innerHTML = teams.map((t, idx) => `
-                <tr class="hover:bg-black/50 transition ${t.name.includes('الترجي') ? 'bg-redEst/15 font-black border-r-2 border-gold' : ''}">
-                    <td class="py-2 font-bold ${idx < 3 ? 'text-gold' : 'text-gray-400'}">${idx + 1}</td>
-                    <td class="py-2 font-black text-white">${t.name}</td>
-                    <td class="py-2 text-center text-gray-300">${t.p}</td>
-                    <td class="py-2 text-center text-emerald-400 font-bold">${t.w}</td>
-                    <td class="py-2 text-center text-amber-400">${t.d}</td>
-                    <td class="py-2 text-center text-rose-400">${t.l}</td>
-                    <td class="py-2 text-center text-gray-400">${t.gf}:${t.ga}</td>
-                    <td class="py-2 text-center font-black text-gold text-sm">${t.pts}</td>
-                </tr>
-            `).join('');
-        }
-
-        function populateRoundSelector() {
-            const sel = document.getElementById('roundSelector');
-            sel.innerHTML = leagueRounds.map((r, i) => `
-                <option value="${i}">الجولة ${r.roundNum}</option>
-            `).join('');
-        }
-
-        function displayRoundMatches(roundIdx) {
-            const round = leagueRounds[roundIdx];
-            if (!round) return;
-
-            document.getElementById('roundSelector').value = roundIdx;
-
-            const container = document.getElementById('roundMatchesList');
-            container.innerHTML = round.matches.map(m => `
-                <div class="p-3 rounded-xl bg-black/60 border border-panelBorder flex items-center justify-between text-xs">
-                    <span class="font-bold text-white w-2/5 text-right truncate">${m.home.name}</span>
-                    <div class="px-3 py-1 rounded bg-black font-black border border-gold/30 text-gold">
-                        ${m.played ? `${m.homeScore} - ${m.awayScore}` : 'VS'}
-                    </div>
-                    <span class="font-bold text-white w-2/5 text-left truncate">${m.away.name}</span>
-                </div>
-            `).join('');
-        }
-
-        function simulateNextRound() {
-            if (currentRoundIndex >= leagueRounds.length) {
-                showToast("اكتملت جميع جولات الموسم (30 جولة)!");
-                return;
-            }
-
-            const round = leagueRounds[currentRoundIndex];
-            round.matches.forEach(m => {
-                if (!m.played) {
-                    const hPower = m.home.power + Math.floor(Math.random() * 15);
-                    const aPower = m.away.power + Math.floor(Math.random() * 12);
-
-                    m.homeScore = Math.max(0, Math.floor((hPower - 60) / 10) + (Math.random() > 0.6 ? 1 : 0));
-                    m.awayScore = Math.max(0, Math.floor((aPower - 62) / 10) + (Math.random() > 0.7 ? 1 : 0));
-                    m.played = true;
-
-                    m.home.p++; m.away.p++;
-                    m.home.gf += m.homeScore; m.home.ga += m.awayScore;
-                    m.away.gf += m.awayScore; m.away.ga += m.homeScore;
-
-                    if (m.homeScore > m.awayScore) {
-                        m.home.w++; m.home.pts += 3;
-                        m.away.l++;
-                    } else if (m.homeScore < m.awayScore) {
-                        m.away.w++; m.away.pts += 3;
-                        m.home.l++;
-                    } else {
-                        m.home.d++; m.home.pts += 1;
-                        m.away.d++; m.away.pts += 1;
-                    }
-                }
-            });
-
-            round.simulated = true;
-            renderLeagueTable();
-            displayRoundMatches(currentRoundIndex);
-
-            currentRoundIndex++;
-            if (currentRoundIndex < leagueRounds.length) {
-                document.getElementById('currentRoundDisplay').innerText = `الجولة ${currentRoundIndex + 1} من 30`;
-            } else {
-                document.getElementById('currentRoundDisplay').innerText = `انتهت البطولة!`;
-            }
-
-            showToast(`تمت محاكاة الجولة ${round.roundNum} بنجاح`);
-        }
-
-        function simulateAllRounds() {
-            while (currentRoundIndex < leagueRounds.length) {
-                simulateNextRound();
-            }
-            showToast("تمت محاكاة كل جولات الموسم بنجاح!");
-        }
-
-        function resetLeague() {
-            teams = JSON.parse(JSON.stringify(initialTeams));
-            currentRoundIndex = 0;
-            generate30RoundSchedule();
-            renderLeagueTable();
-            displayRoundMatches(0);
-            document.getElementById('currentRoundDisplay').innerText = `الجولة 1 من 30`;
-            showToast("تم إعادة ضبط جدول الرابطة الأولى");
-        }
-
-        // Export Full Code
         function exportHTML() {
             const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'Taraji_Analytics_Studio_2026_2027.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            showToast("تم تصدير وتحميل الكود HTML بنجاح!");
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            showToast("تم تصدير وتحميل الكود بنجاح!");
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMsg').innerText = msg;
             toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 3000);
+            setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 3000);
         }
     </script>
-
-</body></html>
+</body>
+</html>
