@@ -95,7 +95,7 @@
 
     <main class="max-w-7xl mx-auto px-3 sm:px-4 py-6 flex-1 w-full space-y-6">
 
-        <!-- ================= TAB 1: TACTICS & PITCH ================= -->
+        <!-- TAB 1: TACTICS & PITCH -->
         <section id="sec-tactics" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div class="lg:col-span-4 space-y-4">
                 <div class="glass-panel rounded-2xl p-4 space-y-3">
@@ -150,7 +150,7 @@
             </div>
         </section>
 
-        <!-- ================= TAB 2: UPCOMING MATCHES & FAN RATINGS ================= -->
+        <!-- TAB 2: UPCOMING MATCHES & FAN RATINGS -->
         <section id="sec-matches" class="space-y-6 hidden">
             <div class="glass-panel rounded-2xl p-5 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
@@ -185,7 +185,7 @@
             </div>
         </section>
 
-        <!-- ================= TAB 3: TUNISIAN LEAGUE (15 TEAMS) ================= -->
+        <!-- TAB 3: TUNISIAN LEAGUE (15 TEAMS) -->
         <section id="sec-league" class="space-y-4 hidden">
             <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex flex-col md:flex-row items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
@@ -222,7 +222,7 @@
             </div>
         </section>
 
-        <!-- ================= TAB 4: CAF CHAMPIONS LEAGUE GROUPS (OFFICIAL DRAW) ================= -->
+        <!-- TAB 4: CAF CHAMPIONS LEAGUE GROUPS -->
         <section id="sec-caf" class="space-y-4 hidden">
             <div class="glass-panel rounded-2xl p-4 border border-panelBorder flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -239,7 +239,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cafGroupsContainer"></div>
         </section>
 
-        <!-- ================= TAB 5: SCOUT RADAR ================= -->
+        <!-- TAB 5: SCOUT RADAR -->
         <section id="sec-scout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 hidden">
             <div class="lg:col-span-4 glass-panel rounded-2xl p-4 space-y-3">
                 <h3 class="font-black text-xs text-white border-b border-panelBorder pb-2">اختيار اللاعب للرادار</h3>
@@ -295,13 +295,11 @@
 
         const allPlayers = [...estStarters, ...estSubs];
 
-        // Upcoming Official Matches Schedule
         const upcomingMatches = [
             { id: 1, competition: 'الرابطة المحترفة الأولى', opponent: 'النادي الرياضي الصفاقسي 🇹🇳', date: '29 أكتوبر 2026 - 16:30', venue: 'ملعب حمادي العقربي برادس', status: 'قادمة' },
             { id: 2, competition: 'الرابطة المحترفة الأولى', opponent: 'الاتحاد الرياضي المنستيري 🇹🇳', date: '7 نوفمبر 2026 - 15:00', venue: 'ملعب مصطفى بن جنات بالمنستير', status: 'قادمة' }
         ];
 
-        // Tunisian League 15 Teams
         const initialTeams = [
             { name: 'الترجي الرياضي التونسي', power: 92, p: 8, w: 7, d: 1, l: 0, gf: 18, ga: 4, pts: 22 },
             { name: 'النادي الإفريقي', power: 84, p: 8, w: 6, d: 2, l: 0, gf: 14, ga: 5, pts: 20 },
@@ -322,7 +320,6 @@
 
         let teams = JSON.parse(JSON.stringify(initialTeams));
 
-        // Official CAF Champions League Groups (Based on Image)[cite: 1]
         const cafGroups = {
             'المجموعة الأولى (Group A)': [
                 { name: 'الترجي الرياضي 🇹🇳', pts: 0, gf: 0, ga: 0 },[cite: 1]
