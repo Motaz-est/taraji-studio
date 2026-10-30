@@ -1,211 +1,296 @@
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="dark">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحدي ألغاز الترجي - غول إفريقيا</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        estRed: '#E60000',
-                        estGold: '#D4AF37',
-                        estDark: '#121318'
-                    },
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #0B0C10; color: #F3F4F6; }
-        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.25); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TARAGI SOCIAL</title>
+<style>
+:root {
+  --red: #b90018;
+  --yellow: #ffd229;
+  --bg: #f4f4f5;
+  --white: #fff;
+  --text: #202124;
+  --muted: #777;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  background: var(--red);
+  color: white;
+  padding: 16px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid var(--yellow);
+}
+.logo { font-size: 23px; font-weight: bold; }
+.logo span { color: var(--yellow); }
+header small { color: #ffe6e6; }
+.container {
+  width: min(1100px, 94%);
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 230px;
+  gap: 18px;
+}
+.panel, .post, .composer {
+  background: var(--white);
+  border-radius: 13px;
+  padding: 17px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 9px #0000000b;
+}
+nav a {
+  display: block;
+  padding: 12px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+nav a:hover, nav a.active {
+  background: #fff0f0;
+  color: var(--red);
+  font-weight: bold;
+}
+h3 { margin-top: 0; }
+.hero {
+  background: linear-gradient(120deg, #970014, #d71932);
+  color: white;
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 16px;
+}
+.hero h1 { margin: 0 0 10px; }
+.hero strong { color: var(--yellow); }
+textarea, input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  font: inherit;
+  outline-color: var(--red);
+}
+textarea { resize: vertical; min-height: 85px; }
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: var(--red);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover { opacity: .9; }
+.publish { margin-top: 10px; }
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--red);
+  font-weight: bold;
+  margin-left: 8px;
+}
+.author { display: flex; align-items: center; font-weight: bold; }
+.post p { line-height: 1.8; white-space: pre-wrap; }
+.actions {
+  display: flex;
+  gap: 9px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+.actions button {
+  background: #f5f5f5;
+  color: #444;
+}
+.actions button.liked { color: var(--red); }
+.tag { color: var(--red); font-weight: bold; }
+.muted { color: var(--muted); font-size: 12px; }
+.trend { padding: 9px 0; border-bottom: 1px solid #eee; }
+footer { text-align: center; padding: 25px; color: var(--muted); }
+@media (max-width: 800px) {
+  .container { grid-template-columns: 1fr; }
+  .left, .right { display: none; }
+  header { padding: 14px 4%; }
+}
+</style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4 bg-[#0B0C10]">
+<body>
 
-    <!-- Container -->
-    <div class="max-w-xl w-full bg-[#121318] border border-estGold/30 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 gold-glow">
-        
-        <!-- Header -->
-        <div class="flex items-center justify-between border-b border-gray-800 pb-4">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-estRed to-estGold flex items-center justify-center text-white text-xl font-black shadow-lg">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <div>
-                    <h1 class="font-black text-lg text-white">مسابقة ألغاز الترجي الرياضي</h1>
-                    <p class="text-xs text-estGold">اختبر معلوماتك الكروية عن غول إفريقيا</p>
-                </div>
-            </div>
-            <div id="scoreBox" class="bg-black/60 px-4 py-2 rounded-xl border border-estGold/25 text-xs font-bold text-estGold">
-                النقاط: <span id="scoreVal" class="text-white text-sm font-black">0</span>
-            </div>
-        </div>
+<header>
+  <div class="logo">TARAGI <span>SOCIAL</span></div>
+  <small>شبكة جماهير الترجي الرياضي التونسي</small>
+</header>
 
-        <!-- Quiz Box -->
-        <div id="quizContainer" class="space-y-6">
-            <div class="flex items-center justify-between text-xs text-gray-400 font-bold">
-                <span id="questionProgress">السؤال 1 من 6</span>
-                <span class="text-estRed bg-estRed/10 px-2.5 py-1 rounded-lg border border-estRed/20">تحدي المكشخين</span>
-            </div>
-
-            <!-- Question Text -->
-            <div class="bg-black/40 p-5 rounded-2xl border border-gray-800">
-                <h3 id="questionText" class="font-black text-base sm:text-lg text-white leading-relaxed">
-                    جاري تحميل السؤال...
-                </h3>
-            </div>
-
-            <!-- Options Grid -->
-            <div id="optionsContainer" class="grid grid-cols-1 gap-3">
-                <!-- Buttons injected by JS -->
-            </div>
-        </div>
-
-        <!-- Result / Finished Screen -->
-        <div id="resultContainer" class="hidden text-center space-y-6 py-6">
-            <div class="w-20 h-20 mx-auto rounded-full bg-estGold/20 border-2 border-estGold flex items-center justify-center text-estGold text-3xl">
-                <i class="fa-solid fa-trophy"></i>
-            </div>
-            <div class="space-y-2">
-                <h2 id="resultTitle" class="text-2xl font-black text-white">أحسنت يا مكشخ!</h2>
-                <p id="resultDesc" class="text-xs text-gray-300">أنت تعرف كل صغيرة وكبيرة عن تاريخ الترجي الرياضي.</p>
-            </div>
-            <div class="bg-black/60 p-4 rounded-2xl border border-estGold/30 max-w-xs mx-auto">
-                <span class="text-xs text-gray-400 block">النتيجة النهائية</span>
-                <span id="finalScore" class="text-3xl font-black text-estGold">6 / 6</span>
-            </div>
-            <button onclick="restartQuiz()" class="w-full bg-gradient-to-r from-estRed to-rose-700 hover:brightness-110 text-white font-extrabold py-3 rounded-xl transition shadow-lg text-xs">
-                إعادة التحدي <i class="fa-solid fa-rotate-right ml-1"></i>
-            </button>
-        </div>
-
+<div class="container">
+  <aside class="left">
+    <div class="panel">
+      <h3>القائمة</h3>
+      <nav>
+        <a class="active" href="#">🏠 الرئيسية</a>
+        <a href="#popular">🔥 المنشورات الرائجة</a>
+        <a href="#poll">📊 استطلاعات الرأي</a>
+        <a href="#profile">👤 ملفي الشخصي</a>
+      </nav>
     </div>
+  </aside>
 
-    <!-- JavaScript Game Logic -->
-    <script>
-        const questions = [
-            {
-                q: "في أي سنة تأسس الترجي الرياضي التونسي (قلعة باب سويقة)؟",
-                options: ["1910", "1919", "1925", "1930"],
-                answer: 1
-            },
-            {
-                q: "كم عدد ألقاب دوري أبطال إفريقيا التي توج بها الترجي في تاريخه حتى الآن؟",
-                options: ["2 ألقاب", "3 ألقاب", "4 ألقاب", "5 ألقاب"],
-                answer: 2
-            },
-            {
-                q: "ما هو اللقب الشهير الذي يطلق جماهيرياً على الترجي الرياضي التونسي؟",
-                options: ["الشيخ", "غول إفريقيا", "الزعيم", "المارد الأحمر"],
-                answer: 1
-            },
-            {
-                q: "في أي ملعب عريق يستقبل الترجي الرياضي التونسي مبارياته الرسمية الكبرى؟",
-                options: ["ملعب زويتن", "ملعب الشاهد الحارثي", "الملعب الأولمبي برادس (حمادي العقربي)", "ملعب المنزه"],
-                answer: 2
-            },
-            {
-                q: "من هو النادي التاريخي الذي جمعته مباريات 'الديربي' الكلاسيكي الشهير ضد الترجي في تونس؟",
-                options: ["النجم الساحلي", "النادي الإفريقي", "النادي الصفاقسي", "الملعب التونسي"],
-                answer: 1
-            },
-            {
-                q: "بأي لونين يتميز الزي الرسمي والتاريخي للترجي الرياضي التونسي؟",
-                options: ["الأبيض والأزرق", "الأحمر والأصفر", "الأخضر والأبيض", "الأسود والأصفر"],
-                answer: 1
-            }
-        ];
+  <main>
+    <section class="hero">
+      <h1>ديما <strong>ترجي</strong> ❤️💛</h1>
+      <p>مساحة تجمع جماهير المكشخة، للنقاش والتفاعل ومشاركة الأخبار.</p>
+    </section>
 
-        let currentQuestion = 0;
-        let score = 0;
-        let lockAnswer = false;
+    <section class="composer">
+      <h3>ماذا تريد أن تشارك الجماهير؟</h3>
+      <textarea id="postText" placeholder="اكتب منشورك هنا..."></textarea>
+      <button class="publish" onclick="publishPost()">نشر المنشور</button>
+    </section>
 
-        function loadQuestion() {
-            lockAnswer = false;
-            const q = questions[currentQuestion];
-            document.getElementById('questionProgress').innerText = `السؤال ${currentQuestion + 1} من ${questions.length}`;
-            document.getElementById('questionText').innerText = q.q;
+    <section id="feed">
+      <article class="post">
+        <div class="post-head">
+          <div class="author"><span class="avatar">ت</span> جماهير الترجي</div>
+          <span class="muted">منشور ترحيبي</span>
+        </div>
+        <p>مرحبًا بكم في TARAGI SOCIAL ❤️💛
+هذه مساحتنا للتواصل وتبادل الآراء حول فريقنا.</p>
+        <div class="actions">
+          <button onclick="likePost(this)">❤️ إعجاب <span>0</span></button>
+          <button onclick="focusComment(this)">💬 تعليق</button>
+        </div>
+        <div class="comment-area"></div>
+      </article>
+    </section>
+  </main>
 
-            const optionsBox = document.getElementById('optionsContainer');
-            optionsBox.innerHTML = q.options.map((opt, idx) => `
-                <button onclick="checkAnswer(${idx})" class="option-btn w-full text-right p-3.5 rounded-xl bg-black/60 border border-gray-800 hover:border-estGold text-xs sm:text-sm font-bold text-gray-200 transition flex items-center justify-between">
-                    <span>${opt}</span>
-                    <span class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center text-[10px] text-gray-400 font-black">${['أ', 'ب', 'ج', 'د'][idx]}</span>
-                </button>
-            `).join('');
-        }
+  <aside class="right">
+    <div class="panel" id="popular">
+      <h3>🔥 مواضيع رائجة</h3>
+      <div class="trend"><span class="tag">#الترجي</span></div>
+      <div class="trend"><span class="tag">#مكشخة</span></div>
+      <div class="trend"><span class="tag">#باب_سويقة</span></div>
+      <div class="trend"><span class="tag">#ديما_ترجي</span></div>
+    </div>
+    <div class="panel" id="poll">
+      <h3>📊 استطلاع الجماهير</h3>
+      <p>ما رأيك في أداء الترجي في المباراة الأخيرة؟</p>
+      <button onclick="vote(this)">ممتاز</button>
+      <button onclick="vote(this)" style="background:#555">متوسط</button>
+      <p class="muted" id="voteResult">شارك برأيك.</p>
+    </div>
+    <div class="panel" id="profile">
+      <h3>👤 ملفي الشخصي</h3>
+      <input id="username" placeholder="اسمك الجماهيري">
+      <button style="margin-top:9px" onclick="saveName()">حفظ الاسم</button>
+      <p class="muted" id="nameResult">زائر</p>
+    </div>
+  </aside>
+</div>
 
-        function checkAnswer(selectedIdx) {
-            if (lockAnswer) return;
-            lockAnswer = true;
+<footer>TARAGI SOCIAL © 2026 — ديما مكشخة</footer>
 
-            const q = questions[currentQuestion];
-            const buttons = document.querySelectorAll('.option-btn');
+<script>
+function publishPost() {
+  const field = document.getElementById("postText");
+  const content = field.value.trim();
+  if (!content) return alert("اكتب شيئًا قبل النشر.");
 
-            if (selectedIdx === q.answer) {
-                buttons[selectedIdx].classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-white');
-                score++;
-                document.getElementById('scoreVal').innerText = score;
-            } else {
-                buttons[selectedIdx].classList.add('bg-rose-500/20', 'border-rose-500', 'text-rose-300');
-                buttons[q.answer].classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-white');
-            }
+  const name = localStorage.getItem("taragiName") || "مشجع الترجي";
+  const post = document.createElement("article");
+  post.className = "post";
 
-            setTimeout(() => {
-                currentQuestion++;
-                if (currentQuestion < questions.length) {
-                    loadQuestion();
-                } else {
-                    showResults();
-                }
-            }, 1200);
-        }
+  const head = document.createElement("div");
+  head.className = "post-head";
+  const author = document.createElement("div");
+  author.className = "author";
+  const avatar = document.createElement("span");
+  avatar.className = "avatar";
+  avatar.textContent = name.charAt(0);
+  author.append(avatar, document.createTextNode(name));
+  head.append(author);
 
-        function showResults() {
-            document.getElementById('quizContainer').classList.add('hidden');
-            document.getElementById('resultContainer').classList.remove('hidden');
-            document.getElementById('finalScore').innerText = `${score} / ${questions.length}`;
+  const paragraph = document.createElement("p");
+  paragraph.textContent = content;
 
-            const title = document.getElementById('resultTitle');
-            const desc = document.getElementById('resultDesc');
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  const like = document.createElement("button");
+  like.textContent = "❤️ إعجاب ";
+  const count = document.createElement("span");
+  count.textContent = "0";
+  like.append(count);
+  like.onclick = () => likePost(like);
 
-            if (score === questions.length) {
-                title.innerText = "أنت مكشخ حقيقي أسطوري! 🏆";
-                desc.innerText = "علامة كاملة! إلمامك بتاريخ وأرقام الترجي الرياضي التونسي ممتاز جداً.";
-            } else if (score >= 4) {
-                title.innerText = "أداء ممتاز يا مكشخ! 🥇";
-                desc.innerText = "معلوماتك القوية تعكس حبك الكبير لغول إفريقيا.";
-            } else {
-                title.innerText = "حاول مرة أخرى! 💪";
-                desc.innerText = "يمكنك مراجعة تاريخ الترجي العريق وإعادة التحدي لتسجيل علامة كاملة.";
-            }
-        }
+  const comment = document.createElement("button");
+  comment.textContent = "💬 تعليق";
+  comment.onclick = () => focusComment(comment);
+  actions.append(like, comment);
 
-        function restartQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            lockAnswer = false;
-            document.getElementById('scoreVal').innerText = score;
-            document.getElementById('resultContainer').classList.add('hidden');
-            document.getElementById('quizContainer').classList.remove('hidden');
-            loadQuestion();
-        }
+  const commentArea = document.createElement("div");
+  commentArea.className = "comment-area";
 
-        window.onload = function() {
-            loadQuestion();
-        };
-    </script>
+  post.append(head, paragraph, actions, commentArea);
+  document.getElementById("feed").prepend(post);
+  field.value = "";
+}
+
+function likePost(button) {
+  const count = button.querySelector("span");
+  const liked = button.classList.toggle("liked");
+  count.textContent = Number(count.textContent) + (liked ? 1 : -1);
+}
+
+function focusComment(button) {
+  const area = button.closest(".post").querySelector(".comment-area");
+  if (area.querySelector("input")) {
+    area.querySelector("input").focus();
+    return;
+  }
+  const input = document.createElement("input");
+  input.placeholder = "اكتب تعليقك...";
+  input.style.marginTop = "12px";
+  const send = document.createElement("button");
+  send.textContent = "إرسال";
+  send.style.marginTop = "8px";
+  send.onclick = () => {
+    if (!input.value.trim()) return;
+    const line = document.createElement("p");
+    line.textContent = "💬 " + input.value.trim();
+    area.insertBefore(line, input);
+    input.value = "";
+  };
+  area.append(input, send);
+  input.focus();
+}
+
+function vote(button) {
+  document.getElementById("voteResult").textContent =
+    "صوّتَّ: " + button.textContent + " — شكرًا لمشاركتك!";
+}
+
+function saveName() {
+  const name = document.getElementById("username").value.trim();
+  if (!name) return alert("اكتب اسمك أولًا.");
+  localStorage.setItem("taragiName", name);
+  document.getElementById("nameResult").textContent = "مرحبًا، " + name;
+}
+</script>
 </body>
 </html>
