@@ -1,312 +1,133 @@
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+const pages = document.querySelectorAll('.page');
+const navButtons = document.querySelectorAll('.nav-btn');
+
+function showPage(id) {
+  pages.forEach(page => {
+    page.classList.toggle('active', page.id === id);
+  });
+
+  navButtons.forEach(button => {
+    button.classList.toggle('active', button.dataset.page === id);
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => showPage(button.dataset.page));
+});
+
+// تشغيل الكود وعرض النتيجة
+function runCode() {
+  const html = document.getElementById('htmlCode').value;
+  const css = document.getElementById('cssCode').value;
+  const js = document.getElementById('jsCode').value;
+
+  const doc = `<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TARAGI SOCIAL</title>
-<style>
-:root {
-  --red:#a90016;
-  --yellow:#ffd52a;
-  --bg:#f2f3f5;
-  --white:#fff;
-  --text:#202124;
-  --muted:#777;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Tahoma,sans-serif;background:var(--bg);color:var(--text)}
-header{
-  height:65px;background:var(--white);display:flex;align-items:center;
-  justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:10;
-  box-shadow:0 2px 12px #00000010
-}
-.logo{font-size:23px;font-weight:900;color:var(--red)}
-.logo span{color:#222}
-.search{background:#f0f1f3;border:0;border-radius:25px;padding:12px 18px;width:280px;outline:none}
-.header-right{display:flex;align-items:center;gap:15px}
-.avatar{width:38px;height:38px;border-radius:50%;background:var(--red);color:white;display:grid;place-items:center;font-weight:bold}
-.layout{max-width:1250px;margin:25px auto;display:grid;grid-template-columns:245px minmax(0,650px) 260px;gap:22px;padding:0 15px}
-.panel,.card{background:white;border-radius:15px;padding:17px;margin-bottom:15px;box-shadow:0 2px 10px #00000008}
-nav a{display:flex;align-items:center;gap:12px;padding:13px;border-radius:10px;text-decoration:none;color:#333;font-weight:bold;margin:3px 0;cursor:pointer}
-nav a:hover,nav a.active{background:#fff0f0;color:var(--red)}
-nav .ico{font-size:20px}
-.club-banner{background:linear-gradient(135deg,#a90016,#e01b32);color:white;border-radius:15px;padding:20px;text-align:center}
-.club-banner h2{margin:5px 0}
-.club-banner p{font-size:13px;color:#ffe6e6}
-.section-title{font-size:19px;font-weight:800;margin:5px 0 15px}
-.composer{display:flex;gap:12px;align-items:center}
-.composer input{flex:1;border:0;background:#f3f4f6;border-radius:25px;padding:14px;outline:none}
-button{border:0;cursor:pointer;font-weight:bold}
-.primary{background:var(--red);color:white;padding:11px 18px;border-radius:9px}
-.primary:hover{background:#800012}
-.post{padding:18px}
-.post-head{display:flex;align-items:center;gap:10px}
-.post-name{font-weight:bold}
-.time{font-size:12px;color:var(--muted);margin-top:4px}
-.post-content{line-height:1.8;margin:17px 0}
-.post-image{background:linear-gradient(135deg,#a90016,#e8b91e);height:180px;border-radius:12px;display:grid;place-items:center;color:white;font-size:30px;font-weight:900;text-align:center}
-.actions{display:flex;gap:20px;border-top:1px solid #eee;padding-top:12px;color:#666}
-.actions button{background:none;color:#666;font-size:14px}
-.actions button:hover{color:var(--red)}
-.right-title{font-weight:bold;margin-bottom:12px}
-.trend{padding:10px 0;border-bottom:1px solid #eee}
-.trend small{display:block;color:#888;margin-top:4px}
-.page{display:none}
-.page.active{display:block}
-.quiz-option{display:block;width:100%;text-align:right;background:#f3f4f6;padding:13px;border-radius:9px;margin:9px 0}
-.quiz-option:hover{background:#fff0f0;color:var(--red)}
-.levels{display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap}
-.level{padding:9px 14px;background:#eee;border-radius:20px}
-.level.active{background:var(--red);color:white}
-.result{font-weight:bold;margin-top:12px}
-.mobile-nav{display:none}
-@media(max-width:950px){
- .layout{grid-template-columns:210px minmax(0,1fr)}
- .right-column{display:none}
-}
-@media(max-width:650px){
- header{padding:0 12px}
- .search{display:none}
- .layout{display:block;margin:12px auto;padding:0 10px}
- .left-column{display:none}
- .mobile-nav{display:flex;position:fixed;bottom:0;right:0;left:0;background:white;justify-content:space-around;padding:12px 5px;box-shadow:0 -2px 12px #00000012;z-index:20}
- .mobile-nav button{background:none;font-size:20px;color:#555}
- main{padding-bottom:65px}
- .post-image{height:140px}
-}
-</style>
+<style>${css}</style>
 </head>
 <body>
-
-<header>
-  <div class="logo">TARAGI <span>SOCIAL</span></div>
-  <input class="search" id="search" placeholder="ابحث عن منشورات أو أعضاء...">
-  <div class="header-right">
-    <span>🔔</span>
-    <div class="avatar">T</div>
-  </div>
-</header>
-
-<div class="layout">
-  <aside class="left-column">
-    <div class="panel">
-      <nav>
-        <a class="active" data-page="home"><span class="ico">🏠</span> الرئيسية</a>
-        <a data-page="explore"><span class="ico">🌍</span> اكتشف</a>
-        <a data-page="quiz"><span class="ico">🧠</span> اختبارات الترجي</a>
-        <a data-page="ranking"><span class="ico">🏆</span> الترتيب</a>
-        <a data-page="profile"><span class="ico">👤</span> ملفي الشخصي</a>
-      </nav>
-    </div>
-    <div class="club-banner">
-      <div style="font-size:38px">🔴🟡</div>
-      <h2>ديما ترجي</h2>
-      <p>منصة جماهير المكشخة</p>
-      <strong>1919</strong>
-    </div>
-  </aside>
-
-  <main>
-    <section class="page active" id="home">
-      <div class="card">
-        <div class="section-title">شنوة في بالك يا مكشخ؟</div>
-        <div class="composer">
-          <div class="avatar">T</div>
-          <input id="postInput" placeholder="شارك جماهير الترجي رأيك...">
-          <button class="primary" onclick="addPost()">نشر</button>
-        </div>
-      </div>
-
-      <div id="posts">
-        <article class="card post">
-          <div class="post-head">
-            <div class="avatar">T</div>
-            <div><div class="post-name">جماهير الترجي ❤️💛</div><div class="time">منذ قليل · عام</div></div>
-          </div>
-          <div class="post-content">مرحبا بكم في TARAGI SOCIAL! فضاء يجمع جماهير شيخ الأندية التونسية. ❤️💛</div>
-          <div class="post-image">TARAGI SOCIAL<br><small>ديما مكشخين</small></div>
-          <div class="actions">
-            <button onclick="likePost(this)">♡ إعجاب <span>0</span></button>
-            <button onclick="commentPost(this)">💬 تعليق</button>
-            <button onclick="sharePost()">↗ مشاركة</button>
-          </div>
-          <div class="comments"></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="page" id="explore">
-      <div class="card">
-        <div class="section-title">اكتشف مجتمع الترجي</div>
-        <p>تابع آخر النقاشات والمنشورات الجماهيرية.</p>
-        <div class="trend">🔥 أخبار الفريق <small>آخر النقاشات حول الترجي</small></div>
-        <div class="trend">⚽ التحليل الفني <small>التشكيلات والخطط والمباريات</small></div>
-        <div class="trend">🏟️ تاريخ المكشخة <small>ذكريات وإنجازات النادي</small></div>
-      </div>
-    </section>
-
-    <section class="page" id="quiz">
-      <div class="card">
-        <div class="section-title">🧠 اختبر معلوماتك عن الترجي</div>
-        <div class="levels">
-          <button class="level active" onclick="setLevel('easy',this)">سهل</button>
-          <button class="level" onclick="setLevel('medium',this)">متوسط</button>
-          <button class="level" onclick="setLevel('hard',this)">صعب</button>
-        </div>
-        <div id="quizArea"></div>
-        <div class="result" id="quizResult"></div>
-      </div>
-    </section>
-
-    <section class="page" id="ranking">
-      <div class="card">
-        <div class="section-title">🏆 ترتيب الجماهير</div>
-        <p>ترتيب تجريبي لأعضاء المجتمع حسب النقاط.</p>
-        <div class="trend">🥇 مشجع المكشخة <small>120 نقطة</small></div>
-        <div class="trend">🥈 Taraji1919 <small>95 نقطة</small></div>
-        <div class="trend">🥉 أحمر وأصفر <small>80 نقطة</small></div>
-      </div>
-    </section>
-
-    <section class="page" id="profile">
-      <div class="card" style="text-align:center">
-        <div class="avatar" style="width:75px;height:75px;margin:auto;font-size:28px">T</div>
-        <h2>مشجع الترجي</h2>
-        <p>عضو في TARAGI SOCIAL</p>
-        <p>منشوراتي تظهر في الصفحة الرئيسية.</p>
-      </div>
-    </section>
-  </main>
-
-  <aside class="right-column">
-    <div class="panel">
-      <div class="right-title">🔥 مواضيع رائجة</div>
-      <div class="trend">#الترجي_الرياضي <small>نقاشات الجماهير</small></div>
-      <div class="trend">#ديما_مكشخ <small>هوية وانتماء</small></div>
-      <div class="trend">#مكشخة_العالم <small>ذكريات وإنجازات</small></div>
-    </div>
-    <div class="panel">
-      <div class="right-title">📢 مرحبا بك</div>
-      <p style="font-size:14px;line-height:1.8;color:#666">شارك أفكارك، ناقش المباريات، واختبر معلوماتك عن تاريخ الترجي.</p>
-    </div>
-  </aside>
-</div>
-
-<div class="mobile-nav">
-  <button onclick="showPage('home')">🏠</button>
-  <button onclick="showPage('explore')">🌍</button>
-  <button onclick="showPage('quiz')">🧠</button>
-  <button onclick="showPage('ranking')">🏆</button>
-  <button onclick="showPage('profile')">👤</button>
-</div>
-
+${html}
 <script>
-function showPage(name){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(name).classList.add('active');
-  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
-}
-document.querySelectorAll('nav a').forEach(a=>{
-  a.addEventListener('click',()=>showPage(a.dataset.page));
-});
-
-function addPost(){
-  const input=document.getElementById('postInput');
-  const value=input.value.trim();
-  if(!value){alert('اكتب منشورك أولا');return;}
-  const post=document.createElement('article');
-  post.className='card post';
-  const head=document.createElement('div');
-  head.className='post-head';
-  head.innerHTML='<div class="avatar">T</div><div><div class="post-name">مشجع الترجي</div><div class="time">الآن · عام</div></div>';
-  const content=document.createElement('div');
-  content.className='post-content';
-  content.textContent=value;
-  const actions=document.createElement('div');
-  actions.className='actions';
-  actions.innerHTML='<button onclick="likePost(this)">♡ إعجاب <span>0</span></button><button onclick="commentPost(this)">💬 تعليق</button><button onclick="sharePost()">↗ مشاركة</button>';
-  const comments=document.createElement('div');
-  comments.className='comments';
-  post.append(head,content,actions,comments);
-  document.getElementById('posts').prepend(post);
-  input.value='';
-}
-function likePost(button){
-  const count=button.querySelector('span');
-  let n=Number(count.textContent);
-  count.textContent=++n;
-  button.style.color='#a90016';
-}
-function commentPost(button){
-  const value=prompt('اكتب تعليقك:');
-  if(!value||!value.trim())return;
-  const area=button.closest('.post').querySelector('.comments');
-  const comment=document.createElement('p');
-  comment.style.cssText='background:#f4f4f4;padding:10px;border-radius:8px;font-size:14px';
-  comment.textContent='💬 '+value;
-  area.appendChild(comment);
-}
-function sharePost(){
-  if(navigator.share) navigator.share({title:'TARAGI SOCIAL',text:'ديما ترجي ❤️💛'});
-  else alert('TARAGI SOCIAL ❤️💛');
-}
-
-const questions={
- easy:[
-  {q:'في أي سنة تأسس الترجي الرياضي التونسي؟',a:['1919','1925','1930'],c:0},
-  {q:'ما اللونان الأساسيان للترجي؟',a:['الأزرق والأبيض','الأحمر والأصفر','الأخضر والأسود'],c:1},
-  {q:'ما اسم ملعب الترجي الشهير؟',a:['ملعب رادس','ملعب المنزه','ملعب الطيب المهيري'],c:0}
- ],
- medium:[
-  {q:'ما اسم ملعب الترجي التاريخي في باب سويقة؟',a:['ملعب الشاذلي زويتن','حديقة الرياضة ب','ملعب المنزه'],c:1},
-  {q:'ما اللقب الشهير للترجي؟',a:['النادي الإفريقي','المكشخة','الصفاقسي'],c:1},
-  {q:'في أي مدينة تأسس الترجي؟',a:['سوسة','صفاقس','تونس'],c:2}
- ],
- hard:[
-  {q:'كم مرة فاز الترجي بدوري أبطال إفريقيا حتى نهاية 2024؟',a:['3','4','5'],c:1},
-  {q:'من هو منافس الترجي التقليدي في ديربي تونس؟',a:['النادي الإفريقي','النجم الساحلي','النادي الصفاقسي'],c:0},
-  {q:'ما اسم الحي الذي ارتبط تاريخيا بنشأة الترجي؟',a:['باب سويقة','المرسى','حلق الوادي'],c:0}
- ]
-};
-let currentLevel='easy',questionIndex=0,score=0;
-function setLevel(level,button){
- currentLevel=level;questionIndex=0;score=0;
- document.querySelectorAll('.level').forEach(b=>b.classList.remove('active'));
- button.classList.add('active');
- document.getElementById('quizResult').textContent='';
- renderQuestion();
-}
-function renderQuestion(){
- const q=questions[currentLevel][questionIndex];
- const area=document.getElementById('quizArea');
- if(!q){
-  area.innerHTML='<h3>انتهى الاختبار!</h3><p>نتيجتك: '+score+' من '+questions[currentLevel].length+'</p><button class="primary" onclick="restartQuiz()">إعادة الاختبار</button>';
-  return;
- }
- area.innerHTML='<h3>السؤال '+(questionIndex+1)+' من '+questions[currentLevel].length+'</h3><p>'+q.q+'</p>';
- q.a.forEach((answer,i)=>{
-  const btn=document.createElement('button');
-  btn.className='quiz-option';
-  btn.textContent=answer;
-  btn.onclick=()=>answerQuestion(i);
-  area.appendChild(btn);
- });
-}
-function answerQuestion(choice){
- const q=questions[currentLevel][questionIndex];
- if(choice===q.c)score++;
- questionIndex++;
- renderQuestion();
-}
-function restartQuiz(){questionIndex=0;score=0;renderQuestion();}
-document.getElementById('search').addEventListener('input',function(){
- const term=this.value.trim().toLowerCase();
- document.querySelectorAll('#posts .post').forEach(post=>{
-  post.style.display=post.textContent.toLowerCase().includes(term)?'':'none';
- });
-});
-renderQuestion();
-</script>
+${js.replace(/<\/script/gi, '<\\/script')}
+<\/script>
 </body>
-</html>
+</html>`;
+
+  document.getElementById('preview').srcdoc = doc;
+}
+
+// إعادة الأكواد الافتراضية
+function resetCode() {
+  document.getElementById('htmlCode').value = `
+<h1>مرحبا بك في عالمي!</h1>
+<p>أنا أتعلم البرمجة باستخدام CODEVERSE.</p>
+<button onclick="alert('أهلا بك!')">اضغط هنا</button>`;
+
+  document.getElementById('cssCode').value = `
+body {
+  font-family: Arial;
+  text-align: center;
+  padding: 40px;
+  background: #f0f5ff;
+}
+h1 {
+  color: #3868cc;
+}
+button {
+  padding: 12px 20px;
+  background: #3868cc;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}`;
+
+  document.getElementById('jsCode').value =
+    'console.log("CODEVERSE is running!");';
+
+  runCode();
+}
+
+// تحميل المشروع
+function downloadCode() {
+  const html = document.getElementById('htmlCode').value;
+  const css = document.getElementById('cssCode').value;
+  const js = document.getElementById('jsCode').value;
+
+  const output = `<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<style>${css}</style>
+</head>
+<body>
+${html}
+<script>
+${js.replace(/<\/script/gi, '<\\/script')}
+<\/script>
+</body>
+</html>`;
+
+  const blob = new Blob([output], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+
+  a.href = url;
+  a.download = 'my-project.html';
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+
+// التحديات
+function checkAnswer(button, correct) {
+  const result = document.getElementById('challengeResult');
+
+  if (correct) {
+    result.textContent = '✓ إجابة صحيحة! أحسنت.';
+    result.style.color = '#35d39a';
+  } else {
+    result.textContent = '✕ إجابة غير صحيحة، حاول مرة أخرى.';
+    result.style.color = '#ff7272';
+  }
+
+  document.querySelectorAll('.challenge-option').forEach(option => {
+    option.disabled = true;
+  });
+}
+
+function resetChallenge() {
+  document.querySelectorAll('.challenge-option').forEach(option => {
+    option.disabled = false;
+  });
+
+  document.getElementById('challengeResult').textContent = '';
+}
+
+// تشغيل المعاينة عند فتح الموقع
+runCode();
