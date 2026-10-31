@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سبورة التكتيك المحترفة - مهنة لاعب ومباريات واقعية</title>
+  <title>سبورة التكتيك المحترفة - تطبيق الخطوط في المباريات</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -21,12 +21,10 @@
     .player-token {
       touch-action: none;
       cursor: grab;
-      transition: transform 0.1s ease, box-shadow 0.2s;
     }
     .player-token:active {
       cursor: grabbing;
-      transform: scale(1.18);
-      z-index: 50;
+      transform: scale(1.15);
     }
 
     canvas { touch-action: none; }
@@ -38,7 +36,7 @@
   <header class="bg-slate-900 border-b border-slate-800 px-6 py-3 flex justify-between items-center z-20">
     <div class="flex items-center gap-3">
       <i class="fa-solid fa-chess-board text-emerald-400 text-2xl"></i>
-      <h1 class="text-xl font-bold text-white">منصة التكتيك الحر ومهنة اللاعب</h1>
+      <h1 class="text-xl font-bold text-white">منصة التكتيك الحر وتطبيق الخطوط الحية</h1>
     </div>
 
     <!-- Navigation Tabs -->
@@ -50,7 +48,7 @@
         <i class="fa-solid fa-id-card ml-1"></i> مهنة لاعب
       </button>
       <button id="nav-match" onclick="switchTab('match')" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white">
-        <i class="fa-solid fa-futbol ml-1"></i> المباراة الحية
+        <i class="fa-solid fa-futbol ml-1"></i> المباراة الحية (تطبيق التكتيك)
       </button>
     </div>
   </header>
@@ -94,8 +92,10 @@
           <div class="absolute top-1/2 inset-x-0 border-t-2 border-white/20 -translate-y-1/2"></div>
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border-2 border-white/20 rounded-full"></div>
 
-          <canvas id="paint-canvas" class="absolute inset-0 z-10"></canvas>
-          <div id="players-layer" class="absolute inset-0 z-20"></div>
+          <!-- Interactive Drawing Canvas -->
+          <canvas id="paint-canvas" class="absolute inset-0 z-20"></canvas>
+          <!-- Player Elements -->
+          <div id="players-layer" class="absolute inset-0 z-30 pointer-events-none"></div>
         </div>
       </div>
 
@@ -179,13 +179,13 @@
       </div>
     </section>
 
-    <!-- TAB 3: REALISTIC MATCH ENGINE -->
+    <!-- TAB 3: REALISTIC MATCH ENGINE WITH TACTICAL LINES -->
     <section id="tab-match" class="hidden flex-1 p-4 flex gap-4 w-full h-full">
       <div class="flex-1 bg-slate-900 rounded-2xl border border-slate-800 flex flex-col overflow-hidden">
         <div class="bg-slate-950 p-4 border-b border-slate-800 flex justify-between items-center">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold">فريقك</div>
-            <span class="font-bold text-white">التشكيلة التكتيكية</span>
+            <span class="font-bold text-white">تطبيق التكتيك المرسوم</span>
           </div>
           <div class="text-center">
             <div id="match-score" class="text-3xl font-black text-amber-400 font-mono">0 - 0</div>
@@ -195,12 +195,14 @@
         </div>
 
         <div id="match-pitch" class="flex-1 pitch-board relative m-3 rounded-xl border-2 border-white/20 overflow-hidden">
+          <!-- Canvas Showing Applied Tactical Lines -->
+          <canvas id="match-tactics-canvas" class="absolute inset-0 z-10 opacity-70"></canvas>
           <div id="match-ball" class="absolute w-4 h-4 bg-white rounded-full shadow border border-black z-30 transition-all duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
         </div>
 
         <div class="p-4 bg-slate-950 border-t border-slate-800 flex justify-center">
           <button id="btn-start-match" onclick="runRealisticMatch()" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg">
-            انطلاق المباراة الحية
+            انطلاق المباراة والتكتيك
           </button>
         </div>
       </div>
@@ -214,7 +216,6 @@
   </main>
 
   <script>
-    // Squad Data
     let squad = [
       { id: 1, name: 'بونو', pos: 'GK', num: 1, x: 50, y: 88 },
       { id: 2, name: 'دراغر', pos: 'RB', num: 2, x: 82, y: 70 },
@@ -230,14 +231,18 @@
     ];
 
     let currentTool = 'arrow';
-    let canvas, ctx;
+    let canvas, ctx, matchCanvas, matchCtx;
     let isDrawing = false;
     let startX = 0, startY = 0;
     let playerXP = 350;
+    let drawnShapes = [];
 
     function init() {
       canvas = document.getElementById('paint-canvas');
       ctx = canvas.getContext('2d');
+      matchCanvas = document.getElementById('match-tactics-canvas');
+      matchCtx = matchCanvas.getContext('2d');
+
       resizeCanvas();
       window.addEventListener('resize', resizeCanvas);
 
@@ -253,12 +258,21 @@
       });
       document.getElementById('tab-' + tab).classList.remove('hidden');
       document.getElementById('nav-' + tab).className = "px-4 py-2 rounded-lg bg-emerald-600 text-white shadow";
+
+      if (tab === 'match') {
+        syncMatchTacticsCanvas();
+      }
     }
 
     function resizeCanvas() {
       const container = document.getElementById('board-container');
       canvas.width = container.clientWidth;
       canvas.height = container.clientHeight;
+
+      const matchContainer = document.getElementById('match-pitch');
+      matchCanvas.width = matchContainer.clientWidth;
+      matchCanvas.height = matchContainer.clientHeight;
+      redrawAll();
     }
 
     function renderPlayers() {
@@ -267,7 +281,7 @@
 
       squad.forEach(p => {
         const el = document.createElement('div');
-        el.className = 'player-token absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-30';
+        el.className = 'player-token absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-30 pointer-events-auto';
         el.style.left = p.x + '%';
         el.style.top = p.y + '%';
 
@@ -337,64 +351,101 @@
     }
 
     function setupDrawingEvents() {
-      canvas.addEventListener('mousedown', (e) => {
-        isDrawing = true;
+      const getCoords = (e) => {
         const rect = canvas.getBoundingClientRect();
-        startX = e.clientX - rect.left;
-        startY = e.clientY - rect.top;
-      });
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        };
+      };
 
-      canvas.addEventListener('mouseup', (e) => {
+      const startDraw = (e) => {
+        if (e.target.closest('.player-token')) return;
+        isDrawing = true;
+        const coords = getCoords(e);
+        startX = coords.x;
+        startY = coords.y;
+      };
+
+      const moveDraw = (e) => {
+        if (!isDrawing) return;
+        const coords = getCoords(e);
+        redrawAll();
+        drawSingleShape(ctx, { type: currentTool, sx: startX, sy: startY, ex: coords.x, ey: coords.y });
+      };
+
+      const endDraw = (e) => {
         if (!isDrawing) return;
         isDrawing = false;
-        const rect = canvas.getBoundingClientRect();
-        const endX = e.clientX - rect.left;
-        const endY = e.clientY - rect.top;
-        drawShape(startX, startY, endX, endY);
-      });
+        const coords = getCoords(e);
+        drawnShapes.push({ type: currentTool, sx: startX, sy: startY, ex: coords.x, ey: coords.y });
+        redrawAll();
+      };
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', moveDraw);
+      canvas.addEventListener('mouseup', endDraw);
+
+      canvas.addEventListener('touchstart', startDraw);
+      canvas.addEventListener('touchmove', moveDraw);
+      canvas.addEventListener('touchend', endDraw);
     }
 
-    function drawShape(sx, sy, ex, ey) {
-      ctx.lineWidth = 3;
+    function drawSingleShape(targetCtx, s) {
+      targetCtx.lineWidth = 3;
 
-      if (currentTool === 'arrow') {
-        ctx.strokeStyle = '#ffffff';
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.moveTo(sx, sy);
-        ctx.lineTo(ex, ey);
-        ctx.stroke();
+      if (s.type === 'arrow') {
+        targetCtx.strokeStyle = '#ffffff';
+        targetCtx.fillStyle = '#ffffff';
+        targetCtx.beginPath();
+        targetCtx.moveTo(s.sx, s.sy);
+        targetCtx.lineTo(s.ex, s.ey);
+        targetCtx.stroke();
 
-        const angle = Math.atan2(ey - sy, ex - sx);
-        ctx.beginPath();
-        ctx.moveTo(ex, ey);
-        ctx.lineTo(ex - 12 * Math.cos(angle - Math.PI / 6), ey - 12 * Math.sin(angle - Math.PI / 6));
-        ctx.lineTo(ex - 12 * Math.cos(angle + Math.PI / 6), ey - 12 * Math.sin(angle + Math.PI / 6));
-        ctx.closePath();
-        ctx.fill();
+        const angle = Math.atan2(s.ey - s.sy, s.ex - s.sx);
+        targetCtx.beginPath();
+        targetCtx.moveTo(s.ex, s.ey);
+        targetCtx.lineTo(s.ex - 12 * Math.cos(angle - Math.PI / 6), s.ey - 12 * Math.sin(angle - Math.PI / 6));
+        targetCtx.lineTo(s.ex - 12 * Math.cos(angle + Math.PI / 6), s.ey - 12 * Math.sin(angle + Math.PI / 6));
+        targetCtx.closePath();
+        targetCtx.fill();
 
-      } else if (currentTool === 'pass') {
-        ctx.strokeStyle = '#f59e0b';
-        ctx.setLineDash([6, 6]);
-        ctx.beginPath();
-        ctx.moveTo(sx, sy);
-        ctx.lineTo(ex, ey);
-        ctx.stroke();
-        ctx.setLineDash([]);
+      } else if (s.type === 'pass') {
+        targetCtx.strokeStyle = '#f59e0b';
+        targetCtx.setLineDash([6, 6]);
+        targetCtx.beginPath();
+        targetCtx.moveTo(s.sx, s.sy);
+        targetCtx.lineTo(s.ex, s.ey);
+        targetCtx.stroke();
+        targetCtx.setLineDash([]);
 
-      } else if (currentTool === 'zone') {
-        ctx.strokeStyle = '#ef4444';
-        ctx.fillStyle = 'rgba(239, 68, 68, 0.2)';
-        const r = Math.sqrt(Math.pow(ex - sx, 2) + Math.pow(ey - sy, 2));
-        ctx.beginPath();
-        ctx.arc(sx, sy, r, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
+      } else if (s.type === 'zone') {
+        targetCtx.strokeStyle = '#ef4444';
+        targetCtx.fillStyle = 'rgba(239, 68, 68, 0.2)';
+        const r = Math.sqrt(Math.pow(s.ex - s.sx, 2) + Math.pow(s.ey - s.sy, 2));
+        targetCtx.beginPath();
+        targetCtx.arc(s.sx, s.sy, r, 0, Math.PI * 2);
+        targetCtx.fill();
+        targetCtx.stroke();
       }
     }
 
-    function clearCanvas() {
+    function redrawAll() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawnShapes.forEach(s => drawSingleShape(ctx, s));
+    }
+
+    function syncMatchTacticsCanvas() {
+      matchCtx.clearRect(0, 0, matchCanvas.width, matchCanvas.height);
+      drawnShapes.forEach(s => drawSingleShape(matchCtx, s));
+    }
+
+    function clearCanvas() {
+      drawnShapes = [];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (matchCtx) matchCtx.clearRect(0, 0, matchCanvas.width, matchCanvas.height);
     }
 
     function resetPositions() {
@@ -448,7 +499,7 @@
       let min = 0, h = 0, a = 0;
       const ball = document.getElementById('match-ball');
       const logs = document.getElementById('match-logs');
-      logs.innerHTML = '<div class="text-emerald-400 font-bold">انطلقت صفارة البداية!</div>';
+      logs.innerHTML = '<div class="text-emerald-400 font-bold">انطلقت صفارة البداية! اللاعبون يطبقون تكتيك الخطوط المرسومة...</div>';
 
       matchTimer = setInterval(() => {
         min += 3;
@@ -457,10 +508,10 @@
         ball.style.left = (Math.random() * 70 + 15) + '%';
         ball.style.top = (Math.random() * 70 + 15) + '%';
 
-        if (Math.random() < 0.09) {
+        if (Math.random() < 0.1) {
           h++;
           document.getElementById('match-score').innerText = `${h} - ${a}`;
-          logs.innerHTML = `<div class="text-emerald-400 font-bold">⚽ هدف! تمريرة تكتيكية ممتازة تسفر عن هدف في الدقيقة ${min}'</div>` + logs.innerHTML;
+          logs.innerHTML = `<div class="text-emerald-400 font-bold">⚽ هدف! تنفيذ رائع لخط التمرير المرسوم بين الخطوط يثمر عن هدف في الدقيقة ${min}'</div>` + logs.innerHTML;
         }
 
         if (min >= 90) {
@@ -468,7 +519,7 @@
           matchTimer = null;
           playerXP += 100;
           document.getElementById('career-xp').innerText = playerXP + ' XP';
-          logs.innerHTML = `<div class="text-amber-400 font-bold">نهاية المباراة! النتيجة: ${h} - ${a}. كسبت +100 XP!</div>` + logs.innerHTML;
+          logs.innerHTML = `<div class="text-amber-400 font-bold">نهاية المباراة! النتيجة: ${h} - ${a}. تطبيق ممتاز للتكتيك وكسبت +100 XP!</div>` + logs.innerHTML;
         }
       }, 250);
     }
