@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سبورة التكتيك المحترفة - تطبيق الخطوط في المباريات</title>
+  <title>سبورة التكتيك والمباراة الحية - نمط المدرب</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -32,28 +32,25 @@
 </head>
 <body class="h-screen flex flex-col overflow-hidden">
 
-  <!-- Header & Navigation -->
+  <!-- Header -->
   <header class="bg-slate-900 border-b border-slate-800 px-6 py-3 flex justify-between items-center z-20">
     <div class="flex items-center gap-3">
-      <i class="fa-solid fa-chess-board text-emerald-400 text-2xl"></i>
-      <h1 class="text-xl font-bold text-white">منصة التكتيك الحر وتطبيق الخطوط الحية</h1>
+      <i class="fa-solid fa-clipboard-user text-emerald-400 text-2xl"></i>
+      <h1 class="text-xl font-bold text-white">منصة التكتيك التفاعلية - غطاء المدرب (Coach Mode)</h1>
     </div>
 
-    <!-- Navigation Tabs -->
+    <!-- Tab Selection -->
     <div class="flex bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs font-bold gap-1">
       <button id="nav-tactics" onclick="switchTab('tactics')" class="px-4 py-2 rounded-lg bg-emerald-600 text-white shadow">
-        <i class="fa-solid fa-chalkboard ml-1"></i> سبورة التكتيك
-      </button>
-      <button id="nav-career" onclick="switchTab('career')" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white">
-        <i class="fa-solid fa-id-card ml-1"></i> مهنة لاعب
+        <i class="fa-solid fa-chalkboard ml-1"></i> سبورة التكتيك والرسم
       </button>
       <button id="nav-match" onclick="switchTab('match')" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white">
-        <i class="fa-solid fa-futbol ml-1"></i> المباراة الحية (تطبيق التكتيك)
+        <i class="fa-solid fa-futbol ml-1"></i> تطبيق التكتيك في المباراة الحية
       </button>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main View Area -->
   <main class="flex-1 flex overflow-hidden relative">
 
     <!-- TAB 1: TACTICS BOARD -->
@@ -74,33 +71,31 @@
             </button>
             <div class="h-5 w-px bg-slate-700 mx-1"></div>
             <button onclick="clearCanvas()" class="px-3 py-1.5 rounded-lg bg-red-600/80 hover:bg-red-600 text-white font-bold">
-              <i class="fa-solid fa-trash ml-1"></i> مسح الرسوم
+              <i class="fa-solid fa-trash ml-1"></i> مسح الخطوط
             </button>
           </div>
 
           <div class="flex items-center gap-3">
             <button onclick="resetPositions()" class="text-emerald-400 font-bold hover:underline">
-              <i class="fa-solid fa-rotate-right ml-1"></i> إعادة التموضع
+              <i class="fa-solid fa-rotate-right ml-1"></i> إعادة التشكيلة
             </button>
           </div>
         </div>
 
-        <!-- Pitch Canvas & Tokens -->
+        <!-- Field Canvas -->
         <div id="board-container" class="flex-1 pitch-board relative m-3 rounded-xl border-2 border-white/20 overflow-hidden">
           <div class="absolute inset-x-0 top-0 h-28 border-b-2 border-white/20 w-64 mx-auto"></div>
           <div class="absolute inset-x-0 bottom-0 h-28 border-t-2 border-white/20 w-64 mx-auto"></div>
           <div class="absolute top-1/2 inset-x-0 border-t-2 border-white/20 -translate-y-1/2"></div>
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border-2 border-white/20 rounded-full"></div>
 
-          <!-- Interactive Drawing Canvas -->
           <canvas id="paint-canvas" class="absolute inset-0 z-20"></canvas>
-          <!-- Player Elements -->
           <div id="players-layer" class="absolute inset-0 z-30 pointer-events-none"></div>
         </div>
       </div>
 
-      <!-- Right Panel: Player Details -->
-      <div class="w-80 bg-slate-900 rounded-2xl border border-slate-800 p-4 flex flex-col gap-4">
+      <!-- Squad List Sidebar -->
+      <div class="w-72 bg-slate-900 rounded-2xl border border-slate-800 p-4 flex flex-col gap-4">
         <h3 class="font-bold text-lg border-b border-slate-800 pb-2 text-emerald-400 flex items-center justify-between">
           <span>التشكيلة الأساسية (11)</span>
           <i class="fa-solid fa-users text-sm"></i>
@@ -109,83 +104,15 @@
       </div>
     </section>
 
-    <!-- TAB 2: PLAYER CAREER MODE -->
-    <section id="tab-career" class="hidden flex-1 p-6 overflow-y-auto w-full">
-      <div class="max-w-4xl mx-auto space-y-6">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex justify-between items-center">
-          <div class="flex items-center gap-4">
-            <div class="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-emerald-400 shadow-xl">
-              10
-            </div>
-            <div>
-              <h2 id="career-name" class="text-2xl font-bold text-white">معتز ناجي</h2>
-              <div class="text-slate-400 text-sm">المركز: صانع ألعاب / جناح أيسر (LW/CAM)</div>
-              <div class="text-amber-400 font-bold text-sm mt-1">التقييم العام: <span id="career-ovr">82</span></div>
-            </div>
-          </div>
-          <div class="text-left bg-slate-950 p-4 rounded-xl border border-slate-800">
-            <div class="text-xs text-slate-400">نقاط التطوير (XP)</div>
-            <div id="career-xp" class="text-2xl font-black text-emerald-400">350 XP</div>
-          </div>
-        </div>
-
-        <!-- Career Stats -->
-        <div class="grid grid-cols-4 gap-4">
-          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center">
-            <div class="text-xs text-slate-400">المباريات</div>
-            <div id="stat-apps" class="text-2xl font-bold text-white mt-1">12</div>
-          </div>
-          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center">
-            <div class="text-xs text-slate-400">الأهداف</div>
-            <div id="stat-goals" class="text-2xl font-bold text-emerald-400 mt-1">8</div>
-          </div>
-          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center">
-            <div class="text-xs text-slate-400">التمريرات الحاسمة</div>
-            <div id="stat-assists" class="text-2xl font-bold text-amber-400 mt-1">5</div>
-          </div>
-          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center">
-            <div class="text-xs text-slate-400">معدل التقييم</div>
-            <div id="stat-rating" class="text-2xl font-bold text-sky-400 mt-1">8.4</div>
-          </div>
-        </div>
-
-        <!-- Skill Upgrades -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-          <h3 class="font-bold text-lg border-b border-slate-800 pb-3 mb-4 text-emerald-400">تطوير مهارات اللاعب</h3>
-          <div class="space-y-4">
-            <div class="flex justify-between items-center bg-slate-950 p-3 rounded-xl">
-              <div>
-                <div class="font-bold">التسديد والإنهاء (Shooting)</div>
-                <div class="text-xs text-slate-400">زيادة دقة وقوة التسديدات على المرمى</div>
-              </div>
-              <button onclick="upgradeSkill('shoot')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-bold text-xs">ترقية (100 XP)</button>
-            </div>
-            <div class="flex justify-between items-center bg-slate-950 p-3 rounded-xl">
-              <div>
-                <div class="font-bold">التمرير والرؤية (Passing)</div>
-                <div class="text-xs text-slate-400">إتقان التمريرات بين الخطوط والعرضيات</div>
-              </div>
-              <button onclick="upgradeSkill('pass')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-bold text-xs">ترقية (100 XP)</button>
-            </div>
-            <div class="flex justify-between items-center bg-slate-950 p-3 rounded-xl">
-              <div>
-                <div class="font-bold">المراوغة والسرعة (Dribbling & Pace)</div>
-                <div class="text-xs text-slate-400">التجاوز في مواجهات 1 ضد 1 الانطلاق الفردي</div>
-              </div>
-              <button onclick="upgradeSkill('dribble')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-bold text-xs">ترقية (100 XP)</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: REALISTIC MATCH ENGINE WITH TACTICAL LINES -->
+    <!-- TAB 2: LIVE MATCH ENGINE -->
     <section id="tab-match" class="hidden flex-1 p-4 flex gap-4 w-full h-full">
       <div class="flex-1 bg-slate-900 rounded-2xl border border-slate-800 flex flex-col overflow-hidden">
+        
+        <!-- Scoreboard -->
         <div class="bg-slate-950 p-4 border-b border-slate-800 flex justify-between items-center">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold">فريقك</div>
-            <span class="font-bold text-white">تطبيق التكتيك المرسوم</span>
+            <span class="font-bold text-white">تطبيق الخطوط التكتيكية</span>
           </div>
           <div class="text-center">
             <div id="match-score" class="text-3xl font-black text-amber-400 font-mono">0 - 0</div>
@@ -194,22 +121,30 @@
           <div class="font-bold text-slate-300">الخصم المنافس</div>
         </div>
 
+        <!-- Pitch with Applied Tactical Lines & Live Players -->
         <div id="match-pitch" class="flex-1 pitch-board relative m-3 rounded-xl border-2 border-white/20 overflow-hidden">
-          <!-- Canvas Showing Applied Tactical Lines -->
           <canvas id="match-tactics-canvas" class="absolute inset-0 z-10 opacity-70"></canvas>
-          <div id="match-ball" class="absolute w-4 h-4 bg-white rounded-full shadow border border-black z-30 transition-all duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+          <div id="match-players-layer" class="absolute inset-0 z-20 pointer-events-none"></div>
+          <div id="match-ball" class="absolute w-4 h-4 bg-white rounded-full shadow-lg border border-black z-30 transition-all duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
         </div>
 
-        <div class="p-4 bg-slate-950 border-t border-slate-800 flex justify-center">
-          <button id="btn-start-match" onclick="runRealisticMatch()" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg">
-            انطلاق المباراة والتكتيك
+        <!-- Controls -->
+        <div class="p-4 bg-slate-950 border-t border-slate-800 flex justify-center gap-4">
+          <button id="btn-start-match" onclick="runRealisticMatch()" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-play"></i> انطلاق خطتك في المباراة
           </button>
         </div>
       </div>
 
+      <!-- Live Commentary & Analysis -->
       <div class="w-80 bg-slate-900 rounded-2xl border border-slate-800 p-4 flex flex-col">
-        <h3 class="font-bold text-lg border-b border-slate-800 pb-2 mb-3 text-emerald-400">أحداث المباراة المباشرة</h3>
-        <div id="match-logs" class="flex-1 bg-slate-950 rounded-xl p-3 border border-slate-800 overflow-y-auto text-xs space-y-2 text-slate-300"></div>
+        <h3 class="font-bold text-lg border-b border-slate-800 pb-2 mb-3 text-emerald-400 flex items-center justify-between">
+          <span>تحليل تطبيق التكتيك</span>
+          <i class="fa-solid fa-chart-line text-sm"></i>
+        </h3>
+        <div id="match-logs" class="flex-1 bg-slate-950 rounded-xl p-3 border border-slate-800 overflow-y-auto text-xs space-y-2 text-slate-300">
+          <div class="text-slate-500">قم برسم خططك بالأسهم والتمريرات في سبورة التكتيك، ثم اضغط على انطلاق خطتك لمشاهدة التكتيك ينجح أو يفشل!</div>
+        </div>
       </div>
     </section>
 
@@ -234,7 +169,6 @@
     let canvas, ctx, matchCanvas, matchCtx;
     let isDrawing = false;
     let startX = 0, startY = 0;
-    let playerXP = 350;
     let drawnShapes = [];
 
     function init() {
@@ -252,279 +186,6 @@
     }
 
     function switchTab(tab) {
-      ['tactics', 'career', 'match'].forEach(t => {
+      ['tactics', 'match'].forEach(t => {
         document.getElementById('tab-' + t).classList.add('hidden');
-        document.getElementById('nav-' + t).className = "px-4 py-2 rounded-lg text-slate-300 hover:text-white";
-      });
-      document.getElementById('tab-' + tab).classList.remove('hidden');
-      document.getElementById('nav-' + tab).className = "px-4 py-2 rounded-lg bg-emerald-600 text-white shadow";
-
-      if (tab === 'match') {
-        syncMatchTacticsCanvas();
-      }
-    }
-
-    function resizeCanvas() {
-      const container = document.getElementById('board-container');
-      canvas.width = container.clientWidth;
-      canvas.height = container.clientHeight;
-
-      const matchContainer = document.getElementById('match-pitch');
-      matchCanvas.width = matchContainer.clientWidth;
-      matchCanvas.height = matchContainer.clientHeight;
-      redrawAll();
-    }
-
-    function renderPlayers() {
-      const layer = document.getElementById('players-layer');
-      layer.innerHTML = '';
-
-      squad.forEach(p => {
-        const el = document.createElement('div');
-        el.className = 'player-token absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-30 pointer-events-auto';
-        el.style.left = p.x + '%';
-        el.style.top = p.y + '%';
-
-        el.innerHTML = `
-          <div class="w-10 h-10 ${p.pos === 'GK' ? 'bg-amber-500' : 'bg-emerald-600'} rounded-full border-2 border-white flex items-center justify-center font-bold text-white shadow-xl text-sm">
-            ${p.num}
-          </div>
-          <div class="bg-slate-950/90 px-2 py-0.5 rounded text-[11px] font-bold border border-slate-700 whitespace-nowrap shadow">
-            ${p.name}
-          </div>
-        `;
-
-        makeDraggable(el, p);
-        layer.appendChild(el);
-      });
-    }
-
-    function makeDraggable(el, playerObj) {
-      let isDragging = false;
-      const container = document.getElementById('board-container');
-
-      const onStart = (e) => {
-        isDragging = true;
-        e.stopPropagation();
-      };
-
-      const onMove = (e) => {
-        if (!isDragging) return;
-        const rect = container.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-        let x = ((clientX - rect.left) / rect.width) * 100;
-        let y = ((clientY - rect.top) / rect.height) * 100;
-
-        x = Math.max(4, Math.min(96, x));
-        y = Math.max(4, Math.min(96, y));
-
-        playerObj.x = x;
-        playerObj.y = y;
-
-        el.style.left = x + '%';
-        el.style.top = y + '%';
-      };
-
-      const onEnd = () => { isDragging = false; };
-
-      el.addEventListener('mousedown', onStart);
-      window.addEventListener('mousemove', onMove);
-      window.addEventListener('mouseup', onEnd);
-
-      el.addEventListener('touchstart', onStart);
-      window.addEventListener('touchmove', onMove);
-      window.addEventListener('touchend', onEnd);
-    }
-
-    function setTool(tool) {
-      currentTool = tool;
-      ['arrow', 'pass', 'zone'].forEach(t => {
-        const b = document.getElementById('tool-' + t);
-        if (t === tool) {
-          b.className = "px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold flex items-center gap-1 shadow";
-        } else {
-          b.className = "px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-bold flex items-center gap-1";
-        }
-      });
-    }
-
-    function setupDrawingEvents() {
-      const getCoords = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        return {
-          x: clientX - rect.left,
-          y: clientY - rect.top
-        };
-      };
-
-      const startDraw = (e) => {
-        if (e.target.closest('.player-token')) return;
-        isDrawing = true;
-        const coords = getCoords(e);
-        startX = coords.x;
-        startY = coords.y;
-      };
-
-      const moveDraw = (e) => {
-        if (!isDrawing) return;
-        const coords = getCoords(e);
-        redrawAll();
-        drawSingleShape(ctx, { type: currentTool, sx: startX, sy: startY, ex: coords.x, ey: coords.y });
-      };
-
-      const endDraw = (e) => {
-        if (!isDrawing) return;
-        isDrawing = false;
-        const coords = getCoords(e);
-        drawnShapes.push({ type: currentTool, sx: startX, sy: startY, ex: coords.x, ey: coords.y });
-        redrawAll();
-      };
-
-      canvas.addEventListener('mousedown', startDraw);
-      canvas.addEventListener('mousemove', moveDraw);
-      canvas.addEventListener('mouseup', endDraw);
-
-      canvas.addEventListener('touchstart', startDraw);
-      canvas.addEventListener('touchmove', moveDraw);
-      canvas.addEventListener('touchend', endDraw);
-    }
-
-    function drawSingleShape(targetCtx, s) {
-      targetCtx.lineWidth = 3;
-
-      if (s.type === 'arrow') {
-        targetCtx.strokeStyle = '#ffffff';
-        targetCtx.fillStyle = '#ffffff';
-        targetCtx.beginPath();
-        targetCtx.moveTo(s.sx, s.sy);
-        targetCtx.lineTo(s.ex, s.ey);
-        targetCtx.stroke();
-
-        const angle = Math.atan2(s.ey - s.sy, s.ex - s.sx);
-        targetCtx.beginPath();
-        targetCtx.moveTo(s.ex, s.ey);
-        targetCtx.lineTo(s.ex - 12 * Math.cos(angle - Math.PI / 6), s.ey - 12 * Math.sin(angle - Math.PI / 6));
-        targetCtx.lineTo(s.ex - 12 * Math.cos(angle + Math.PI / 6), s.ey - 12 * Math.sin(angle + Math.PI / 6));
-        targetCtx.closePath();
-        targetCtx.fill();
-
-      } else if (s.type === 'pass') {
-        targetCtx.strokeStyle = '#f59e0b';
-        targetCtx.setLineDash([6, 6]);
-        targetCtx.beginPath();
-        targetCtx.moveTo(s.sx, s.sy);
-        targetCtx.lineTo(s.ex, s.ey);
-        targetCtx.stroke();
-        targetCtx.setLineDash([]);
-
-      } else if (s.type === 'zone') {
-        targetCtx.strokeStyle = '#ef4444';
-        targetCtx.fillStyle = 'rgba(239, 68, 68, 0.2)';
-        const r = Math.sqrt(Math.pow(s.ex - s.sx, 2) + Math.pow(s.ey - s.sy, 2));
-        targetCtx.beginPath();
-        targetCtx.arc(s.sx, s.sy, r, 0, Math.PI * 2);
-        targetCtx.fill();
-        targetCtx.stroke();
-      }
-    }
-
-    function redrawAll() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawnShapes.forEach(s => drawSingleShape(ctx, s));
-    }
-
-    function syncMatchTacticsCanvas() {
-      matchCtx.clearRect(0, 0, matchCanvas.width, matchCanvas.height);
-      drawnShapes.forEach(s => drawSingleShape(matchCtx, s));
-    }
-
-    function clearCanvas() {
-      drawnShapes = [];
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (matchCtx) matchCtx.clearRect(0, 0, matchCanvas.width, matchCanvas.height);
-    }
-
-    function resetPositions() {
-      squad = [
-        { id: 1, name: 'بونو', pos: 'GK', num: 1, x: 50, y: 88 },
-        { id: 2, name: 'دراغر', pos: 'RB', num: 2, x: 82, y: 70 },
-        { id: 3, name: 'الشيخاوي', pos: 'CB', num: 3, x: 62, y: 76 },
-        { id: 4, name: 'علايلات', pos: 'CB', num: 4, x: 38, y: 76 },
-        { id: 5, name: 'عرعار', pos: 'LB', num: 12, x: 18, y: 70 },
-        { id: 6, name: 'كاستيلو', pos: 'CDM', num: 6, x: 50, y: 58 },
-        { id: 7, name: 'الحاج محمود', pos: 'CM', num: 20, x: 68, y: 44 },
-        { id: 8, name: 'كوناتي', pos: 'CM', num: 17, x: 32, y: 44 },
-        { id: 9, name: 'ريبيرو', pos: 'RW', num: 10, x: 78, y: 24 },
-        { id: 10, name: 'المستوري', pos: 'ST', num: 9, x: 50, y: 16 },
-        { id: 11, name: 'البلايلي', pos: 'LW', num: 11, x: 22, y: 24 }
-      ];
-      renderPlayers();
-    }
-
-    function renderSquadList() {
-      const list = document.getElementById('squad-list');
-      list.innerHTML = '';
-      squad.forEach(p => {
-        list.innerHTML += `
-          <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 flex justify-between items-center text-xs">
-            <div class="flex items-center gap-2">
-              <span class="w-6 h-6 bg-emerald-600/30 text-emerald-400 font-bold rounded-full flex items-center justify-center">${p.num}</span>
-              <span class="font-bold text-white">${p.name}</span>
-            </div>
-            <span class="text-slate-400 font-semibold">${p.pos}</span>
-          </div>
-        `;
-      });
-    }
-
-    function upgradeSkill(type) {
-      if (playerXP >= 100) {
-        playerXP -= 100;
-        document.getElementById('career-xp').innerText = playerXP + ' XP';
-        let ovr = parseInt(document.getElementById('career-ovr').innerText);
-        document.getElementById('career-ovr').innerText = ovr + 1;
-        alert('تم تطوير المهارات بنجاح ورفع تقييم اللاعب!');
-      } else {
-        alert('لا تملك نقاط XP كافية! خض مباريات إضافية لكسب النقاط.');
-      }
-    }
-
-    let matchTimer;
-    function runRealisticMatch() {
-      if (matchTimer) return;
-      let min = 0, h = 0, a = 0;
-      const ball = document.getElementById('match-ball');
-      const logs = document.getElementById('match-logs');
-      logs.innerHTML = '<div class="text-emerald-400 font-bold">انطلقت صفارة البداية! اللاعبون يطبقون تكتيك الخطوط المرسومة...</div>';
-
-      matchTimer = setInterval(() => {
-        min += 3;
-        document.getElementById('match-time').innerText = `الدقيقة: ${min}'`;
-
-        ball.style.left = (Math.random() * 70 + 15) + '%';
-        ball.style.top = (Math.random() * 70 + 15) + '%';
-
-        if (Math.random() < 0.1) {
-          h++;
-          document.getElementById('match-score').innerText = `${h} - ${a}`;
-          logs.innerHTML = `<div class="text-emerald-400 font-bold">⚽ هدف! تنفيذ رائع لخط التمرير المرسوم بين الخطوط يثمر عن هدف في الدقيقة ${min}'</div>` + logs.innerHTML;
-        }
-
-        if (min >= 90) {
-          clearInterval(matchTimer);
-          matchTimer = null;
-          playerXP += 100;
-          document.getElementById('career-xp').innerText = playerXP + ' XP';
-          logs.innerHTML = `<div class="text-amber-400 font-bold">نهاية المباراة! النتيجة: ${h} - ${a}. تطبيق ممتاز للتكتيك وكسبت +100 XP!</div>` + logs.innerHTML;
-        }
-      }, 250);
-    }
-
-    window.onload = init;
-  </script>
-</body>
-</html>
+        document.getElementById('nav-' + t).className = "px
